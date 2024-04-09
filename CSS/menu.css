@@ -1,0 +1,109 @@
+html{
+    font-family: "Inter";
+}
+
+body {
+    margin: 0;
+    padding: 0; /* Optionally set padding to 0 as well */
+  }
+  
+
+.logo{
+    width: 75px;
+    margin: 20px 5px 20px 100px;
+}
+
+.border-top{
+    height: 50px;
+    background-color: #5086A8;
+    margin:0px;
+    border: 0px;
+    padding: 0px;
+}
+
+#menu-bar {
+    display: flex;
+    align-items: center;
+    padding: 10px 0px; 
+}
+
+.icon-bar{
+    width: 35px;
+    margin-right: 40px;
+}
+
+.website-name{
+    text-decoration: none;
+    font-style: italic;
+    font-weight: bolder;
+    color: #006BAF;
+    margin: 10px 100px 20px 0px; 
+}
+
+
+#buyButton{
+    font-family: "Poppins";
+    padding: 15px 40px;
+    font-size: 15px;
+    font-weight:600 ;
+    letter-spacing: 2px;
+    background-color: #006BAF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+#sellButton{
+    font-family: "Poppins";
+    padding: 15px 38px;
+    font-size: 15px;
+    font-weight:600;
+    letter-spacing: 2px;
+    background-color: #D9D9D9;
+    color: #615D5D;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+  }
+
+  #searchInput {
+    margin-left: 100px;
+    margin-right: 0px;
+    padding: 19px;
+    width: 470px;
+    border:0px;
+    border-radius: 8px;
+    font-size: 14px;
+    flex: 1;
+    background-color: #F5F5F5;
+  }
+
+  #searchInput::placeholder {
+    font-family: "Poppins";
+    color: #7a7a7a; 
+  }
+
+  #search-icon{
+    width: 20px;
+  }
+
+  .search-button{
+    padding:15px;
+    border: 0px;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 200px;
+    border-radius: 8px;
+    background-color: #D9D9D9;
+  }
+
+  header {
+    border-bottom: 1px solid #ccc; /* Add a border to the bottom of the header */
+  }
