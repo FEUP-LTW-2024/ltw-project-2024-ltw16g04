@@ -15,25 +15,39 @@
     <!-- end here -->
   </head>
   <body>
-    <header>
-      <div class ="border-top"></div>
-      <div id="menu-bar">
-        <img src="../images/logo-removebg-preview.png" alt="Martech logo" class="logo">
-        <h1><a href="index.html" class="website-name">MarTech</a></h1>
-        <button id="buyButton">BUY</button>
-        <button id="sellButton">SELL</button>
-
-        <form action="/search" method="get" id="search-bar">
-          <input type="text" name="q" id="searchInput" placeholder="What are you looking for?">
-          <button type="submit" class="search-button">
-            <img src="../images/search.png" alt="search engine" id="search-icon"></button>
-        </form>
-        <img src="../images/user.png" alt="profile icon" class="icon-bar">
-        <img src="../images/heart.png" alt="favorites icon" class="icon-bar">
-        <img src="../images/shopping-basket.png" alt="basket icon" class="icon-bar">
+    <div class="top_bar">
+    </div>
+     <nav class="nav">
+      <div class="container nav_container">
+        <div class="nav-title">
+        <img src="../images/logo-removebg-preview.png" alt="Martech logo" class="logo" width="75px";>
+        <a href="menu copy.html" class="nav_logo">MarTech</a></div>
+        <ul class="nav_list">
+          <li class="nav_item"><a href="menu copy.html" class="nav_link">Home</a></li>
+          <li class="nav_item"><a href="#" class="nav_link">Sell</a></li>
+          <li class="nav_item"><a href="#" class="nav_link">Products</a></li>
+          <li class="nav_item">
+            <a href="/sign-up.html" class="nav_link">Account</a>
+          </li>
+        </ul>
+        <div class="nav_items">
+          <form action="#" class="nav_form">
+            <input
+              type="text"
+              class="nav_input"
+              placeholder="What are you looking for?" />
+            <img src="../images/search.png" alt="" class="nav_search" />
+          </form>
+    
+          <img src="../images/heart.png" alt="" class="nav_heart" />
+          <a href="/cart.html">
+            <img src="../images/cart.png" alt="" class="nav_cart" />
+          </a>
+        </div>
       </div>
-    </header>
-    <body>
+    </nav>
+  
+  
         <section class="login">
           <img src="../images/loginimage.jpeg" alt="">
             <div class="login-box">
@@ -55,4 +69,78 @@
             <p>Don't have an account? <a href="menu.html">Sign Up Now</a></p>
             </div>
         </section>
+        <!--FOOTER-->
+ <footer class="footer">
+  <div class="footer__addr">
+
+
+    <h1 class="footer__logo">
+      MarTech</h1>
+
+      <h2>Contact</h2>
+
+      <address>
+        5534 Somewhere In. The World 22193-10212<br>
+            
+        <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
+      </address>
+        
+    
+  </div>
+  
+  <ul class="footer__nav">
+    <li class="nav__item">
+      <h2 class="nav__title">Account</h2>
+
+      <ul class="nav__ul">
+        <li>
+          <a href="#">My Account</a>
+        </li>
+
+        <li>
+          <a href="#">Login / Register</a>
+        </li>
+            
+        <li>
+          <a href="#">Cart</a>
+        </li>
+
+        <li>
+          <a href="#">Wishlist</a>
+        </li>
+
+        <li>
+          <a href="#">Shop</a>
+        </li>
+      </ul>
+    </li>
+    
+    <li class="nav__item">
+      <h2 class="nav__title">Quick Link</h2>
+      
+      <ul class="nav__ul">
+        <li>
+          <a href="#">Privacy Policy</a>
+        </li>
+        
+        <li>
+          <a href="#">Terms Of Use</a>
+        </li>
+        
+        <li>
+          <a href="#">FAQ</a>
+        </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+  
+  <div class="legal">
+    <p>&copy; Copyrigth FEUP\LTW 2024. All rights reserved.</p>
+  
+  </div>
+</footer>
     </body>
+    </html>
+    

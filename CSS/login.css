@@ -1,125 +1,135 @@
-html{
-  font-family: "Inter";
-}
 
+
+html {
+  font-size: 10px;
+  /* 1 rem 10px */
+}
 body {
-  margin: 0;
   padding: 0;
+  margin: 0;
+  font-family: "Inter";
+  font-size: 1.6rem;
+ 
 }
-
-
-.logo{
-  width: 75px;
-  margin: 20px 5px 20px 100px;
-}
-
-.border-top{
-  height: 50px;
-  background-color: #5086A8;
-  margin:0px;
-  border: 0px;
-  padding: 0px;
-}
-
-#menu-bar {
-  display: flex;
-  align-items: center;
-  padding: 10px 0px; 
-}
-
-.icon-bar{
-  width: 35px;
-  margin-right: 40px;
-}
-
-.website-name{
+a {
   text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+.container {
+  max-width: 114rem;
+  margin: 2em auto;
+  padding: 0rem 1rem;
+  box-sizing: border-box;
+}
+.w-6 {
+  width: 2rem;
+  height: 2rem;
+}
+.h-6 {
+  fill: rgb(239, 140, 1);
+}
+
+.top_bar {
+  width: 100%;
+  height: 4rem;
+  background-color: #5086A8;
+}
+/* navigation-bar */
+.nav {
+  width: 100%;
+  height: 8rem;
+  border-bottom: 1px solid rgb(199, 193, 193);
+}
+.nav_container {
+  
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.nav_list {
+  display: flex;
+}
+.nav_items {
+  display: flex;
+}
+.nav_logo {
+  font-size: 3rem;
+  font-weight: 800;
   font-style: italic;
-  font-weight: bolder;
   color: #006BAF;
-  margin: 10px 100px 20px 0px; 
+}
+.nav_item {
+  margin: 0rem 0.5rem;
+}
+.nav_link {
+  font-size: "Inter";
+  font-weight: 500;
+  padding: 0.6rem;
+  color: black;
+  transition: all 0.3s ease;
 }
 
-
-button{
-  font-family: "Poppins";
-  padding: 15px 40px;
-  font-size: 15px;
-  font-weight:600 ;
-  letter-spacing: 2px;
-  background-color: #006BAF;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-right: 15px;
+.nav_link:hover{
+  color: #006BAF;
+}
+.nav_form {
+  padding: 0.8rem 3em;
+  background-color: #F5F5F5;
+  display: flex;
+  align-items: center;
+ 
 }
 
-#buyButton{
-  font-family: "Poppins";
-  padding: 15px 40px;
-  font-size: 15px;
-  font-weight:600 ;
-  letter-spacing: 2px;
-  background-color: #006BAF;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-right: 15px;
+.nav_input::placeholder{
+  font-family: "Inter";
+  padding-left: 0px;
+  color: #7D8184;
 }
-
-#sellButton{
-  font-family: "Poppins";
-  padding: 15px 38px;
-  font-size: 15px;
-  font-weight:600;
-  letter-spacing: 2px;
-  background-color: #D9D9D9;
-  color: #615D5D;
+.nav_input {
+  padding: 0.4rem;
+  background-color: transparent;
+  outline: none;
   border: none;
-  border-radius: 8px;
+}
+.nav_search {
   cursor: pointer;
 }
-
-.search-bar {
+.nav-title{
+  display: flex;
+  align-items: center;
+}
+.nav_items {
   display: flex;
   align-items: center;
 }
 
-#searchInput {
-  margin-left: 100px;
-  margin-right: 0px;
-  padding: 19px;
-  width: 470px;
-  border:0px;
-  border-radius: 8px;
-  font-size: 14px;
-  flex: 1;
-  background-color: #F5F5F5;
+.nav_heart {
+  margin-left: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.nav_search:hover{
+  filter: drop-shadow(16px 16px 20px rgb(0, 4, 255)) invert(50%);
 }
 
-#searchInput::placeholder {
-  font-family: "Poppins";
-  color: #7a7a7a; 
+.nav_heart:hover{
+  filter: drop-shadow(16px 16px 20px rgb(0, 4, 255)) invert(50%);
 }
 
-#search-icon{
-  width: 20px;
+.nav_cart:hover{
+  filter: drop-shadow(16px 16px 20px rgb(0, 4, 255)) invert(50%);
+}
+.nav_cart {
+  margin-left: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.search-button{
-  padding:15px;
-  border: 0px;
-  margin-top: 10px;
-  margin-left: 0px;
-  margin-right: 200px;
-  border-radius: 8px;
-  background-color: #D9D9D9;
-}
-header {
-  border-bottom: 1px solid #ccc; /* Add a border to the bottom of the header */
-}
+
 .login{
   margin-top: 50px;
   margin-bottom: 50px;
@@ -163,6 +173,15 @@ form{
 .loginproblem p{
   justify-self: end;
 }
+
+#signin{
+  background-color: #006BAF;
+  border: none;
+  color: #F5F5F5;
+  border-radius: 8px;
+}
+
+
 @media only screen and (max-width: 800px){
 .login img{
   display: none;
@@ -170,4 +189,127 @@ form{
 .login-box{
   width: 100%;
 }
+}
+
+/* footer */
+.footer {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 30px 30px 20px 30px;
+  color: #fff;
+  background-color: #2c2c2e;
+  border-top: 1px solid #e5e5e5;
+}
+
+.footer > * {
+  flex:  1 100%;
+}
+
+.footer__addr {
+  margin-right: 1.25em;
+  margin-bottom: 2em;
+}
+
+.footer__logo {
+  font-family: 'Inter';
+  font-weight: 400;
+  color: #006BAF;
+  font-weight: bold;
+  font-style: italic;
+  text-transform:none;
+  font-size: 1.5rem;
+}
+
+.footer__addr h2 {
+  margin-top: 1.3em;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.nav__title {
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.footer address {
+  font-style: normal;
+  color: #999;
+}
+
+.footer__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  max-width: max-content;
+  background-color: rgb(33, 33, 33, 0.07);
+  border-radius: 100px;
+  color: #2f2f2f;
+  line-height: 0;
+  margin: 0.6em 0;
+  font-size: 1rem;
+  padding: 0 1.3em;
+}
+
+.footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer li {
+  line-height: 2em;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer__nav {
+  display: flex;
+    flex-flow: row wrap;
+}
+
+.footer__nav > * {
+  flex: 1 50%;
+  margin-right: 1.25em;
+}
+
+.nav__ul a {
+  color: #999;
+}
+
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  color: #999;
+}
+  
+.legal__links {
+  display: flex;
+  align-items: center;
+}
+
+.heart {
+  color: #2f2f2f;
+}
+
+@media screen and (min-width: 24.375em) {
+  .legal .legal__links {
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 40.375em) {
+  .footer__nav > * {
+    flex: 1;
+  }
+  
+  
+  .footer__addr {
+    flex: 1 0px;
+  }
+  
+  .footer__nav {
+    flex: 2 0px;
+  }
 }
