@@ -120,34 +120,45 @@ button{
   header {
     border-bottom: 1px solid #ccc; /* Add a border to the bottom of the header */
   }
-
   .register{
-    display: grid;
-    grid-template-areas: "image register";
     margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
     align-items: center;
+    height: 90vh;
   }
-  .login-box{
-    grid-area: "register";
-    margin-right: 300px;
+  .register-box{
+    padding: 6rem;
+    margin-bottom: 5rem;
   }
-
+  .register-box h1{
+    font-size: 2rem;
+  }
   form{
-    width: 80%;
+    width: 100%;
+    margin-bottom: 2rem;
   }
   .register form div input{
     height: 30px;
     width: 100%;
-    border-radius: 3px;
+    border-radius: 6px;
     border: 1px solid #ccc;
     width: 100%;
     margin-bottom: 20px;
+    padding: 0.6em 1rem;
   }
   .register button{
-    width: 70%;
+    width: 50%;
   }
   .register img{
-    grid-area: "image";
-    width: 900px;
+    width: 50%;
     height: 100%;
   }
+  @media only screen and (max-width: 800px){
+  .register img{
+    display: none;
+  }
+  .login-box{
+    width: 100%;
+  }
+}
