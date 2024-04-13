@@ -246,6 +246,25 @@ ul {
   border-radius: 0.5rem;
 }
 
+.add_btn{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #006BAF;
+    color: white;
+    padding: 1rem 10rem;
+    border: none;
+    border-radius: 5px;
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+  }
+  
+  .card_top:hover .add_btn {
+    opacity: 1; 
+  }
+
+
 .footer {
   display: flex;
   flex-flow: row wrap;
