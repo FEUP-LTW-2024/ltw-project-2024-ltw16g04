@@ -255,33 +255,6 @@ body {
 
 
 
-
-    .favorite-button {
-      cursor: pointer;
-      border: 0;
-      color: red;
-    }
-    
-    .favorite-button .favorite__icon {
-      height: 20px;
-      width: 30px;
-      opacity: 0;
-      transition: opacity 0.3s, transform 0.3s;
-      transform: scale(.6);
-      position:relative;
-      
-    }
-    
-    .favorite-button.is-favorite .favorite--enable {
-      opacity: 1;
-      transform: scale(1);
-    }
-    
-    .favorite-button:not(.is-favorite) .favorite--not {
-      opacity: 1;
-      transform: scale(1);
-    }
-
     #testimonials{
       display: flex;
       justify-content: center;
@@ -401,86 +374,265 @@ body {
       background-color: #252525;
   }
 
-  .container {  display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "product product product"
-      "product product product"
-      "description description description";
-  }
-  
-  .product {  display: grid;
-    margin: 0; /* Remove any margin */
-    height: auto; /* Adjust the height as needed */
-
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-area: product;
-    border: #999;
-    border-width: 2px;
-    border-bottom: #4b4b4b;
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    gap: 100px;
+    border-bottom: #615D5D;
     border-bottom-style: solid;
-    border-bottom-width: 3px;
-
-  }
-  
-  .product-img { 
-    
-    padding-left: 60px;
-    padding-top: 60px;
-    grid-area: 1 / 1 / 4 / 2; }
-  
-  .prouduct-title {  display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 0.7fr 1.3fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "main-title main-title main-title"
-      "main-title main-title main-title"
-      ". . .";
-    grid-area: 1 / 2 / 2 / 4;
-    padding-left: 30px;
-  }
-  
-  .main-title { 
-    grid-area: main-title;
-    padding: 30px;
-    border-bottom: #979797;
-    border-bottom-style: solid;
-    border-bottom-width: 3px;
-  }
-  
-  .main-title h5{
-    font-size: medium;
-  }
-  .main-title .price {
-    font-size: medium;
-    
+    border-bottom-width: 2px;
   }
 
-  
-  .product-info { grid-area: 2 / 1 / 4 / 4; 
-    padding-left: 30px;
+  .items{
+    align-self: flex-end;
+  }
+
+  .left-side{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
   
-  .info-title { grid-area: 3 / 1 / 4 / 3;
-    padding-left: 30px;
-    word-spacing: 7px;
-    margin-block: 3px;
+
+  .select-image{
+    max-width: 700px;
+    size: 100%;
+  }
+
+  .select-image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+
+  .thumbnails{
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 400px;
+    gap: 10px;
+
+  }
+
+  .thumbnail img{
+    width: 100%;
+    border-radius: 10px;
+  }
+  .right-side{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+   
+  }
+
+  .right-side h6{
+    color: #006BAF;
+    font-size: medium;
+
+  }
+
+  .right-side p{
+    color: hsl(219, 9%, 45%);
+    font-size: 18px;
+  }
+
+  .content{
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .options{
+    gap: 20px;
+    border-top: #615D5D;
+    border-top-style: solid;
+    border-top-width: 2px;
+  }
+
+  .price{
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+  .off{
+    font-size: 16px;
+    color: #ccc;
+    font-weight: 700;
+  }
+
+  .info-title p{
     font-weight: bold;
-    font-size: medium;
   }
+
+  .cart{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background-color: #006BAF;
+    padding: 10px 35px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    width:200px;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .buttons{
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    padding-bottom: 20px;
+
+  }
+
+  .cart img{
+    width: 18px;
+  }
+
+  .fav{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background-color: red;
+    padding: 10px 35px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    width:200px;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .fav img{
+    
+    width: 18px;
+  }
+
+  .getcontact{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background-color: #615D5D;
+    padding: 10px 35px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    width:200px;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .comment-box{
+    border-top: #615D5D;
+    border-top-style: solid;
+    border-top-width: 2px;
+    top: 50%;
+    left: 50%;
+    position:relative;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    padding: 20px;
+  }
+
+  .comment-box h2{
+    font-size: 20px;
+    margin-bottom: 15px;
+
+  }
+
+  .comment-box input{
+    width:100%;
+    height: 50px;
+    padding: 0 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #86b0b6;
+  }
+
+  .comment-box input:focus{
+    border: 1px solid #000;
+    outline: 0;
+  }
+  .comment-box textarea {
+    width: 100%;
+    height: 150px;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #86b0b6;
+  }
+
+  .comment-box textarea:focus{
+    border: 1px solid #000;
+    outline: 0;
+  }
+
+  .comment-box button{
+    border:0;
+    padding: 10px 30px;
+    background: #86b0b6;
+    font-size: 18px;
+    border-radius: 5px;
+    color: #fff;
+  }
+
+  .comment-box button:hover{
+    background-color: #718a71;
+  }
+
+  #full-stars-example-two {
+
+    /* use display:inline-flex to prevent whitespace issues. alternatively, you can put all the children of .rating-group on a single line */
+    .rating-group {
+      display: flex;
+    }
+    
+    /* make hover effect work properly in IE */
+    .rating__icon {
+      pointer-events: none;
+    }
+    
+    /* hide radio inputs */
+    .rating__input {
+     position: absolute !important;
+     left: -9999px !important;
+    }
+    
+    /* hide 'none' input from screenreaders */
+    .rating__input--none {
+      display: none
+    }
   
-  .info-data { grid-area: 3 / 2 / 4 / 4; 
-  font-size: medium;}
+    /* set icon padding and size */
+    .rating__label {
+      cursor: pointer;
+      padding: 0 0.1em;
+      font-size: 2rem;
+    }
+    
+    /* set default star color */
+    .rating__icon--star {
+      color: orange;
+    }
   
- .testimonial-heading { grid-area: description; 
-  text-align: center;
-  padding: 60px;
-}
+    /* if any input is checked, make its following siblings grey */
+    .rating__input:checked ~ .rating__label .rating__icon--star {
+      color: #ddd;
+    }
+    
+    /* make all stars orange on rating group hover */
+    .rating-group:hover .rating__label .rating__icon--star {
+      color: orange;
+    }
+  
+    /* make hovered input's following siblings grey on hover */
+    .rating__input:hover ~ .rating__label .rating__icon--star {
+      color: #ddd;
+    }
+  }

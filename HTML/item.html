@@ -31,54 +31,56 @@
     <!-- Showcase -->
     
     
-    <section class="container">
-      <div class="product">
-        <div class="product-img">
-          <img src="../images/relogio.png" />
-        </div>
-        <div class="prouduct-title">
-          <div class="main-title">
-            <h2>SmartWatch XIAOMI Redmi Watch 3
-              <button type="button" class="favorite-button">
-                <i class="fas fa-heart favorite__icon favorite--enable"></i>
-                <i class="far fa-heart favorite__icon favorite--not"></i></button>
-                  
-            </h2>
-            <h5>Grade A+</h5>
-            <div class="price">
-              <p> &#8364 25.00 </p>
-              
+      <main>
+        <section>
+          <div class="container">
+            <div class="left-side">
+              <div class="items">
+                <div class="select-image">
+                  <img src="../images/items/iphonemain.jpeg" alt="relogio">
+                </div>
+                <div class="thumbnails">
+                  <div class="thumbnail">
+                    <img src="../images/items/iphone1.jpeg" alt="">
+                  </div>
+                  <div class="thumbnail">
+                    <img src="../images/items/iphone2.jpeg" alt="">
+                  </div>
+                  <div class="thumbnail">
+                    <img src="../images/items/iphone3.jpeg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="right-side">
+              <div class="content">
+                <h6>Grade A+</h6>
+                <h1>Iphone 13 Pro Max</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                <span class="price">&#8364 25.00</span>
+                <span class="off"> &#8364 45.00</span>
+                <div class="options">
+                  <div class="info-title">
+                    <p>Sold by: Marcos Goiano </p>
+                    <p>Location: Rua de Antonio Enes, Porto</p>
+                    <p>Published: Today at 10:32</p>
+                  </div>
+                  <div class="buttons">
+                  <a href="" class="getcontact">GET CONTACT</a>  
+                  <a href="" class="cart">SEND MESSAGE</a>  
+                  </div>
+                  <div class="buttons">
+                  <a href="" class="fav"><img src="../images/heart.png" alt=""> ADD TO FAVORITES</a>  
+                  <a href="" class="cart"><img src="../images/cart.png" alt=""> ADD TO CART</a>  
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="add">
-           
-          </div>
-        </div>
-        <div class="product-info">
+        </section>
+      </main>
 
-        </div>
-        <div class="info-title">
-          <p class="title">Sold by: </p>
-          <p class="title">Location: </p>
-          <p class="title">Published: </p>
-          
-          <button id="sellButton">SEND MESSAGE</button>
-        </div>
-        <div class="info-data">
-          <p>Marcos Goiano</p>
-          <p> Rua de Antonio Enes, Porto</p>
-          <p class="title">Today at 10:32 </p>
-         <button id="buyButton">GET CONTACT</button>
-        </div>
-      </div>
-    </div>
-    
-    </div>
-    <div class="testimonial-heading">
-      <span>Description</span>
-      <h4>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</h4>
-  </div>
-</section>
-
+    <!-- Testimonials -->
 
   <section id="testimonials">
     <!--heading--->
@@ -211,6 +213,35 @@
     </div>
   </section>
   <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+
+    <!--Add Comment-->
+
+      <div class="comment-box">
+        <h2>Add Your Comment</h2>
+        <div id="full-stars-example-two">
+          <div class="rating-group">
+              <input disabled checked class="rating__input rating__input--none" name="rating3" id="rating3-none" value="0" type="radio">
+              <label aria-label="1 star" class="rating__label" for="rating3-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+              <input class="rating__input" name="rating3" id="rating3-1" value="1" type="radio">
+              <label aria-label="2 stars" class="rating__label" for="rating3-2"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+              <input class="rating__input" name="rating3" id="rating3-2" value="2" type="radio">
+              <label aria-label="3 stars" class="rating__label" for="rating3-3"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+              <input class="rating__input" name="rating3" id="rating3-3" value="3" type="radio">
+              <label aria-label="4 stars" class="rating__label" for="rating3-4"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+              <input class="rating__input" name="rating3" id="rating3-4" value="4" type="radio">
+              <label aria-label="5 stars" class="rating__label" for="rating3-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+              <input class="rating__input" name="rating3" id="rating3-5" value="5" type="radio">
+          </div>
+          </div>
+        <form action="#">
+          <input type="text" name = "full_name" placeholder="Full Name...">
+          <input type="text" name="username" placeholder="Username...">
+          <textarea name="comment" id="" cols="30" rows="10" placeholder="Type your comment"></textarea>
+          
+          <button type="submit">Submit Comment</button>
+
+        </form>
+      </div>
 
     <!--FOOTER-->
     <footer class="footer">
