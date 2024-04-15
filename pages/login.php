@@ -1,3 +1,13 @@
+<?php
+  declare(strict_types = 1);
+
+  require_once(__DIR__ . '/../utils/session.php');
+  $session = new Session();
+
+  require_once(__DIR__ .'/../data/connection.php');
+
+
+?>
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
@@ -38,7 +48,7 @@
           <img src="../images/loginimage.jpeg" alt="">
             <div class="login-box">
             <h1>Enter your details below</h1>
-            <form action="" method="post">
+            <form action="../actions/login_action.php" method="post">
                 <div class="email">
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" placeholder="Your e-mail">
@@ -47,9 +57,17 @@
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password" placeholder="Your password">
                 </div>
+                <section id="messages">
+			            <?php foreach ($session->getMessages() as $messsage) { ?>
+				            <article class="<?=$messsage['type']?>">
+				            <?=$messsage['text']?>
+				            </article>
+			            <?php } ?>
+			          </section>
+                <button id="signin">Log In</button>
             </form>
             <div class="loginproblem">
-              <button id="signin">Log In</button>
+              
               <p><a href="menu.html">Forgot Password?</a></p>
             </div>
             <p>Don't have an account? <a href="menu.html">Sign Up Now</a></p>
