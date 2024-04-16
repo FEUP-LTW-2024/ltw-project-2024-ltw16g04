@@ -70,7 +70,7 @@
               
               <p><a href="menu.html">Forgot Password?</a></p>
             </div>
-            <p>Don't have an account? <a href="menu.html">Sign Up Now</a></p>
+            <p>Don't have an account? <a href="register.php">Sign Up Now</a></p>
             </div>
         </section>
     </body>

@@ -18,8 +18,8 @@
 
     static function addUser($id,$name ,$phone, $pwd, $email, $db){
 
-        $stmt = $db->prepare('INSERT INTO Users(id,name,phone,email,password) VALUES (?,?, ?, ?, ?);');
-        $stmt->execute(array($name, $name,$phone, $email, $password));
+        $stmt = $db->prepare('INSERT INTO USERS(id,name,phone,email,password) VALUES (?,?, ?, ?, ?);');
+        $stmt->execute(array($id,$name,$phone, $email, $pwd));
     }
 
     static function checkUserWithPassword($email, $pwd, $db) : ?User {

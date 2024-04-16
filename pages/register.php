@@ -1,3 +1,12 @@
+<?php
+  declare(strict_types=1);
+
+  require_once(__DIR__ . '/../utils/session.php');
+  $session = new Session();
+
+  require_once(__DIR__ .'/../data/connection.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
@@ -38,7 +47,7 @@
           <img src="../images/loginimage.jpeg" alt="">
             <div class="register-box">
             <h1>Create an account</h1>
-            <form action="register.php" method="post">
+            <form action="../actions/register_action.php" method="post">
                 <div class="name">
                     <label for="name">Name</label>
                     <input type="text" name="name" id="name" placeholder="e.g: John Doe">
@@ -47,13 +56,18 @@
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" placeholder="e.g: johndoe@example.com">
                 </div>
+                <section id="messages">
+			            <?php foreach ($session->getMessages() as $messsage) { ?>
+                  <?php if($messsage['type'] == 'double_user'){ ?>
+                    <article class="<?=$messsage['type']?>">
+                      <?=$messsage['text']?>
+                      </article>
+                  <?php } ?>
+			          <?php } ?>
+			          </section>
                 <div class="password">
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password" placeholder="required">
-                </div>
-                <div class="birthday">
-                    <label for="birthday">Date of Birth</label>
-                    <input type="date" name="birthday" id="birthday">
                 </div>
                 <div class="phone">
                     <label for="phone">Phone Number</label>
