@@ -17,11 +17,23 @@ id INT PRIMARY KEY NOT NULL,
 name TEXT NOT NULL,
 description TEXT NOT NULL,
 price DECIMAL(10, 2) NOT NULL,
+old_price DECIMAL(10, 2),
 category TEXT NOT NULL,
 condition TEXT NOT NULL,
 location TEXT NOT NULL,
+main_image TEXT NOT NULL,
+published_time TEXT NOT NULL,
 seller_id INT NOT NULL,
 FOREIGN KEY (seller_id) REFERENCES USERS(id)
+);
+
+DROP TABLE IF EXISTS THUMBNAILS;
+
+CREATE TABLE THUMBNAILS(
+    id INT PRIMARY KEY NOT NULL,
+    item_id INT NOT NULL,
+    url TEXT NOT NULL,
+    FOREIGN KEY (item_id) REFERENCES ITEMS(id)
 );
 
 DROP TABLE IF EXISTS REPORT_ITEM;
@@ -113,3 +125,12 @@ INSERT INTO USERS (id, name, phone, email, password) VALUES
     (10, 'Amanda Garcia', '6665554444', 'amanda@example.com', 'password10');
 
 
+INSERT INTO ITEMS (id, name, description, price, old_price, category, condition, location, main_image,published_time, seller_id) VALUES
+    (1, 'Iphone 13 Pro Max', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+    25.00, 45.00, 'Electronics', 'Grade A+', 'Rua de Antonio Enes, Porto', '../images/items/iphonemain.jpeg','10:34', 1);
+
+INSERT INTO THUMBNAILS(id, item_id, url) VALUES
+    (1, 1, '../images/items/iphone1.jpeg'),
+    (2, 1, '../images/items/iphone2.jpeg'),
+    (3, 1, '../images/items/iphone3.jpeg'),
+    (4, 1, '../images/items/iphone4.jpeg');

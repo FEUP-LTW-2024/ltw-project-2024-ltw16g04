@@ -1,3 +1,9 @@
+<?php
+  
+  require_once (__DIR__ . '/../actions/item_actions.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -31,54 +37,9 @@
     <!-- Showcase -->
     
     
-      <main>
-        <section>
-          <div class="container">
-            <div class="left-side">
-              <div class="items">
-                <div class="select-image">
-                  <img src="../images/items/iphonemain.jpeg" alt="relogio">
-                </div>
-                <div class="thumbnails">
-                  <div class="thumbnail">
-                    <img src="../images/items/iphone1.jpeg" alt="">
-                  </div>
-                  <div class="thumbnail">
-                    <img src="../images/items/iphone2.jpeg" alt="">
-                  </div>
-                  <div class="thumbnail">
-                    <img src="../images/items/iphone3.jpeg" alt="">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="right-side">
-              <div class="content">
-                <h6>Grade A+</h6>
-                <h1>Iphone 13 Pro Max</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-                <span class="price">&#8364 25.00</span>
-                <span class="off"> &#8364 45.00</span>
-                <div class="options">
-                  <div class="info-title">
-                    <p>Sold by: Marcos Goiano </p>
-                    <p>Location: Rua de Antonio Enes, Porto</p>
-                    <p>Published: Today at 10:32</p>
-                  </div>
-                  <div class="buttons">
-                  <a href="" class="getcontact">GET CONTACT</a>  
-                  <a href="" class="cart">SEND MESSAGE</a>  
-                  </div>
-                  <div class="buttons">
-                  <a href="" class="fav"><img src="../images/heart.png" alt=""> ADD TO FAVORITES</a>  
-                  <a href="" class="cart"><img src="../images/cart.png" alt=""> ADD TO CART</a>  
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
+    <?php
+    $itemId = $_GET['id'];
+    drawItem($itemId) ?>
 
     <!-- Testimonials -->
 
