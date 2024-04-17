@@ -29,7 +29,6 @@
   </head>
   <body>
     <?php drawHeader(); ?>
-    <body>
         <section class="register">
           <img src="../images/loginimage.jpeg" alt="">
             <div class="register-box">
