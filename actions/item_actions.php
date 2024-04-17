@@ -3,6 +3,7 @@
     require_once(__DIR__ .'/../utils/session.php');
     require_once(__DIR__ .'/../data/connection.php');
     
+    $session = new Session();
     
 
     function drawItem($item_id) {
@@ -14,7 +15,6 @@
         $item = $stmt->fetch();
 
         if(!$item) {
-            $session = new Session();
             $session->addMessage('error', 'O item não existe.');
             header('Location: ../pages/index.php');
             exit();
@@ -100,14 +100,12 @@
         $comments = $stmt->fetchAll();
 
         if(!$comments) {
-            $session = new Session();
             $session->addMessage('error', 'Não existem comentários.');
             header('Location: ../pages/item.php?id=' . $item_id);
             exit();
         }
         
 ?>
-
 
 
 <section id="testimonials">
