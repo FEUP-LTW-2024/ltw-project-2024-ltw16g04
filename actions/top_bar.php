@@ -12,24 +12,35 @@ function drawHeader(){
 
 
 ?>
-<header>
-      <div class ="border-top"></div>
-      <div id="menu-bar">
-        <img src="../images/logo-removebg-preview.png" alt="Martech logo" class="logo">
-        <h1><a href="index.html" class="website-name">MarTech</a></h1>
-        <button id="buyButton">BUY</button>
-        <button id="sellButton">SELL</button>
+ <div class="top_bar">
+</div>
+ <nav class="nav">
+  <div class="container nav_container">
+    <div class="nav-title">
+    <img src="../images/logo-removebg-preview.png" alt="Martech logo" class="logo" width="75px";>
+    <a href="menu copy.html" class="nav_logo">MarTech</a></div>
+    <ul class="nav_list">
+      <li class="nav_item"><a href="/" class="nav_link">Home</a></li>
+      <li class="nav_item"><a href="#" class="nav_link">Sell</a></li>
+      <li class="nav_item"><a href="#" class="nav_link">Products</a></li>
+      <li class="nav_item">
+        <a href="/sign-up.html" class="nav_link">Account</a>
+      </li>
+    </ul>
+    <div class="nav_items">
+      <form action="#" class="nav_form">
+        <input
+          type="text"
+          class="nav_input"
+          placeholder="What are you looking for?" />
+        <img src="../images/search.png" alt="" class="nav_search" />
+      </form>
 
-        <form action="/search" method="get" id="search-bar">
-          <input type="text" name="q" id="searchInput" placeholder="What are you looking for?">
-          <button type="submit" class="search-button">
-            <img src="../images/search.png" alt="search engine" id="search-icon"></button>
-        </form>
-        <img src="../images/user.png" alt="profile icon" class="icon-bar">
-        <img src="../images/heart.png" alt="favorites icon" class="icon-bar">
-        <img src="../images/shopping-basket.png" alt="basket icon" class="icon-bar">
-      </div>
-</header>
+      <img src="../images/heart.png" alt="" class="nav_heart" />
+
+    </div>
+  </div>
+</nav>
 <?php 
 }
 ?>

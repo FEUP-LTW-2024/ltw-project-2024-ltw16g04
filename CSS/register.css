@@ -25,12 +25,28 @@
     margin-bottom: 20px;
     padding: 0.6em 1rem;
   }
-  .register button{
+  #registerButton{
     width: 50%;
+    background-color: #006BAF;
+    font-family: "Poppins";
+    padding: 15px 40px;
+    font-size: 15px;
+    font-weight:600 ;
+    letter-spacing: 2px;
+    background-color: #006BAF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 15px;
   }
   .register img{
     width: 50%;
     height: 100%;
+  }
+  #createAccTitle{
+    font-size: 30px;
+    margin: 3rem 0rem;
   }
   @media only screen and (max-width: 800px){
   .register img{

@@ -1,3 +1,3 @@
 <?php
-  die(header('Location: pages/register.php'));
+  die(header('Location: pages/login.php'));
 ?>

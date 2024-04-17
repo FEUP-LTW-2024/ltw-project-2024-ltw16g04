@@ -6,6 +6,7 @@
 
   require_once(__DIR__ .'/../data/connection.php');
   require_once(__DIR__ .'/../actions/top_bar.php');
+  require_once(__DIR__ .'/../actions/footer.php');
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../CSS/register.css" rel="stylesheet">
     <link href="../CSS/topbar.css" rel="stylesheet">
+    <link href="../CSS/footer.css" rel="stylesheet">
     <!-- fonts used  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +33,7 @@
         <section class="register">
           <img src="../images/loginimage.jpeg" alt="">
             <div class="register-box">
-            <h1>Create an account</h1>
+            <h1 id="createAccTitle">Create an account</h1>
             <form action="../actions/register_action.php" method="post">
                 <div class="name">
                     <label for="name">Name</label>
@@ -58,9 +60,10 @@
                     <label for="phone">Phone Number</label>
                     <input type="tel" name="phone" id="phone" placeholder="e.g: +351 000-000-000">
                 </div>
-                <button id="register">Register</button>
+                <button id="registerButton">Register</button>
             </form>
             <span>Already have an account? <a href="menu.html">Sign In Now</a></span>
             </div>
         </section>
+        <?php drawFooter(); ?>
     </body>

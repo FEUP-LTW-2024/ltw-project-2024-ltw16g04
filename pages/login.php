@@ -5,7 +5,8 @@
   $session = new Session();
 
   require_once(__DIR__ .'/../data/connection.php');
-
+  require_once(__DIR__ .'/../actions/top_bar.php');
+  require_once(__DIR__ .'/../actions/footer.php');
 
 ?>
 <!DOCTYPE html>
@@ -15,6 +16,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../CSS/login.css" rel="stylesheet">
+    <link href="../CSS/topbar.css" rel="stylesheet">
+    <link href="../CSS/footer.css" rel="stylesheet">
     <!-- fonts used  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,29 +28,12 @@
     <!-- end here -->
   </head>
   <body>
-    <header>
-      <div class ="border-top"></div>
-      <div id="menu-bar">
-        <img src="../images/logo-removebg-preview.png" alt="Martech logo" class="logo">
-        <h1><a href="index.html" class="website-name">MarTech</a></h1>
-        <button id="buyButton">BUY</button>
-        <button id="sellButton">SELL</button>
-
-        <form action="/search" method="get" id="search-bar">
-          <input type="text" name="q" id="searchInput" placeholder="What are you looking for?">
-          <button type="submit" class="search-button">
-            <img src="../images/search.png" alt="search engine" id="search-icon"></button>
-        </form>
-        <img src="../images/user.png" alt="profile icon" class="icon-bar">
-        <img src="../images/heart.png" alt="favorites icon" class="icon-bar">
-        <img src="../images/shopping-basket.png" alt="basket icon" class="icon-bar">
-      </div>
-    </header>
+  <?php drawHeader(); ?>
     <body>
         <section class="login">
           <img src="../images/loginimage.jpeg" alt="">
             <div class="login-box">
-            <h1>Enter your details below</h1>
+            <h1 id="loginTitle">Enter your details below</h1>
             <form action="../actions/login_action.php" method="post">
                 <div class="email">
                     <label for="email">Email</label>
@@ -64,13 +50,14 @@
 				            </article>
 			            <?php } ?>
 			          </section>
-                <button id="signin">Log In</button>
+                <div class="loginbottom">
+                  <button id="signin">Log In</button>
+                <p id="forgot"><a href="menu.html">Forgot Password?</a></p>
+                </div>
+                
             </form>
-            <div class="loginproblem">
-              
-              <p><a href="menu.html">Forgot Password?</a></p>
-            </div>
-            <p>Don't have an account? <a href="register.php">Sign Up Now</a></p>
+            <p id="noAccount">Don't have an account? <a href="register.php">Sign Up Now</a></p>
             </div>
         </section>
+        <?php drawFooter(); ?>
     </body>
