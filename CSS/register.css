@@ -12,10 +12,7 @@
   .register-box h1{
     font-size: 2rem;
   }
-  form{
-    width: 100%;
-    margin-bottom: 2rem;
-  }
+
   .register form div input{
     height: 30px;
     width: 100%;

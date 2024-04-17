@@ -1,3 +1,11 @@
+<?php
+  declare(strict_types = 1);
+
+  require_once(__DIR__ .'/../data/connection.php');
+  require_once(__DIR__ .'/../actions/top_bar.php');
+  require_once(__DIR__ .'/../actions/footer.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
@@ -5,6 +13,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../CSS/menu copy.css" rel="stylesheet">
+    <link href="../CSS/topbar.css" rel="stylesheet">
+    <link href="../CSS/footer.css" rel="stylesheet">
     <!-- fonts used  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,36 +26,7 @@
   </head>
  <!-- Header -->
  <body>
-  
- <div class="top_bar">
-</div>
- <nav class="nav">
-  <div class="container nav_container">
-    <div class="nav-title">
-    <img src="../images/logo-removebg-preview.png" alt="Martech logo" class="logo" width="75px";>
-    <a href="menu copy.html" class="nav_logo">MarTech</a></div>
-    <ul class="nav_list">
-      <li class="nav_item"><a href="/" class="nav_link">Home</a></li>
-      <li class="nav_item"><a href="#" class="nav_link">Sell</a></li>
-      <li class="nav_item"><a href="#" class="nav_link">Products</a></li>
-      <li class="nav_item">
-        <a href="/sign-up.html" class="nav_link">Account</a>
-      </li>
-    </ul>
-    <div class="nav_items">
-      <form action="#" class="nav_form">
-        <input
-          type="text"
-          class="nav_input"
-          placeholder="What are you looking for?" />
-        <img src="../images/search.png" alt="" class="nav_search" />
-      </form>
-
-      <img src="../images/heart.png" alt="" class="nav_heart" />
-
-    </div>
-  </div>
-</nav>
+ <?php drawHeader(); ?>
  <header class="header">
   <div class="container header_container">
     <div class="header_filter">
@@ -199,79 +180,7 @@
       </div>
     </div>
 </section>
-<!--FOOTER-->
-<footer class="footer">
-  <div class="footer__addr">
-
-
-    <h1 class="footer__logo">
-      MarTech</h1>
-
-      <h2>Contact</h2>
-
-      <address>
-        5534 Somewhere In. The World 22193-10212<br>
-            
-        <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
-      </address>
-        
-    
-  </div>
-  
-  <ul class="footer__nav">
-    <li class="nav__item">
-      <h2 class="nav__title">Account</h2>
-
-      <ul class="nav__ul">
-        <li>
-          <a href="#">My Account</a>
-        </li>
-
-        <li>
-          <a href="#">Login / Register</a>
-        </li>
-            
-        <li>
-          <a href="#">Cart</a>
-        </li>
-
-        <li>
-          <a href="#">Wishlist</a>
-        </li>
-
-        <li>
-          <a href="#">Shop</a>
-        </li>
-      </ul>
-    </li>
-    
-    <li class="nav__item">
-      <h2 class="nav__title">Quick Link</h2>
-      
-      <ul class="nav__ul">
-        <li>
-          <a href="#">Privacy Policy</a>
-        </li>
-        
-        <li>
-          <a href="#">Terms Of Use</a>
-        </li>
-        
-        <li>
-          <a href="#">FAQ</a>
-        </li>
-        
-      </ul>
-    </li>
-    
-  </ul>
-  
-  <div class="legal">
-    <p>&copy; Copyrigth FEUP\LTW 2024. All rights reserved.</p>
-  
-  </div>
-</footer>
-  
+<?php drawFooter(); ?>
 </body>
 
 </html>

@@ -13,9 +13,7 @@
 .login-box h1{
   font-size: 2rem;
 }
-form{
-  width: 100%;
-}
+
 .login form div input{
   height: 30px;
   width: 100%;
