@@ -27,6 +27,8 @@ seller_id INT NOT NULL,
 FOREIGN KEY (seller_id) REFERENCES USERS(id)
 );
 
+
+
 DROP TABLE IF EXISTS THUMBNAILS;
 
 CREATE TABLE THUMBNAILS(
@@ -45,9 +47,9 @@ description TEXT NOT NULL,
 FOREIGN KEY (item_id) REFERENCES ITEMS(id)
 );
 
-DROP TABLE IF EXISTS REVIEWS;
+DROP TABLE IF EXISTS COMMENTS;
 
-CREATE TABLE REVIEWS (
+CREATE TABLE COMMENTS (
     id INT PRIMARY KEY NOT NULL,
     item_id INT NOT NULL,
     user_id INT NOT NULL,
@@ -132,5 +134,10 @@ INSERT INTO ITEMS (id, name, description, price, old_price, category, condition,
 INSERT INTO THUMBNAILS(id, item_id, url) VALUES
     (1, 1, '../images/items/iphone1.jpeg'),
     (2, 1, '../images/items/iphone2.jpeg'),
-    (3, 1, '../images/items/iphone3.jpeg'),
-    (4, 1, '../images/items/iphone4.jpeg');
+    (3, 1, '../images/items/iphone3.jpeg');
+
+
+INSERT INTO COMMENTS (id, item_id, user_id, rating, comment, created_at) VALUES
+    (1, 1, 2, 5, 'Great product, fast delivery!', '2022-01-01 12:00:00'),
+    (2, 1, 3, 4, 'Good quality, but took a while to arrive', '2022-01-02 12:00:00'),
+    (3, 1, 4, 3, 'Not as described, disappointed', '2022-01-03 12:00:00');
