@@ -120,14 +120,6 @@ ul {
   filter: drop-shadow(16px 16px 20px rgb(0, 4, 255)) invert(50%);
 }
 
-.nav_cart:hover{
-  filter: drop-shadow(16px 16px 20px rgb(0, 4, 255)) invert(50%);
-}
-.nav_cart {
-  margin-left: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
 
 /* header */
 .header_container {
