@@ -3,6 +3,7 @@
 
   require_once(__DIR__ . '/../utils/session.php');
   $session = new Session();
+
   require_once (__DIR__ . '/../actions/item_actions.php');
   require_once(__DIR__ . '/../actions/footer.php');
   require_once(__DIR__ . '/../actions/top_bar.php');
@@ -20,7 +21,7 @@
     <link rel="stylesheet" href="../CSS/topbar.css">
     <title>Shop</title>
 </head>
-<body>
+<body id="itemsBody">
     <!--NAV BAR-->
     
     <?php drawHeader(); ?>

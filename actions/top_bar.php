@@ -37,6 +37,7 @@ function drawHeader(){
       </form>
 
       <img src="../images/heart.png" alt="" class="nav_heart" />
+      <img src="../images/message.png" alt="" class="nav_heart" />
 
     </div>
   </div>

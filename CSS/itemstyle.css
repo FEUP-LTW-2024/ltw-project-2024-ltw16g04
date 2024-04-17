@@ -7,7 +7,7 @@ html{
 
 body {
     margin: 0;
-    padding: 0; /* Optionally set padding to 0 as well */
+    padding: 0;
   }
   
 
@@ -22,10 +22,9 @@ body {
   body {
     font-family: 'Inter';
     margin: 0;
-    display: grid;
+    /* display: grid; */
     grid-template-rows: auto 1fr auto;
     font-size: 14px;
-    background-color: #f4f4f4;
     align-items: start;
     min-height: 100vh;
   }
@@ -112,6 +111,7 @@ body {
       align-items: center;
       margin-bottom: 20px;
   }
+  .comment-box
   .client-comment p{
       font-size: 0.9rem;
       color: #4b4b4b;
@@ -304,6 +304,9 @@ body {
   }
 
   .comment-box{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    margin-top: 250px;
     border-top: #615D5D;
     border-top-style: solid;
     border-top-width: 2px;
@@ -366,6 +369,7 @@ body {
     /* use display:inline-flex to prevent whitespace issues. alternatively, you can put all the children of .rating-group on a single line */
     .rating-group {
       display: flex;
+      margin-bottom: 20px;
     }
     
     /* make hover effect work properly in IE */
