@@ -42,29 +42,32 @@
       <div class="account_selector">
         <a href="#" class="account_link">My Profile</a>
         <a href="#" class="account_link">My Orders</a>
-        <a href="#" class="account_link">My Wishlist</a>
+        <a href="wishlist.php" class="account_link">My Wishlist</a>
+        <a href="#" class="account_link">My Ads</a>
     </div>
     </div>
         <section class= "edit_profile">
           <h1 class="profile_sub">Edit My Profile</h2>
           <form action="" method="post">
                 <div class="name">
-                  <div class="input-wrapper" id="input_fname">
+                  <div class="input_wrapper_name" id="input_fname">
                     <label for="first-name">First Name</label>
                     <input type="text" name="fname" id="fname" placeholder="Your First Name">
                   </div>
-                  <div class="input-wrapper" id="input_lname">
+                  <div class="input_wrapper_name" id="input_lname">
                     <label for="last-name">Last Name</label>
                     <input type="text" name="f=lname" id="lname" placeholder="Your Last Name">
                   </div>
                 </div>
                 <div class="email">
+                  <div class="input_wrapper_email" id="input_email">
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" placeholder="Your e-mail">
-                </div>
-                <div class="address">
+                  </div>
+                  <div class="input_wrapper_email" id="input_address">
                     <label for="address">Address</label>
                     <input type="text" name="address" id="address" placeholder="Your address">
+                  </div>
                 </div>
                 <div class="password_change">
                   <label for="cur-password">Password Changes</label>
@@ -72,9 +75,10 @@
                   <input type="password" name="new_password" id="new_password" placeholder="New password">
                   <input type="password" name="rep_password" id="rep_password" placeholder="Repeat new password">
                 </div>
-                <div class="finish_edit_profile"></div>
-                <button id="cancel_button">Cancel</button>
-                <button id="">Save Changes</button>
+                <div class="finish_edit_profile">
+                  <button id="cancel_button">Cancel</button>
+                  <button id="save_changes">Save Changes</button>
+                </div>
             </form>
         </section>
   </section>
