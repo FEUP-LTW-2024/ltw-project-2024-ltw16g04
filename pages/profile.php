@@ -25,21 +25,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- end here -->
   </head>
-  <body>
+  
+<header class="header">
   <?php drawHeader(); ?>
-        <section class="profile-header">
-          <p>Home / My Account</p>
-          <p>Welcome! UserExample</p>
-        </section>
-        <h1 class="profile-title">Manage My Account</h1>
-        <section class= "edit-profile">
-          <h1 class="profile-sub">Edit My Profile</h2>
+</header>
+<body id= "profile_body">
+  <section class="profile_header">
+    <div class= "profile_header_container">
+      <p>Home / My Account</p>
+      <p>Welcome! UserExample</p>
+    </div>    
+</section>
+  <section class="account">
+    <div class="container account_nav">
+      <h1 class="profile_title">Manage My Account</h1>
+      <div class="account_selector">
+        <a href="#" class="account_link">My Profile</a>
+        <a href="#" class="account_link">My Orders</a>
+        <a href="#" class="account_link">My Wishlist</a>
+    </div>
+    </div>
+        <section class= "edit_profile">
+          <h1 class="profile_sub">Edit My Profile</h2>
           <form action="" method="post">
                 <div class="name">
+                  <div class="input-wrapper" id="input_fname">
                     <label for="first-name">First Name</label>
                     <input type="text" name="fname" id="fname" placeholder="Your First Name">
+                  </div>
+                  <div class="input-wrapper" id="input_lname">
                     <label for="last-name">Last Name</label>
                     <input type="text" name="f=lname" id="lname" placeholder="Your Last Name">
+                  </div>
                 </div>
                 <div class="email">
                     <label for="email">Email</label>
@@ -49,11 +66,18 @@
                     <label for="address">Address</label>
                     <input type="text" name="address" id="address" placeholder="Your address">
                 </div>
-                <div class="password-change">
+                <div class="password_change">
                   <label for="cur-password">Password Changes</label>
-                  <input type="password" name="cur-password" id="cur-password" placeholder="Current password">
+                  <input type="password" name="cur_password" id="cur_password" placeholder="Current password">
+                  <input type="password" name="new_password" id="new_password" placeholder="New password">
+                  <input type="password" name="rep_password" id="rep_password" placeholder="Repeat new password">
                 </div>
+                <div class="finish_edit_profile"></div>
+                <button id="cancel_button">Cancel</button>
+                <button id="">Save Changes</button>
             </form>
         </section>
+  </section>
+  
         <?php drawFooter(); ?>
     </body>

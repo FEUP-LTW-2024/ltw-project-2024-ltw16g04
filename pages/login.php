@@ -31,7 +31,7 @@
   <?php drawHeader(); ?>
         <section class="login">
           <img src="../images/loginimage.jpeg" alt="">
-            <div class="login-box">
+          <div class="login-box">
             <h1 id="loginTitle">Enter your details below</h1>
             <form action="../actions/login_action.php" method="post">
                 <div class="email">
@@ -55,7 +55,7 @@
                 </div>
             </form>
             <p id="noAccount">Don't have an account? <a href="register.php">Sign Up Now</a></p>
-            </div>
+          </div>
         </section>
         <?php drawFooter(); ?>
     </body>
