@@ -4,6 +4,9 @@
   require_once(__DIR__ .'/../data/connection.php');
   require_once(__DIR__ .'/../actions/top_bar.php');
   require_once(__DIR__ .'/../actions/footer.php');
+  require_once(__DIR__ .'/../utils/session.php');
+
+  $session = new Session();
 
 ?>
 
@@ -33,7 +36,9 @@
   <section class="profile_header">
     <div class= "profile_header_container">
       <p>Home / My Account</p>
-      <p>Welcome! UserExample</p>
+      <p>Welcome! <?php echo 
+      $session->getName();  
+      ?></p>
     </div>    
 </section>
   <section class="account">
@@ -48,7 +53,7 @@
     </div>
         <section class= "edit_profile">
           <h1 class="profile_sub">Edit My Profile</h2>
-          <form action="" method="post">
+          <form action="../actions/edit_profile_action.php" method="post">
                 <div class="name">
                   <div class="input_wrapper_name" id="input_fname">
                     <label for="first-name">First Name</label>
@@ -76,8 +81,13 @@
                   <input type="password" name="rep_password" id="rep_password" placeholder="Repeat new password">
                 </div>
                 <div class="finish_edit_profile">
-                  <button id="cancel_button">Cancel</button>
-                  <button id="save_changes">Save Changes</button>
+                <?php foreach ($session->getMessages() as $messsage) { ?>
+				            <article class="<?=$messsage['type']?>">
+				            <?=$messsage['text']?>
+				            </article>
+			            <?php } ?>
+                  <button id="cancel_button" name = "cancel_button">Cancel</button>
+                  <button id="save_changes" name = "save_changes">Save Changes</button>
                 </div>
             </form>
         </section>

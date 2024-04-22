@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS USERS;
 CREATE TABLE USERS(
 id INT PRIMARY KEY NOT NULL,
 name TEXT NOT NULL,
+address TEXT NOT NULL,
 phone TEXT NOT NULL UNIQUE,
 email TEXT NOT NULL UNIQUE,
 password TEXT NOT NULL
@@ -114,17 +115,17 @@ CREATE TABLE CATEGORIES (
     name TEXT NOT NULL
 );
 -- Inserir 10 usuários aleatórios na tabela USERS com IDs especificados
-INSERT INTO USERS (id, name, phone, email, password) VALUES
-    (1, 'John Doe', '1234567890', 'john@example.com', 'password1'),
-    (2, 'Jane Smith', '9876543210', 'jane@example.com', 'password2'),
-    (3, 'Michael Johnson', '5556667777', 'michael@example.com', 'password3'),
-    (4, 'Emily Brown', '1112223333', 'emily@example.com', 'password4'),
-    (5, 'David Wilson', '9998887777', 'david@example.com', 'password5'),
-    (6, 'Sarah Taylor', '4443332222', 'sarah@example.com', 'password6'),
-    (7, 'Christopher Martinez', '7778889999', 'christopher@example.com', 'password7'),
-    (8, 'Jessica Anderson', '2223334444', 'jessica@example.com', 'password8'),
-    (9, 'Ryan Thomas', '8887776666', 'ryan@example.com', 'password9'),
-    (10, 'Amanda Garcia', '6665554444', 'amanda@example.com', 'password10');
+INSERT INTO USERS (id, name, address ,phone, email, password) VALUES
+    (1, 'John Doe', 'Willow Street 24' ,'1234567890', 'john@example.com', 'password1'),
+    (2, 'Jane Smith', 'Campus Neight 13' ,'9876543210', 'jane@example.com', 'password2'),
+    (3, 'Michael Johnson','Bruxels Barrack 23' ,'5556667777', 'michael@example.com', 'password3'),
+    (4, 'Emily Brown', 'Crossriver side 13' ,'1112223333', 'emily@example.com', 'password4'),
+    (5, 'David Wilson', 'Landlust 123' ,'9998887777', 'david@example.com', 'password5'),
+    (6, 'Sarah Taylor', 'Pork Ranch 13','4443332222', 'sarah@example.com', 'password6'),
+    (7, 'Christopher Martinez', 'CruiseSide 131','7778889999', 'christopher@example.com', 'password7'),
+    (8, 'Jessica Anderson', 'Fenix Map 24','2223334444', 'jessica@example.com', 'password8'),
+    (9, 'Ryan Thomas', 'LandSlide 32','8887776666', 'ryan@example.com', 'password9'),
+    (10, 'Amanda Garcia', 'Palm Beach 13','6665554444', 'amanda@example.com', 'password10');
 
 
 INSERT INTO ITEMS (id, name, description, price, old_price, category, condition, location, main_image,published_time, seller_id) VALUES

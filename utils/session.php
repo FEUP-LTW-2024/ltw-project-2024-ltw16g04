@@ -33,6 +33,14 @@
       return isset($_SESSION['name']) ? $_SESSION['name'] : 'null';
     }
 
+    static function getEmail() : ?string {
+      return isset($_SESSION['email']) ? $_SESSION['email'] : 'null';
+    }
+
+    static function getPwd() : ?string {
+      return isset($_SESSION['password']) ? $_SESSION['password'] : 'null';
+    }
+
     public function setId(int $id) {
       $_SESSION['id'] = $id;
     }

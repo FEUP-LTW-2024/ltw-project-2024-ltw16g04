@@ -13,12 +13,14 @@
     $user = User::checkUserWithPassword($_POST['email'], $_POST['password'],$db);
     
     if ($user){
-        $_SESSION['email'] = $user->email;
-        $_SESSION['id'] = $user->id_user;
-
+        $session->setId($user->id_user);
+        $session->setName($user->name);
+        $session->setEmail($user->email);
+        $session->setPwd($user->password);
+        //fazer algo para aparecer isso
         $session->addMessage('success', 'Login efetuado com sucesso.');
         
-        header('Location: ../pages/login.php');
+        header('Location: ../pages/profile.php');
         
         exit();
     }
