@@ -4,7 +4,7 @@
     require_once(__DIR__ .'/../data/connection.php');
     
     $session = new Session();
-    
+    $session->setItemId($_GET['id']);
 
     function drawItem($item_id) {
         $db = getDatabaseConnection();
@@ -78,7 +78,7 @@
                             <a href="" class="cart">SEND MESSAGE</a>  
                         </div>
                         <div class="buttons">
-                            <a href="" class="fav"><img src="../images/heart.png" alt=""> ADD TO FAVORITES</a>  
+                            <a href="../actions/fav_btn.php" class="fav"><img src="../images/heart.png" alt=""> ADD TO FAVORITES</a>  
                             <a href="" class="cart"><img src="../images/cart.png" alt="">BUY NOW</a>  
                         </div>
                     </div>

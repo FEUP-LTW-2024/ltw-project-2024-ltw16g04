@@ -4,7 +4,9 @@
   require_once(__DIR__ .'/../data/connection.php');
   require_once(__DIR__ .'/../actions/top_bar.php');
   require_once(__DIR__ .'/../actions/footer.php');
+  require_once(__DIR__ .'/../actions/wishlist_action.php');
 
+  $session = new Session();
 ?>
 
 <!DOCTYPE html>
@@ -28,97 +30,10 @@
  <!-- Header -->
  <body>
  <?php drawHeader(); ?> 
-<section class="section">
-  <div class="container">
 
-    <div class="section_header">
-      <h3 class="section_title">Wishlist</h3> 
-    </div>
-    <div class="products">
-      <div class="card">
-        <div class="card_top">
-          <img src="../images/items/gameController.png" alt="" class="card_img" />
-          <button class="buy_btn">Buy</button>
-        </div>
-        <div class="card_body">
-          <h3 class="card_title">HAVIT HV-G92 Gamepad</h3>
-          <p class="card_price">€12.90</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card_top">
-          <img src="../images/items/camera.png" alt="" class="card_img" />
-          <button class="buy_btn">Buy</button>
-        </div>
-        <div class="card_body">
-          <h3 class="card_title">Canon 1200D + 18-55 + 16GB</h3>
-          <p class="card_price">€99.90</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card_top">
-          <img src="../images/items/gameController.png" alt="" class="card_img" />
-          <button class="buy_btn">Buy</button>
-        </div>
-        <div class="card_body">
-          <h3 class="card_title">HAVIT HV-G92 Gamepad</h3>
-          <p class="card_price">$120</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card_top">
-          <img src="../images/items/gameController.png" alt="" class="card_img" />
-          <button class="buy_btn">Buy</button>
-        </div>
-        <div class="card_body">
-          <h3 class="card_title">HAVIT HV-G92 Gamepad</h3>
-          <p class="card_price">$120</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card_top">
-          <img src="../images/items/gameController.png" alt="" class="card_img" />
-          <button class="buy_btn">Buy</button>
-        </div>
-        <div class="card_body">
-          <h3 class="card_title">HAVIT HV-G92 Gamepad</h3>
-          <p class="card_price">$120</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card_top">
-          <img src="../images/items/gameController.png" alt="" class="card_img" />
-          <button class="buy_btn">Buy</button>
-        </div>
-        <div class="card_body">
-          <h3 class="card_title">HAVIT HV-G92 Gamepad</h3>
-          <p class="card_price">$120</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card_top">
-          <img src="../images/items/gameController.png" alt="" class="card_img" />
-          <button class="buy_btn">Buy</button>
-        </div>
-        <div class="card_body">
-          <h3 class="card_title">HAVIT HV-G92 Gamepad</h3>
-          <p class="card_price">$120</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card_top">
-          <img src="../images/items/gameController.png" alt="" class="card_img" />
-          <button class="buy_btn">Buy</button>
-        </div>
-        <div class="card_body">
-          <h3 class="card_title">HAVIT HV-G92 Gamepad</h3>
-          <p class="card_price">$120</p>
-        </div>
-      </div>
-      </div>
-      </div>
-    </div>
-</section>
+ <?php drawFavorites(); ?>
+  
+
 <!--FOOTER-->
 <footer class="footer">
 <?php drawFooter(); ?> 

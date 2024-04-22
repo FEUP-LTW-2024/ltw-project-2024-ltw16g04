@@ -1,6 +1,7 @@
 <?php
   class Session {
     private array $messages;
+    private $item_id;
 
     public function __construct() {
       session_start();
@@ -19,6 +20,14 @@
 
     public function getId() : ?int {
       return isset($_SESSION['id']) ? $_SESSION['id'] : null;    
+    }
+
+    public function getItemId() : ?int {
+      return isset($_SESSION['item_id']) ? $_SESSION['item_id'] : null;    
+    }
+
+    public function setItemId(int $item_id) {
+      $_SESSION['item_id'] = $item_id;
     }
 
     public function addMessage(string $type, string $text) {
