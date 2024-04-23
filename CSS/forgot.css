@@ -1,19 +1,19 @@
-  .register{
+.forgot{
     margin-top: 50px;
     margin-bottom: 50px;
     display: flex;
     align-items: center;
     height: 90vh;
   }
-  .register-box{
+  .forgot-box{
     padding: 6rem;
     margin-bottom: 5rem;
   }
-  .register-box h1{
+  .forgot-box h1{
     font-size: 2rem;
   }
 
-  .register form div input{
+  .forgot form div input{
     height: 30px;
     width: 100%;
     border-radius: 6px;
@@ -22,7 +22,7 @@
     margin-bottom: 20px;
     padding: 0.6em 1rem;
   }
-  #registerButton{
+  #forgotButton{
     width: 50%;
     background-color: #006BAF;
     font-family: "Poppins";
@@ -37,7 +37,7 @@
     cursor: pointer;
     margin-right: 15px;
   }
-  .register img{
+  .forgot img{
     width: 50%;
     height: 100%;
   }
@@ -45,11 +45,14 @@
     font-size: 30px;
     margin: 3rem 0rem;
   }
+  .forgot-box p{
+    margin-bottom: 3rem;
+  }
   @media only screen and (max-width: 800px){
-  .register img{
+  .forgot img{
     display: none;
   }
-  .register-box{
+  .login-box{
     width: 100%;
   }
 }

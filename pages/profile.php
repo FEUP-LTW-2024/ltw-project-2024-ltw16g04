@@ -49,6 +49,7 @@
         <a href="#" class="account_link">My Orders</a>
         <a href="wishlist.php" class="account_link">My Wishlist</a>
         <a href="#" class="account_link">My Ads</a>
+        <a href="" class="account_link" id="logout">Log Out</a>
     </div>
     </div>
         <section class= "edit_profile">
@@ -74,6 +75,10 @@
                     <input type="text" name="address" id="address" placeholder="Your address">
                   </div>
                 </div>
+                <div class="phone">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" name="phone" id="phone" placeholder="e.g: +351 000-000-000">
+                </div>
                 <div class="password_change">
                   <label for="cur-password">Password Changes</label>
                   <input type="password" name="cur_password" id="cur_password" placeholder="Current password">
@@ -86,11 +91,11 @@
 				            <?=$messsage['text']?>
 				            </article>
 			            <?php } ?>
-                  <button id="cancel_button" name = "cancel_button">Cancel</button>
                   <button id="save_changes" name = "save_changes">Save Changes</button>
                 </div>
             </form>
         </section>
+        
   </section>
   
         <?php drawFooter(); ?>

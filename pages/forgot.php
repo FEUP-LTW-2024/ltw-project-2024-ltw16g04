@@ -15,7 +15,7 @@
     <title>Register</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../CSS/register.css" rel="stylesheet">
+    <link href="../CSS/forgot.css" rel="stylesheet">
     <link href="../CSS/topbar.css" rel="stylesheet">
     <link href="../CSS/footer.css" rel="stylesheet">
     <!-- fonts used  -->
@@ -29,39 +29,18 @@
   </head>
   <body>
     <?php drawHeader(); ?>
-        <section class="register">
+        <section class="forgot">
           <img src="../images/loginimage.jpeg" alt="">
-            <div class="register-box">
-            <h1 id="createAccTitle">Create an account</h1>
-            <form action="../actions/register_action.php" method="post">
-                <div class="name">
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name" placeholder="e.g: John Doe">
-                </div>
+            <div class="forgot-box">
+            <h1 id="createAccTitle">Forgot password? Reset here!</h1>
+            <p id="forgot_text">We will send you an email with a link to reset your password, please enter the email associated with your account below.</p>
+            <form action="" method="post">
                 <div class="email">
-                    <label for="email">Email</label>
+                    <label for="email">Your E-mail</label>
                     <input type="email" name="email" id="email" placeholder="e.g: johndoe@example.com">
+                    <button id="forgotButton">Send Email</button>
                 </div>
-                <section id="messages">
-			            <?php foreach ($session->getMessages() as $messsage) { ?>
-                  <?php if($messsage['type'] == 'double_user'){ ?>
-                    <article class="<?=$messsage['type']?>">
-                      <?=$messsage['text']?>
-                      </article>
-                  <?php } ?>
-			          <?php } ?>
-			          </section>
-                <div class="password">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" placeholder="required">
-                </div>
-                <div class="phone">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" name="phone" id="phone" placeholder="e.g: +351 000-000-000">
-                </div>
-                <button id="registerButton">Register</button>
             </form>
-            <span>Already have an account? <a href="login.php">Sign In Now</a></span>
             </div>
         </section>
         <?php drawFooter(); ?>
