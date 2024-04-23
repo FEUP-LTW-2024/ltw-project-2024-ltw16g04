@@ -114,6 +114,31 @@ CREATE TABLE CATEGORIES (
     id INTEGER PRIMARY KEY,
     name TEXT NOT NULL
 );
+
+DROP TABLE IF EXISTS BILLING;
+
+CREATE TABLE BILLING (
+    id INTEGER PRIMARY KEY,
+    user_id INTEGER NOT NULL,
+    first_name TEXT NOT NULL,
+    last_name TEXT NOT NULL,
+    street TEXT NOT NULL,
+    apartment TEXT,
+    city TEXT NOT NULL,
+    email TEXT NOT NULL,
+    phone TEXT NOT NULL
+);
+
+DROP TABLE IF EXISTS BILLING_ITEMS;
+
+CREATE TABLE BILLING_ITEMS (
+    id INTEGER PRIMARY KEY,
+    billing_id INTEGER NOT NULL,
+    item_id INTEGER NOT NULL,
+    FOREIGN KEY (billing_id) REFERENCES BILLING(id),
+    FOREIGN KEY (item_id) REFERENCES ITEMS(id)
+);
+
 -- Inserir 10 usuários aleatórios na tabela USERS com IDs especificados
 INSERT INTO USERS (id, name, address ,phone, email, password) VALUES
     (1, 'John Doe', 'Willow Street 24' ,'1234567890', 'john@example.com', 'password1'),

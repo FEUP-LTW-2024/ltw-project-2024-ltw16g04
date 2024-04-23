@@ -2,11 +2,14 @@
   class Session {
     private array $messages;
     private $item_id;
+    private array $checkoutItems;
 
     public function __construct() {
       session_start();
 
       $this->messages = isset($_SESSION['messages']) ? $_SESSION['messages'] : array();
+      $this->item_id = isset($_SESSION['item_id']) ? $_SESSION['item_id'] : null;
+      $this->checkoutItems = isset($_SESSION['checkoutItems']) ? $_SESSION['checkoutItems'] : array();
       unset($_SESSION['messages']);
     }
 
@@ -24,6 +27,14 @@
 
     public function getItemId() : ?int {
       return isset($_SESSION['item_id']) ? $_SESSION['item_id'] : null;    
+    }
+
+    public function getCheckoutItems() : array {
+      return $this->checkoutItems;
+    }
+
+    public function addCheckoutItem(int $item_id) {
+      $_SESSION['checkoutItems'][] = $item_id;
     }
 
     public function setItemId(int $item_id) {

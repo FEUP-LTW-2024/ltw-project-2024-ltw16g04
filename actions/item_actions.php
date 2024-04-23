@@ -79,7 +79,7 @@
                         </div>
                         <div class="buttons">
                             <a href="../actions/fav_btn.php" class="fav"><img src="../images/heart.png" alt=""> ADD TO FAVORITES</a>  
-                            <a href="" class="cart"><img src="../images/cart.png" alt="">BUY NOW</a>  
+                            <a href="../actions/cart_btn.php" class="cart"><img src="../images/cart.png" alt="">BUY NOW</a>  
                         </div>
                     </div>
                 </div>
