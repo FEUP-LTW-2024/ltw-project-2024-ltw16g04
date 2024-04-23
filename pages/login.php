@@ -51,7 +51,7 @@
 			          </section>
                 <div class="loginbottom">
                   <button id="signin">Log In</button>
-                <p id="forgot"><a href="menu.html">Forgot Password?</a></p>
+                <p id="forgot"><a href="forgot.php">Forgot Password?</a></p>
                 </div>
             </form>
             <p id="noAccount">Don't have an account? <a href="register.php">Sign Up Now</a></p>
