@@ -7,7 +7,8 @@
   require_once(__DIR__ .'/../utils/session.php');
 
   $session = new Session();
-
+  if(!$session->isLoggedIn()) {header('Location: ../pages/login.php');
+  exit();}
 ?>
 
 <!DOCTYPE html>
@@ -50,6 +51,7 @@
         <a href="wishlist.php" class="account_link">My Wishlist</a>
         <a href="#" class="account_link">My Ads</a>
         <a href="../actions/logout.php" class="account_link" id="logout">Log Out</a>
+      </div>
     </div>
     <section class= "edit_profile">
       <h1 class="profile_sub">Edit My Profile</h2>

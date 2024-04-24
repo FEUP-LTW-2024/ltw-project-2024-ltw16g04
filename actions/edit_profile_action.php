@@ -12,7 +12,7 @@
     
     $user = User::checkUserWithPassword($email, $password, $db);
 
-    if($user){
+    if($session->isLoggedIn()){
         $fname = $_POST['fname'];
         $lname = $_POST['lname'];
         $address = $_POST['address'];
