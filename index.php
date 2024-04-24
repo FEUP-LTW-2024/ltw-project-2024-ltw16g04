@@ -1,3 +1,3 @@
 <?php
-  die(header('Location: pages/profile.php'));
+  die(header('Location: pages/browse.html'));
 ?>
