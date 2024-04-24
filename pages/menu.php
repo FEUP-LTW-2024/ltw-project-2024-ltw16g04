@@ -178,7 +178,6 @@
         <a href="#" class="container_btn_a">VIEW ALL PRODUCTS</a>
       </div>
       </div>
-    </div>
 </section>
 <?php drawFooter(); ?>
 </body>
