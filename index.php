@@ -1,3 +1,3 @@
 <?php
-  die(header('Location: pages/checkout.php'));
+  die(header('Location: pages/browse.html'));
 ?>

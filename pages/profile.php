@@ -49,8 +49,7 @@
         <a href="order.php" class="account_link">My Orders</a>
         <a href="wishlist.php" class="account_link">My Wishlist</a>
         <a href="#" class="account_link">My Ads</a>
-        <a href="login.php" class="account_link" id="logout">Log Out</a>
-      </div>
+        <a href="../actions/logout.php" class="account_link" id="logout">Log Out</a>
     </div>
     <section class= "edit_profile">
       <h1 class="profile_sub">Edit My Profile</h2>

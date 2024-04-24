@@ -1,3 +1,17 @@
+<?php 
+require_once(__DIR__ . '/../utils/session.php');
+require_once(__DIR__ . '/../data/connection.php');
+require_once(__DIR__ . '/../data/user.php');
+require_once(__DIR__ . '/../actions/browse_actions.php');
+require_once(__DIR__ . '/../actions/top_bar.php');
+require_once(__DIR__ . '/../actions/footer.php');
+
+
+$session = new Session();
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
@@ -17,36 +31,9 @@
  <!-- Header -->
  <body>
   
- <div class="top_bar">
-</div>
- <nav class="nav">
-  <div class="container nav_container">
-    <div class="nav-title">
-    <img src="../images/logo-removebg-preview.png" alt="Martech logo" class="logo" width="75px";>
-    <a href="menu copy.html" class="nav_logo">MarTech</a></div>
-    <ul class="nav_list">
-      <li class="nav_item"><a href="/" class="nav_link">Home</a></li>
-      <li class="nav_item"><a href="#" class="nav_link">Sell</a></li>
-      <li class="nav_item"><a href="#" class="nav_link">Products</a></li>
-      <li class="nav_item">
-        <a href="/sign-up.html" class="nav_link">Account</a>
-      </li>
-    </ul>
-    <div class="nav_items">
-      <form action="#" class="nav_form">
-        <input
-          type="text"
-          class="nav_input"
-          placeholder="What are you looking for?" />
-        <img src="../images/search.png" alt="" class="nav_search" />
-      </form>
-
-      <img src="../images/heart.png" alt="" class="nav_heart" />
-      <img src="../images/message.png" alt="" class="nav_heart" />
-
-    </div>
-  </div>
-</nav>
+<?php
+  drawHeader();
+?>
  
 
 
@@ -195,78 +182,10 @@
     </div>
 </section>
 <!--FOOTER-->
-<footer class="footer">
-  <div class="footer__addr">
 
-
-    <h1 class="footer__logo">
-      MarTech</h1>
-
-      <h2>Contact</h2>
-
-      <address>
-        5534 Somewhere In. The World 22193-10212<br>
-            
-        <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
-      </address>
-        
-    
-  </div>
-  
-  <ul class="footer__nav">
-    <li class="nav__item">
-      <h2 class="nav__title">Account</h2>
-
-      <ul class="nav__ul">
-        <li>
-          <a href="#">My Account</a>
-        </li>
-
-        <li>
-          <a href="#">Login / Register</a>
-        </li>
-            
-        <li>
-          <a href="#">Cart</a>
-        </li>
-
-        <li>
-          <a href="#">Wishlist</a>
-        </li>
-
-        <li>
-          <a href="#">Shop</a>
-        </li>
-      </ul>
-    </li>
-    
-    <li class="nav__item">
-      <h2 class="nav__title">Quick Link</h2>
-      
-      <ul class="nav__ul">
-        <li>
-          <a href="#">Privacy Policy</a>
-        </li>
-        
-        <li>
-          <a href="#">Terms Of Use</a>
-        </li>
-        
-        <li>
-          <a href="#">FAQ</a>
-        </li>
-        
-      </ul>
-    </li>
-    
-  </ul>
-  
-  <div class="legal">
-    <p>&copy; Copyrigth FEUP\LTW 2024. All rights reserved.</p>
-  
-  </div>
-</footer>
-  
+<?php
+  drawFooter();
+  ?>
 </body>
 
 </html>
