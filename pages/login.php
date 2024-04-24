@@ -36,11 +36,11 @@
             <form action="../actions/login_action.php" method="post">
                 <div class="email">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Your e-mail">
+                    <input type="email" name="email" id="email" placeholder="Your e-mail" required>
                 </div>
                 <div class="password">
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" placeholder="Your password">
+                    <input type="password" name="password" id="password" placeholder="Your password" required>
                 </div>
                 <section id="messages">
 			            <?php foreach ($session->getMessages() as $messsage) { ?>

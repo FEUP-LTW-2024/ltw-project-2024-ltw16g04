@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Register</title>
+    <title>Forgot Password</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../CSS/forgot.css" rel="stylesheet">
@@ -37,7 +37,7 @@
             <form action="" method="post">
                 <div class="email">
                     <label for="email">Your E-mail</label>
-                    <input type="email" name="email" id="email" placeholder="e.g: johndoe@example.com">
+                    <input type="email" name="email" id="email" placeholder="e.g: johndoe@example.com" required>
                     <button id="forgotButton">Send Email</button>
                 </div>
             </form>

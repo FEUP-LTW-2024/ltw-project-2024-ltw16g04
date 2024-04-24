@@ -36,11 +36,11 @@
             <form action="../actions/register_action.php" method="post">
                 <div class="name">
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name" placeholder="e.g: John Doe">
+                    <input type="text" name="name" id="name" placeholder="e.g: John Doe" required>
                 </div>
                 <div class="email">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="e.g: johndoe@example.com">
+                    <input type="email" name="email" id="email" placeholder="e.g: johndoe@example.com" required>
                 </div>
                 <section id="messages">
 			            <?php foreach ($session->getMessages() as $messsage) { ?>
@@ -53,11 +53,11 @@
 			          </section>
                 <div class="password">
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" placeholder="required">
+                    <input type="password" name="password" id="password" placeholder="Your password" required>
                 </div>
                 <div class="phone">
                     <label for="phone">Phone Number</label>
-                    <input type="tel" name="phone" id="phone" placeholder="e.g: +351 000-000-000">
+                    <input type="tel" name="phone" id="phone" placeholder="e.g: +351 000-000-000" required>
                 </div>
                 <button id="registerButton">Register</button>
             </form>

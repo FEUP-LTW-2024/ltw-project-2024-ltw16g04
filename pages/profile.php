@@ -40,62 +40,61 @@
       $session->getName();  
       ?></p>
     </div>    
-</section>
+  </section>
   <section class="account">
     <div class="container account_nav">
       <h1 class="profile_title">Manage My Account</h1>
       <div class="account_selector">
-        <a href="#" class="account_link">My Profile</a>
-        <a href="#" class="account_link">My Orders</a>
+        <a href="profile.php" class="account_link">My Profile</a>
+        <a href="order.php" class="account_link">My Orders</a>
         <a href="wishlist.php" class="account_link">My Wishlist</a>
         <a href="#" class="account_link">My Ads</a>
         <a href="login.php" class="account_link" id="logout">Log Out</a>
+      </div>
     </div>
-    </div>
-        <section class= "edit_profile">
-          <h1 class="profile_sub">Edit My Profile</h2>
-          <form action="../actions/edit_profile_action.php" method="post">
-                <div class="name">
-                  <div class="input_wrapper_name" id="input_fname">
-                    <label for="first-name">First Name</label>
-                    <input type="text" name="fname" id="fname" placeholder="Your First Name">
-                  </div>
-                  <div class="input_wrapper_name" id="input_lname">
-                    <label for="last-name">Last Name</label>
-                    <input type="text" name="f=lname" id="lname" placeholder="Your Last Name">
-                  </div>
-                </div>
-                <div class="email">
-                  <div class="input_wrapper_email" id="input_email">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Your e-mail">
-                  </div>
-                  <div class="input_wrapper_email" id="input_address">
-                    <label for="address">Address</label>
-                    <input type="text" name="address" id="address" placeholder="Your address">
-                  </div>
-                </div>
-                <div class="phone">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" name="phone" id="phone" placeholder="e.g: +351 000-000-000">
-                </div>
-                <div class="password_change">
-                  <label for="cur-password">Password Changes</label>
-                  <input type="password" name="cur_password" id="cur_password" placeholder="Current password">
-                  <input type="password" name="new_password" id="new_password" placeholder="New password">
-                  <input type="password" name="rep_password" id="rep_password" placeholder="Repeat new password">
-                </div>
-                <div class="finish_edit_profile">
-                <?php foreach ($session->getMessages() as $messsage) { ?>
-				            <article class="<?=$messsage['type']?>">
-				            <?=$messsage['text']?>
-				            </article>
-			            <?php } ?>
-                  <button id="save_changes" name = "save_changes">Save Changes</button>
-                </div>
-            </form>
-        </section>
-        
+    <section class= "edit_profile">
+      <h1 class="profile_sub">Edit My Profile</h2>
+      <form action="../actions/edit_profile_action.php" method="post">
+            <div class="name">
+              <div class="input_wrapper_name" id="input_fname">
+                <label for="first-name">First Name</label>
+                <input type="text" name="fname" id="fname" placeholder="Your First Name" required>
+              </div>
+              <div class="input_wrapper_name" id="input_lname">
+                <label for="last-name">Last Name</label>
+                <input type="text" name="f=lname" id="lname" placeholder="Your Last Name" required>
+              </div>
+            </div>
+            <div class="email">
+              <div class="input_wrapper_email" id="input_email">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Your e-mail" required>
+              </div>
+              <div class="input_wrapper_email" id="input_address">
+                <label for="address">Address</label>
+                <input type="text" name="address" id="address" placeholder="Your address" required>
+              </div>
+            </div>
+            <div class="phone">
+                <label for="phone">Phone Number</label>
+                <input type="tel" name="phone" id="phone" placeholder="e.g: +351 000-000-000" required>
+            </div>
+            <div class="password_change">
+              <label for="cur-password">Password Changes</label>
+              <input type="password" name="cur_password" id="cur_password" placeholder="Current password" required>
+              <input type="password" name="new_password" id="new_password" placeholder="New password" required>
+              <input type="password" name="rep_password" id="rep_password" placeholder="Repeat new password" required>
+            </div>
+            <div class="finish_edit_profile">
+            <?php foreach ($session->getMessages() as $messsage) { ?>
+	              <article class="<?=$messsage['type']?>">
+	              <?=$messsage['text']?>
+	              </article>
+	            <?php } ?>
+              <button id="save_changes" name = "save_changes">Save Changes</button>
+            </div>
+        </form>
+    </section>
   </section>
   
         <?php drawFooter(); ?>

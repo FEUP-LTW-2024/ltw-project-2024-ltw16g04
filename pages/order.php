@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Register</title>
+    <title>My orders</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../CSS/order.css" rel="stylesheet">
@@ -27,10 +27,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- end here -->
   </head>
-  <body>
+  <header class="header">
     <?php drawHeader(); ?>
-        <section class="orders">
-            <p>todo.....</p>
-        </section>
-        <?php drawFooter(); ?>
-    </body>
+  </header>
+  <body id="order_body">
+    <section class="orders_header">
+      <div class= "orders_header_container">
+        <p>Home / My Orders</p>
+        <p>Here is your orders, <?php echo 
+        $session->getName();
+        ?>!</p>
+      </div>  
+    </section>
+    <section class="account">
+      <div class="container account_nav">
+        <h1 class="profile_title">Manage My Account</h1>
+        <div class="account_selector">
+          <a href="profile.php" class="account_link">My Profile</a>
+          <a href="order.php" class="account_link">My Orders</a>
+          <a href="wishlist.php" class="account_link">My Wishlist</a>
+          <a href="#" class="account_link">My Ads</a>
+          <a href="login.php" class="account_link" id="logout">Log Out</a>
+        </div>
+      </div>
+      <section class="orders">
+        <div class="container order_container">
+          <div class="order-detail">
+            <span class="label">Nome do Produto:</span>
+            <span>Notebook Dell Inspiron</span>
+          </div>
+          <div class="order-detail">
+            <span class="label">Preço:</span>
+            <span>R$ 3.500,00</span>
+          </div>
+        </div>
+      </section>
+    </section>
+    <?php drawFooter(); ?>
+  </body>
