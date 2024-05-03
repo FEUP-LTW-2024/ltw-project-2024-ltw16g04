@@ -35,151 +35,29 @@ $session = new Session();
   drawHeader();
 ?>
  
-
+<!--MAIN-->
 
 <section class="section">
   <div class="container">
-    <div class="container filter_container">
-        <p>Filters</p>
-        <div class="header_filter">
-          <a href="#" class="header_filter_link">Audio, Photo & Video</a>
-          <a href="#" class="header_filter_link">Components</a>
-          <a href="#" class="header_filter_link">Computers</a>
-          <a href="#" class="header_filter_link">Consoles</a>
-          <a href="#" class="header_filter_link">Peripheral Devices</a>
-          <a href="#" class="header_filter_link">Smartphones</a>
-          <a href="#" class="header_filter_link">Tablets</a>
-        </div>
+<?php
+  drawFilter();
+  // Process form submission and draw filtered items
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $filters = [
+      'price' => $_POST['price'] ?? '',
+      'category' => $_POST['category'] ?? '',
+      'condition' => $_POST['condition'] ?? ''
+  ];
+  $filteredItems = getItems($filters);
+  drawItems($filteredItems);
+  } else {
+  // If no form submission, draw all items
+    $allItems = getItems([]);
+   drawItems($allItems);
+  }
 
-        <div class="header_filter">
-            <label>
-                <input type="checkbox" name="price" value="0-25">
-                $0 - $25
-                <span class="checkmark"></span>
-              </label>
-              <label>
-                <input type="checkbox" name="price" value="25-59">
-                $25 - $50
-              </label>
-              <label>
-                <input type="checkbox" name="price" value="50-100">
-                $50 - $100
-              </label>
-              <label>
-                <input type="checkbox" name="price" value="100 >" id="100">
-                $100 >
-              </label>
-          </div>
-
-          <div class="header_filter">
-            <label>
-                <input type="checkbox" name="price" value="new">
-                New
-              </label>
-              <label>
-                <input type="checkbox" name="price" value="like_new">
-                Like new
-              </label>
-              <label>
-                <input type="checkbox" name="price" value="used">
-                Used
-              </label>
-              <label>
-                <input type="checkbox" name="price" value="fair">
-                Fair
-              </label>
-              <label>
-                <input type="checkbox" name="price" value="damaged">
-                Damaged
-              </label>
-            </div>
-        
-  
-      </div>
-    <div class="products">
-      <div class="card">
-        <div class="card_top">
-          <img src="../images/items/gameController.png" alt="" class="card_img" />
-          <button class="buy_btn">Buy</button>
-        </div>
-        <div class="card_body">
-          <h3 class="card_title">HAVIT HV-G92 Gamepad</h3>
-          <p class="card_price">€12.90</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card_top">
-          <img src="../images/items/camera.png" alt="" class="card_img" />
-          <button class="buy_btn">Buy</button>
-        </div>
-        <div class="card_body">
-          <h3 class="card_title">Canon 1200D + 18-55 + 16GB</h3>
-          <p class="card_price">€99.90</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card_top">
-          <img src="../images/items/gameController.png" alt="" class="card_img" />
-          <button class="buy_btn">Buy</button>
-        </div>
-        <div class="card_body">
-          <h3 class="card_title">HAVIT HV-G92 Gamepad</h3>
-          <p class="card_price">$120</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card_top">
-          <img src="../images/items/gameController.png" alt="" class="card_img" />
-          <button class="buy_btn">Buy</button>
-        </div>
-        <div class="card_body">
-          <h3 class="card_title">HAVIT HV-G92 Gamepad</h3>
-          <p class="card_price">$120</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card_top">
-          <img src="../images/items/gameController.png" alt="" class="card_img" />
-          <button class="buy_btn">Buy</button>
-        </div>
-        <div class="card_body">
-          <h3 class="card_title">HAVIT HV-G92 Gamepad</h3>
-          <p class="card_price">$120</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card_top">
-          <img src="../images/items/gameController.png" alt="" class="card_img" />
-          <button class="buy_btn">Buy</button>
-        </div>
-        <div class="card_body">
-          <h3 class="card_title">HAVIT HV-G92 Gamepad</h3>
-          <p class="card_price">$120</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card_top">
-          <img src="../images/items/gameController.png" alt="" class="card_img" />
-          <button class="buy_btn">Buy</button>
-        </div>
-        <div class="card_body">
-          <h3 class="card_title">HAVIT HV-G92 Gamepad</h3>
-          <p class="card_price">$120</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card_top">
-          <img src="../images/items/gameController.png" alt="" class="card_img" />
-          <button class="buy_btn">Buy</button>
-        </div>
-        <div class="card_body">
-          <h3 class="card_title">HAVIT HV-G92 Gamepad</h3>
-          <p class="card_price">$120</p>
-        </div>
-      </div>
-      </div>
-      </div>
-    </div>
+  ?>
+  </div>
 </section>
 <!--FOOTER-->
 

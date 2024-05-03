@@ -10,6 +10,7 @@ function drawFavorites(){
     $session = new Session();
     $db = getDatabaseConnection();
     $user_id = $session->getId();
+    //seleciona todos os favoritos daquele usuario
     $query = 'SELECT * FROM Favorites WHERE user_id = ?';
     $stmt = $db->prepare($query);
     $stmt->execute(array($user_id));

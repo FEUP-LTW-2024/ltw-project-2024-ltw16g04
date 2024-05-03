@@ -100,9 +100,7 @@
         $comments = $stmt->fetchAll();
 
         if(!$comments) {
-            $session->addMessage('error', 'Não existem comentários.');
-            header('Location: ../pages/item.php?id=' . $item_id);
-            exit();
+            return;
         }
         
 ?>
