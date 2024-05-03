@@ -1,13 +1,12 @@
 <?php
-  declare(strict_types=1);
-
-  require_once(__DIR__ . '/../utils/session.php');
-  $session = new Session();
+  declare(strict_types = 1);
 
   require_once(__DIR__ .'/../data/connection.php');
   require_once(__DIR__ .'/../actions/top_bar.php');
   require_once(__DIR__ .'/../actions/footer.php');
-?>
+  require_once(__DIR__ .'/../actions/orders_action.php');
+
+  $session = new Session(); ?>
 
 <!DOCTYPE html>
 <html lang="en-US">
@@ -51,16 +50,7 @@
         </div>
       </div>
       <section class="orders">
-        <div class="container order_container">
-          <div class="order-detail">
-            <span class="label">Nome do Produto:</span>
-            <span>Notebook Dell Inspiron</span>
-          </div>
-          <div class="order-detail">
-            <span class="label">Preço:</span>
-            <span>R$ 3.500,00</span>
-          </div>
-        </div>
+        <?php drawOrders(); ?>
       </section>
     </section>
     <?php drawFooter(); ?>
