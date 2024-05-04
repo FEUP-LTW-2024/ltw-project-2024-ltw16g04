@@ -50,7 +50,22 @@
         </div>
       </div>
       <section class="orders">
-        <?php drawOrders(); ?>
+        <a href="menu.php" class="order_link">
+        <table class="order_table">
+          <tr>
+              <th>ID</th>
+              <th>Produto</th>
+              <th>Vendedor</th>
+              <th>Horário</th>
+          </tr>
+          <tr>
+              <td>#12345</td>
+              <td>Nome do Produto</td>
+              <td>ID do Vendedor</td>
+              <td>12:00 PM, 20/11/2023</td>
+          </tr>
+        </table>
+        </a>
       </section>
     </section>
     <?php drawFooter(); ?>
