@@ -27,6 +27,7 @@
  <!-- Header -->
  <body>
  <?php drawHeader(); ?>
+
  <header class="header">
   <div class="container header_container">
     <div class="header_filter">
@@ -177,9 +178,12 @@
       <div class="container_btn">
         <a href="#" class="container_btn_a">VIEW ALL PRODUCTS</a>
       </div>
+      <div class="separate"></div>
       </div>
 </section>
+
 <?php drawFooter(); ?>
 </body>
 
 </html>
+
