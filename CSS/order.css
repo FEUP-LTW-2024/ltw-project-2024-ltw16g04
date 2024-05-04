@@ -31,12 +31,12 @@
     margin-bottom: 10rem;
   }
   .account_nav{
-    width: 70%;
+    flex: 0 0 30%;
     height: 100%;
     align-self: flex-start;
   }
   .account_selector {
-    width: 25%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -53,7 +53,44 @@
   .profile_title{
     margin-bottom: 1rem;
   }
-  .orders{
-    width: 90%;
 
-  }
+  .orders {
+    display: flex;
+    flex-direction: column; /* Coloca as tabelas em coluna */
+    gap: 20px; /* Espaço entre as tabelas */
+    padding: 20px;
+}
+
+/* Estilo para cada tabela de pedido */
+.order_table {
+    width: 100%; /* Tabela ocupa largura total */
+    border-collapse: collapse; /* Remove espaços entre bordas */
+    border: 1px solid #ccc; /* Borda ao redor da tabela */
+}
+
+/* Estilo para os títulos (cabeçalhos) da tabela */
+.order_table th {
+    padding: 10px; /* Espaçamento interno para cabeçalhos */
+    text-align: left; /* Alinha texto à esquerda */
+    background-color: #f0f0f0; /* Fundo para cabeçalhos */
+    font-weight: bold; /* Destaca cabeçalhos */
+    
+}
+
+/* Estilo para as células da tabela */
+.order_table td {
+    padding: 10px; /* Espaçamento interno para células */
+    text-align: left; /* Alinha texto à esquerda */
+}
+
+/* Efeito ao passar o mouse sobre uma linha da tabela */
+.order_table tr:hover {
+    background-color: #f9f9f9; /* Muda a cor do fundo ao passar o mouse */
+}
+.order_link{
+  text-decoration: none;
+  color:inherit;
+}
+.order_link:hover{
+  color: #006BAF;
+}
