@@ -18,7 +18,7 @@ function drawHeader(){
   <div class="container nav_container">
     <div class="nav-title">
     <img src="../images/logo-removebg-preview.png" alt="Martech logo" class="logo" width="75px";>
-    <a href="menu copy.html" class="nav_logo">MarTech</a></div>
+    <a href="menu.php" class="nav_logo">MarTech</a></div>
     <ul class="nav_list">
       <li class="nav_item"><a href="../pages/menu.php" class="nav_link">Home</a></li>
       <li class="nav_item"><a href="#" class="nav_link">Sell</a></li>

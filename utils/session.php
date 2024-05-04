@@ -34,7 +34,19 @@
     }
 
     public function addCheckoutItem(int $item_id) {
+      //check if item is already in the checkoutItems 
+      if(in_array($item_id, $this->checkoutItems)) {
+        return;
+      }
+
       $_SESSION['checkoutItems'][] = $item_id;
+    }
+
+    public function removeCheckoutItem(int $item_id) {
+      $key = array_search($item_id, $this->checkoutItems);
+      if($key !== false) {
+        unset($_SESSION['checkoutItems'][$key]);
+      }
     }
 
     public function setItemId(int $item_id) {

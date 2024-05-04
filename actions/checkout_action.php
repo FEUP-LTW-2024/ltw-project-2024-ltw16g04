@@ -82,13 +82,21 @@ $user_id = $session->getId();
             $name = $item['name'];
             $price = $item['price'];
             $img = $item['main_image'];
-
+            $remove_id = 'remove_item_' . $item_id;
         ?>
         <div class="cart_items">
             <img src="<?php echo $img;?>" alt="" class="cart_img" />
             <p class="cart_title"><?php echo $name;?></p>
             <p class="cart_price">€ <?php echo $price;?></p>
-        </div>
+            <!-- add remove item from cart button-->
+            <button id="<?php echo $remove_id;?>" name="remove_item">Remove</button>
+            <script type="text/javascript">
+                document.getElementById("<?php echo $remove_id;?>").onclick = function () {
+                    <?php $session->removeCheckoutItem($item_id);?>;
+                    window.location.reload();
+                };
+            </script>
+          </div>
         <?php } ?>
       </div>
         
