@@ -54,120 +54,35 @@
     <div class="container chats_container">
     
       <div class="chat_form">
-        <p>Details about the product</p>
-            <form action="" method="post">
-                  <div class="title">
-                    <div class="input-wrapper" id="input_title">
-                      <label for="title">Title</label>
-                      <input type="text" name="title" id="title_product" placeholder="Ex: Airpods Gen 2" required>
-                    </div>
-                  </div>
-                  <div class="category">
-                    <label for="category">Category</label>
-                    <select name="category" id="category" required>
-                      <option value="" disabled selected>Select a category</option>
-                      <option value="audio">Audio, Photo & Video (Not camera)</option>
-                      <option value="cameras">Cameras</option>
-                      <option value="components">Components</option>
-                      <option value="computers">Computers</option>
-                      <option value="gaming">Gaming</option>
-                      <option value="headphones">Headphones</option>
-                      <option value="phones">Phones</option>
-                      <option value="peripheral">Peripheral Devices</option>
-                      <option value="tablets">Tablets</option>
-                      <option value="watches">Watches</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                  <div class="upload-image">
-                    <label for="image">Product Image</label>
-                    <input type="file" name="image" id="image" accept="image/*" required>
-                    <p>Upload an image of the product (accepted formats: JPG, PNG, GIF).</p>
-                  </div>
-                  <div class="description">
-                      <label for="product_description">Description</label>
-                      <textarea id="description" name="description" rows="4" cols="50" placeholder="Enter your description here..."></textarea>
-                  </div>
-                  <p>Details of the seller</p>
-                  <div class="name">
-                    <label for="name">Name of the seller</label>
-                    <input type="text" name="apartment" id="address" placeholder="Ex: John Doe">
-                </div>
-                <div class="address">
-                    <label for="address">Location (City or postal code)</label>
-                    <input type="text" name="city" id="address" placeholder="Ex:1234-567">
-                </div>
-                  <div class="email">
-                    <label for="email">Email address</label>
-                    <input type="email" name="email" id="email" placeholder="Ex: johndoe@mail.com">
-                </div>
-                <div class="phone">
-                    <label for="phone">Phone</label>
-                    <input type="text" name="phone" id="phone" placeholder="Ex: +351 999888777">
-                </div>
-                <div class="buttons">
-                  <button id="place_order" name="place_order">Add ad</button>
-                  <button id="go_back" name="go_back">Go back</button>
-                </div>
-              </form>
+        <div class="profile">
+        <img src="../images/user.png" alt="" class="profile-pic">
+        <p>Username</p></div>
+        <ul class="user-chats">
+          <li><div class="profile-chat">
+            <img src="../images/user.png" alt="" class="profile-chat-pic">
+            <p>Username</p></div></li>
+            <li><div class="profile-chat">
+              <img src="../images/user.png" alt="" class="profile-chat-pic">
+              <p>Username</p></div></li>
+        </ul>
       </div>
-      <div class="chat_form">
-        <p>Details about the product</p>
-            <form action="" method="post">
-                  <div class="title">
-                    <div class="input-wrapper" id="input_title">
-                      <label for="title">Title</label>
-                      <input type="text" name="title" id="title_product" placeholder="Ex: Airpods Gen 2" required>
-                    </div>
-                  </div>
-                  <div class="category">
-                    <label for="category">Category</label>
-                    <select name="category" id="category" required>
-                      <option value="" disabled selected>Select a category</option>
-                      <option value="audio">Audio, Photo & Video (Not camera)</option>
-                      <option value="cameras">Cameras</option>
-                      <option value="components">Components</option>
-                      <option value="computers">Computers</option>
-                      <option value="gaming">Gaming</option>
-                      <option value="headphones">Headphones</option>
-                      <option value="phones">Phones</option>
-                      <option value="peripheral">Peripheral Devices</option>
-                      <option value="tablets">Tablets</option>
-                      <option value="watches">Watches</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                  <div class="upload-image">
-                    <label for="image">Product Image</label>
-                    <input type="file" name="image" id="image" accept="image/*" required>
-                    <p>Upload an image of the product (accepted formats: JPG, PNG, GIF).</p>
-                  </div>
-                  <div class="description">
-                      <label for="product_description">Description</label>
-                      <textarea id="description" name="description" rows="4" cols="50" placeholder="Enter your description here..."></textarea>
-                  </div>
-                  <p>Details of the seller</p>
-                  <div class="name">
-                    <label for="name">Name of the seller</label>
-                    <input type="text" name="apartment" id="address" placeholder="Ex: John Doe">
-                </div>
-                <div class="address">
-                    <label for="address">Location (City or postal code)</label>
-                    <input type="text" name="city" id="address" placeholder="Ex:1234-567">
-                </div>
-                  <div class="email">
-                    <label for="email">Email address</label>
-                    <input type="email" name="email" id="email" placeholder="Ex: johndoe@mail.com">
-                </div>
-                <div class="phone">
-                    <label for="phone">Phone</label>
-                    <input type="text" name="phone" id="phone" placeholder="Ex: +351 999888777">
-                </div>
-                <div class="buttons">
-                  <button id="place_order" name="place_order">Add ad</button>
-                  <button id="go_back" name="go_back">Go back</button>
-                </div>
-              </form>
+      <div class="messages">  
+        <div class="profile">
+          <img src="../images/user.png" alt="" class="profile-pic">
+          <div class="username-status">
+          <p>Username</p>
+          <p id="status">Active</p>
+        </div>
+        </div>
+     
+        <div class="chat-container">
+          <div id="chat-box"></div>
+          <form id="message-form">
+            <input type="text" id="message-input" placeholder="Type your message...">
+            <button type="submit">Send</button>
+          </form>
+        </div>
+        <script src="scripts.js"></script>
       </div>
       </div>
 
