@@ -4,7 +4,7 @@
   require_once(__DIR__ .'/../data/connection.php');
   require_once(__DIR__ .'/../actions/top_bar.php');
   require_once(__DIR__ .'/../actions/footer.php');
-  require_once(__DIR__ .'/../actions/orders_action.php');
+
 
   $session = new Session(); ?>
 
@@ -14,7 +14,7 @@
     <title>My orders</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../CSS/order.css" rel="stylesheet">
+    <link href="../CSS/myads.css" rel="stylesheet">
     <link href="../CSS/topbar.css" rel="stylesheet">
     <link href="../CSS/footer.css" rel="stylesheet">
     <!-- fonts used  -->
@@ -32,8 +32,8 @@
   <body id="order_body">
     <section class="orders_header">
       <div class= "orders_header_container">
-        <p>Home / My Orders</p>
-        <p>Here is your orders, <?php echo 
+        <p>Home / My Ads</p>
+        <p>Here is your ads, <?php echo 
         $session->getName();
         ?>!</p>
       </div>  
@@ -45,29 +45,21 @@
           <a href="profile.php" class="account_link">My Profile</a>
           <a href="order.php" class="account_link">My Orders</a>
           <a href="wishlist.php" class="account_link">My Wishlist</a>
-          <a href="myads.php" class="account_link">My Ads</a>
+          <a href="#" class="account_link">My Ads</a>
           <a href="login.php" class="account_link" id="logout">Log Out</a>
         </div>
       </div>
-      <section class="orders">
-        <a href="menu.php" class="order_link">
-        <table class="order_table">
-          <tr>
-              <th>ID</th>
-              <th>Product</th>
-              <th>Seller</th>
-              <th>Date</th>
-              <th>Value</th>
-          </tr>
-          <tr>
-              <td>#12345</td>
-              <td>Laptop Samsung</td>
-              <td>#32410</td>
-              <td>12:00 PM, 20/11/2023</td>
-              <td>€279,99</td>
-          </tr>
-        </table>
-        </a>
+      <section class="ads">
+        <div class="card">
+          <div class="card_top">
+            <img src="../images/items/gameController.png" alt="" class="card_img" />
+            <button class="add_btn">Edit</button>
+          </div>
+          <div class="card_body">
+            <h3 class="card_title">HAVIT HV-G92 Gamepad</h3>
+            <p class="card_price">$120</p>
+          </div>
+        </div>
       </section>
     </section>
     <?php drawFooter(); ?>

@@ -51,6 +51,9 @@
   .account_link:hover{
     color: #006BAF;
   }
+  #logout{
+  color: red;
+}
   .profile_title{
     margin-bottom: 1rem;
   }
@@ -130,7 +133,4 @@
   flex-direction: row;
   justify-content: end;
   
-}
-#logout{
-  color: red;
 }

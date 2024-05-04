@@ -50,9 +50,6 @@
   .account_link:hover{
     color: #006BAF;
   }
-  #logout{
-    color: red;
-  }
   .profile_title{
     margin-bottom: 1rem;
   }
@@ -97,3 +94,51 @@
 .order_link:hover{
   color: #006BAF;
 }
+.card {
+    width: 290px;
+    margin-bottom: 5rem;
+    margin-top: 1em;
+    display: grid;
+  }
+  .card_top {
+    width: 250px;
+    height: 22rem;
+    position: relative;
+  }
+  .card_img {
+    width: 100%;
+    height: 100%;
+  }
+  .card_body {
+    width: 50%;
+    margin-top: 1rem;
+    text-align: left;
+  }
+  .card_title {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  .card_price {
+    color: black;
+    margin-bottom: 1rem;
+  }
+  .add_btn{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #006BAF;
+    color: white;
+    font-weight: 700;
+    padding: 1rem 10rem;
+    border: none;
+    border-radius: 5px;
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+  }
+  .card_top:hover .add_btn {
+    opacity: 1; 
+  }
+  #logout{
+    color: red;
+  }
