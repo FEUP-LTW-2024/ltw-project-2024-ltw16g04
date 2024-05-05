@@ -59,6 +59,10 @@
                     <label for="phone">Phone Number</label>
                     <input type="tel" name="phone" id="phone" placeholder="e.g: +351 000-000-000" required>
                 </div>
+                <div class="address">
+                    <label for="address">Address</label>
+                    <input type="text" name="address" id="address" placeholder="e.g: Pink Street, 000" required>
+                </div>
                 <button id="registerButton">Register</button>
             </form>
             <span>Already have an account? <a href="login.php">Sign In Now</a></span>

@@ -49,7 +49,7 @@
         <a href="profile.php" class="account_link">My Profile</a>
         <a href="order.php" class="account_link">My Orders</a>
         <a href="wishlist.php" class="account_link">My Wishlist</a>
-        <a href="#" class="account_link">My Ads</a>
+        <a href="myads.php" class="account_link">My Ads</a>
         <a href="../actions/logout.php" class="account_link" id="logout">Log Out</a>
       </div>
     </div>

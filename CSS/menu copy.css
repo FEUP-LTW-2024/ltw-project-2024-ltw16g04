@@ -1,6 +1,10 @@
 
 /* header */
-
+.container {
+  max-width: 114rem;
+  margin: 0 auto;
+  padding: 0rem 1rem;
+}
 .header_container {
   width: 100%;
   display: flex;
@@ -35,12 +39,14 @@
 .section_category_p {
   border-left: 1.4rem solid #006BAF;
   padding-left: 1.5rem;
+  margin-top: 3em;
   margin-bottom: 1.5rem;
   color: #006BAF;
   font-size: 1.6rem;
 }
 .section_header {
   display: flex;
+  flex-direction: row;
   align-items: flex-end;
   margin-bottom: 4rem;
 }
@@ -135,6 +141,9 @@
   .card_top:hover .add_btn {
     opacity: 1; 
   }
+  .separate{
+    padding: 40px;
+  }
 
 
 .footer {
@@ -191,7 +200,7 @@
   border-radius: 100px;
   color: #2f2f2f;
   line-height: 0;
-  margin: 0.6em 0;
+  margin: 0.6em 0 2em;
   font-size: 1rem;
   padding: 0 1.3em;
 }
