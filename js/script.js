@@ -39,4 +39,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update chat initially
     updateChat();
   });
+
+
+  
+  function showAlert(message){
+    alert(message);
+  }
+
   

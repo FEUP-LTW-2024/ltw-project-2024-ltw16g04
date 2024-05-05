@@ -131,6 +131,8 @@
             $comment_text = $comment['comment'];
             $rating = $comment['rating'];
             $created_at = $comment['created_at'];
+
+             
     ?>
     <div class="testimonial-box-container">
         <!--BOX-1-------------->
@@ -151,11 +153,17 @@
                 </div>
                 <!--reviews------>
                 <div class="reviews">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i><!--Empty -->
-                    <i class="far fa-star"></i><!--Empty star-->
+                    <?php 
+                    for ($i = 1; $i <= 5; $i++) {
+                        if ($i <= $rating) {
+                            // Filled star icon
+                            echo '<i class="fas fa-star"></i>';
+                        } else {
+                            // Empty star icon
+                            echo '<i class="far fa-star"></i>';
+                        }
+                    }
+                    ?>
                 </div>
             </div>
             <!--Comments---------------------------------------->

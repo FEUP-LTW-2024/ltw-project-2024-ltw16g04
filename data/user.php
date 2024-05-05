@@ -22,6 +22,25 @@
         $stmt->execute(array($id,$name,$phone, $email, $pwd));
     }
 
+    static function getUser($id, $db): ?User {
+        $query = 'SELECT * FROM Users WHERE id = ?';
+        $stmt = $db->prepare($query);
+        $stmt->execute(array($id));
+        $user = $stmt->fetch();
+        if($user){
+            return new User(
+                $user['id'],
+                $user['name'],
+                $user['phone'],
+                $user['email'],
+                $user['password']
+            );
+        } else {
+            return NULL;
+        }
+    }
+
+
     static function checkUserWithEmail($email,$db){
         $query = 'SELECT * FROM Users WHERE email = ?';
         $stmt = $db->prepare($query);
