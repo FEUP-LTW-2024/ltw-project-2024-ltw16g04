@@ -31,7 +31,7 @@
         $num = $stmt->fetch();
         $id = $num['count'] + 1;
         
-        User::addUser($id, $name, $phone, $email, $password, $db);
+        User::addUser($id, $name, $phone, $password, $email, $db);
         $session = new Session();
         $session->addMessage('success', 'Conta criada com sucesso.');
         header('Location: ../pages/login.php');
