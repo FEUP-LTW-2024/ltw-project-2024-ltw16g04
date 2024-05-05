@@ -205,11 +205,12 @@
     font-size: 1.5rem;
     font-weight: 500;
     font-family: "Inter";
+    color:#535455
   }
 
   .chat-container {
-    width: 400px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0 0;
   }
   
   #chat-box {
