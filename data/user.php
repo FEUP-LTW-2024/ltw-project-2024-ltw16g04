@@ -64,5 +64,20 @@
         else {return NULL;}
             
     }
+
+
+    static function favoriteItem($user_id,$item_id, $db): ?bool{
+        //see if the current user has the item in their favorites
+        $query = 'SELECT * FROM Favorites WHERE user_id = ? AND item_id = ?';
+        $stmt = $db->prepare($query);
+        $stmt->execute(array($user_id, $item_id));
+        $favorite = $stmt->fetch();
+
+        if($favorite){
+            return true;
+        } else {
+            return false;
+        }
+    }
     }
     ?>

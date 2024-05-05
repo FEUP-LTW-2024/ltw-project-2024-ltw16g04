@@ -9,7 +9,7 @@
 
       $this->messages = isset($_SESSION['messages']) ? $_SESSION['messages'] : array();
       $this->item_id = isset($_SESSION['item_id']) ? $_SESSION['item_id'] : null;
-      $this->checkoutItems = isset($_SESSION['checkoutItems']) ? $_SESSION['checkoutItems'] : array();
+      $this->checkoutItem = isset($_SESSION['checkoutItem']) ? $_SESSION['checkoutItem'] : null;
       unset($_SESSION['messages']);
     }
 
@@ -29,24 +29,12 @@
       return isset($_SESSION['item_id']) ? $_SESSION['item_id'] : null;    
     }
 
-    public function getCheckoutItems() : array {
-      return $this->checkoutItems;
+    public function getCheckoutItem() : ?int {
+      return isset($_SESSION['checkoutItem']) ? $_SESSION['checkoutItem'] : null;
     }
 
-    public function addCheckoutItem(int $item_id) {
-      //check if item is already in the checkoutItems 
-      if(in_array($item_id, $this->checkoutItems)) {
-        return;
-      }
-
-      $_SESSION['checkoutItems'][] = $item_id;
-    }
-
-    public function removeCheckoutItem(int $item_id) {
-      $key = array_search($item_id, $this->checkoutItems);
-      if($key !== false) {
-        unset($_SESSION['checkoutItems'][$key]);
-      }
+    public function setCheckoutItem(int $item_id) {
+      $_SESSION['checkoutItem'] = $item_id;
     }
 
     public function setItemId(int $item_id) {

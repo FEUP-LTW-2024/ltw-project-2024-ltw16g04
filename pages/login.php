@@ -8,6 +8,11 @@
   require_once(__DIR__ .'/../actions/top_bar.php');
   require_once(__DIR__ .'/../actions/footer.php');
 
+  if($session->isLoggedIn()) {
+    header('Location: ../pages/profile.php');
+    exit();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en-US">

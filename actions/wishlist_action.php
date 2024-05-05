@@ -25,9 +25,7 @@ function drawFavorites(){
       <h3 class="section_title">Wishlist</h3> 
     </div>
     <div class="products">
-      <div class="card">
-        <div class="card_top">
-        <?php foreach($favorites as $favorite){ 
+    <?php foreach($favorites as $favorite){ 
             $query = 'SELECT * FROM Items WHERE id = ?';
             $stmt = $db->prepare($query);
             $stmt->execute(array($favorite['item_id']));
@@ -35,23 +33,26 @@ function drawFavorites(){
             $name = $item['name'];
             $price = $item['price'];
             $img = $item['main_image']; 
+            $buy_button_id = 'buy_btn_' . $item['id'];
 
             ?>
+      <div class="card">
+        <div class="card_top">
           <img src="<?php echo $img;?>" alt="" class="card_img" />
-          <button id="myButton" class="buy_btn">Buy</button>
+          <button id="<?php echo $buy_button_id; ?>" class="buy_btn">Buy</button>
           <script type="text/javascript">
-    document.getElementById("myButton").onclick = function () {
-        location.href = "item.php?id=<?php echo $item['id'];?>";
-    };
-</script>
+            document.getElementById("<?php echo $buy_button_id;?>").onclick = function () {
+            location.href = "item.php?id=<?php echo $item['id'];?>";
+            };
+          </script>
         </div>
         <div class="card_body">
           <h3 class="card_title"><?php echo $name;?></h3>
           <p class="card_price">$<?php echo $price ?></p>
         </div>
-        <?php } ?>
       </div>
       </div>
+      <?php } ?>
       </div>
     </div>
 </section>

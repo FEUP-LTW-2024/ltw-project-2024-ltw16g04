@@ -34,23 +34,19 @@ function drawFooter(){
 
       <ul class="nav__ul">
         <li>
-          <a href="#">My Account</a>
+          <a href="../pages/profile.php">My Account</a>
         </li>
 
         <li>
-          <a href="#">Login / Register</a>
+          <a href="../pages/login.php">Login / Register</a>
         </li>
             
         <li>
-          <a href="#">Cart</a>
+          <a href="../pages/wishlist.php">Wishlist</a>
         </li>
 
         <li>
-          <a href="#">Wishlist</a>
-        </li>
-
-        <li>
-          <a href="#">Shop</a>
+          <a href="../pages/browse.php">Shop</a>
         </li>
       </ul>
     </li>

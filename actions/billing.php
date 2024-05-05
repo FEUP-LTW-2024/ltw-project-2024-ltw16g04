@@ -4,13 +4,15 @@
     require_once(__DIR__ .'/../utils/session.php');
     require_once(__DIR__ .'/../data/connection.php');
     include_once(__DIR__ . '/../data/user.php');
+    require_once(__DIR__ .'/../actions/favorites.php');
 
     $session = new Session();
 
     
     if(isset($_POST['place_order'])){
-        $countBillings = 'SELECT COUNT(*) as count FROM Billing';
         $db = getDatabaseConnection();
+        removeFavorite($session->getId(), $session->getItemId(), $db);
+        $countBillings = 'SELECT COUNT(*) as count FROM Billing';
         $stmt = $db->prepare($countBillings);
         $stmt->execute();
         $num = $stmt->fetch();
@@ -33,13 +35,13 @@
         $stmt = $db->prepare($query);
         $stmt->execute(array($order_id,$user_id, $fname, $lname, $address, $apartment, $city, $email, $phone));
         
-        $checkoutItems = $session->getCheckoutItems();
-        foreach($checkoutItems as $item_id) {
-            $query = 'INSERT INTO BILLING_ITEMS (billing_id, item_id) VALUES (?, ?)';
-            $stmt = $db->prepare($query);
-            $stmt->execute(array($order_id, $item_id));
-        }
-            header('Location: ../pages/profile.php');
+        $item_id = $session->getCheckoutItem();
+        
+        $query = 'INSERT INTO BILLING_ITEMS (billing_id, item_id) VALUES (?, ?)';
+        $stmt = $db->prepare($query);
+        $stmt->execute(array($order_id, $item_id));
+        
+        header('Location: ../pages/profile.php');
         exit();
     }
     if(isset($_POST['go_back'])){

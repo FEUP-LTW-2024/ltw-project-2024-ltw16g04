@@ -4,7 +4,7 @@ require_once(__DIR__ . '/../conf.php');
 require_once(__DIR__ .'/../utils/session.php');
 require_once(__DIR__ .'/../data/connection.php');
 include_once(__DIR__ . '/../data/user.php');
-
+require_once(__DIR__ .'/../actions/favorites.php');
 
 function drawCheckout(){
     $session = new Session();
@@ -19,6 +19,7 @@ if(!$session->isLoggedIn()) {
 
 $user_id = $session->getId();
 
+addFavorite();
 
 
 ?>
@@ -73,31 +74,20 @@ $user_id = $session->getId();
         </div>
 
         <?php 
-        $checkoutItems = $session->getCheckoutItems();
-        foreach($checkoutItems as $item_id) {
-            $query = 'SELECT * FROM Items WHERE id = ?';
-            $stmt = $db->prepare($query);
-            $stmt->execute(array($item_id));
-            $item = $stmt->fetch();
-            $name = $item['name'];
-            $price = $item['price'];
-            $img = $item['main_image'];
-            $remove_id = 'remove_item_' . $item_id;
+          $item_id = $session->getCheckoutItem(); 
+          $query = 'SELECT * FROM Items WHERE id = ?';
+          $stmt = $db->prepare($query);
+          $stmt->execute(array($item_id));
+          $item = $stmt->fetch();
+          $name = $item['name'];
+          $price = $item['price'];
+          $img = $item['main_image'];
         ?>
         <div class="cart_items">
             <img src="<?php echo $img;?>" alt="" class="cart_img" />
             <p class="cart_title"><?php echo $name;?></p>
             <p class="cart_price">€ <?php echo $price;?></p>
-            <!-- add remove item from cart button-->
-            <button id="<?php echo $remove_id;?>" name="remove_item">Remove</button>
-            <script type="text/javascript">
-                document.getElementById("<?php echo $remove_id;?>").onclick = function () {
-                    <?php $session->removeCheckoutItem($item_id);?>;
-                    window.location.reload();
-                };
-            </script>
           </div>
-        <?php } ?>
       </div>
         
     </div>

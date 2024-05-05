@@ -14,7 +14,7 @@ if(!$session->isLoggedIn()) {
 }
 
 $item_id = $session->getItemId();
-$session->addCheckoutItem($item_id);
+$session->setCheckoutItem($item_id);
 
 header('Location: ../pages/checkout.php');
 exit();

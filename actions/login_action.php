@@ -8,7 +8,7 @@
     
     $session = new Session();
     
-
+    
     $db = getDatabaseConnection();
     $user = User::checkUserWithPassword($_POST['email'], $_POST['password'],$db);
     
