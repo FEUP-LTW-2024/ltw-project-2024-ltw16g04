@@ -65,7 +65,7 @@
                 </div>
                 <button id="registerButton">Register</button>
             </form>
-            <span>Already have an account? <a href="login.php">Sign In Now</a></span>
+            <span id="span">Already have an account? <a href="login.php">Sign In Now</a></span>
             </div>
         </section>
         <?php drawFooter(); ?>

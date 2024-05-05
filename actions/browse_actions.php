@@ -127,7 +127,7 @@ function drawFilter(){
                     <option value="damaged">Damaged</option>
                 </select>
             </div>
-            <div class="header_filter">
+            <div class="header_filter" >
                 <input type="submit" value="Apply Filters">
             </div>
         </form>

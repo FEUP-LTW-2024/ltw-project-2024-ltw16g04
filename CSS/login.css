@@ -47,7 +47,7 @@
   grid-area: "forgot";
   justify-self: end;
   a{
-    color: red;
+    color: rgb(180, 5, 5);
   }
 }
 
@@ -55,7 +55,7 @@
   width: 140px;
   height: 50px;
   background-color: #006BAF;
-  font-family: "Poppins";
+  font-family: "Inter";
   padding: 15px 40px;
   font-size: 15px;
   font-weight:600 ;
@@ -70,6 +70,15 @@
 #noAccount{
   margin: 3rem 0rem;
 }
+
+label{
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: "Inter";
+  color: #535455;
+}
+
+
 @media only screen and (max-width: 800px){
 .login img{
   display: none;

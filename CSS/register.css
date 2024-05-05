@@ -25,7 +25,7 @@
   #registerButton{
     width: 50%;
     background-color: #006BAF;
-    font-family: "Poppins";
+    font-family: "Inter";
     padding: 15px 40px;
     font-size: 15px;
     font-weight:600 ;
@@ -36,11 +36,20 @@
     border-radius: 8px;
     cursor: pointer;
     margin-right: 15px;
+    margin-bottom: 10px;
   }
   .register img{
     width: 50%;
     height: 100%;
   }
+
+  label{
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: "Inter";
+    color: #535455;
+  }
+ 
   #createAccTitle{
     font-size: 30px;
     margin: 3rem 0rem;
