@@ -34,13 +34,20 @@
             <div class="forgot-box">
             <h1 id="createAccTitle">Forgot password? Reset here!</h1>
             <p id="forgot_text">We will send you an email with a link to reset your password, please enter the email associated with your account below.</p>
-            <form action="" method="post">
+            <form action="../actions/forgot_action.php" method="post">
                 <div class="email">
                     <label for="email">Your E-mail</label>
                     <input type="email" name="email" id="email" placeholder="e.g: johndoe@example.com" required>
                     <button id="forgotButton">Send Email</button>
                 </div>
             </form>
+            <section id="messages">
+			            <?php foreach ($session->getMessages() as $messsage) { ?>
+				            <article class="<?=$messsage['type']?>">
+				            <?=$messsage['text']?>
+				            </article>
+			            <?php } ?>
+			          </section>
             </div>
         </section>
         <?php drawFooter(); ?>
