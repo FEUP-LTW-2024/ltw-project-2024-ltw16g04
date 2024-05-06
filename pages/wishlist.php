@@ -17,7 +17,7 @@
     <title>Profile</title>    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../CSS/profile.css" rel="stylesheet">
+    <link href="../CSS/wishlist.css" rel="stylesheet">
     <link href="../CSS/topbar.css" rel="stylesheet">
     <link href="../CSS/footer.css" rel="stylesheet">
     <!-- fonts used  -->
@@ -33,13 +33,13 @@
 <header class="header">
   <?php drawHeader(); ?>
 </header>
-<body id= "profile_body">
-  <section class="profile_header">
-    <div class= "profile_header_container">
-      <p>Home / My Account</p>
-      <p>Welcome! <?php echo 
+<body id= "wishlist_body">
+  <section class="wishlist_header">
+    <div class= "wishlist_header_container">
+      <p>Home / My Wishlist</p>
+      <p>Here is your wishlist, <?php echo 
       $session->getName();  
-      ?></p>
+      ?>!</p>
     </div>    
   </section>
   <section class="account">
@@ -54,6 +54,9 @@
         <a href="../actions/logout.php" class="account_link" id="logout">Log Out</a>
       </div>
     </div>
+    <section class="edit_profile">
+    <?php drawFavorites(); ?>
+    </section>
     
   </section>
  
