@@ -36,13 +36,13 @@
  <header class="header">
   <div class="container header_container">
     <div class="header_filter">
-      <a href="#" class="header_filter_link">Audio, Photo & Video</a>
-      <a href="#" class="header_filter_link">Components</a>
-      <a href="#" class="header_filter_link">Computers</a>
-      <a href="#" class="header_filter_link">Consoles</a>
-      <a href="#" class="header_filter_link">Peripheral Devices</a>
-      <a href="#" class="header_filter_link">Smartphones</a>
-      <a href="#" class="header_filter_link">Tablets</a>
+      <a href="browse.php?category=Audio%2C%20Photo%20%26%20Video" class="header_filter_link">Audio, Photo & Video</a>
+      <a href="browse.php?category=Components" class="header_filter_link">Components</a>
+      <a href="browse.php?category=Computers" class="header_filter_link">Computers</a>
+      <a href="browse.php?category=Consoles" class="header_filter_link">Consoles</a>
+      <a href="browse.php?category=Peripheral%20Devices" class="header_filter_link">Peripheral Devices</a>
+      <a href="browse.php?category=Smartphones" class="header_filter_link">Smartphones</a>
+      <a href="browse.php?category=Tablets" class="header_filter_link">Tablets</a>
     </div>
     <img src="../images/add.jpeg" alt="" class="header_img"/>
   </div>
@@ -56,36 +56,31 @@
       <h3 class="section_title">Browse by Category</h3>
     </div>
     <div class="categories">
-      <div class="category">
-        <img src="../images/icons/camera.png" alt="" class="category_icon" />
-        <p class="category_name">Cameras</p>
-      </div>
-      <div class="category">
-        <img
-          src="../images/icons/computer.png"
-          alt=""
-          class="category_icon" />
-        <p class="category_name">Computers</p>
-      </div>
-      <div class="category">
-        <img src="../images/icons/gaming.png" alt="" class="category_icon" />
-        <p class="category_name">Gaming</p>
-      </div>
-      <div class="category">
-        <img
-          src="../images/icons/headphone.png"
-          alt=""
-          class="category_icon" />
-        <p class="category_name">Headphones</p>
-      </div>
-      <div class="category">
-        <img src="../images/icons/phone.png" alt="" class="category_icon" />
-        <p class="category_name">Phones</p>
-      </div>
-      <div class="category">
-        <img src="../images/icons/watch.png" alt="" class="category_icon" />
-        <p class="category_name">Watches</p>
-      </div>
+  <a href="browse.php?category=Cameras" class="category">
+    <img src="../images/icons/camera.png" alt="" class="category_icon" />
+    <p class="category_name">Cameras</p>
+  </a>
+  <a href="browse.php?category=Computers" class="category">
+    <img src="../images/icons/computer.png" alt="" class="category_icon" />
+    <p class="category_name">Computers</p>
+  </a>
+  <a href="browse.php?category=Gaming" class="category">
+    <img src="../images/icons/gaming.png" alt="" class="category_icon" />
+    <p class="category_name">Gaming</p>
+  </a>
+  <a href="browse.php?category=Headphones" class="category">
+    <img src="../images/icons/headphone.png" alt="" class="category_icon" />
+    <p class="category_name">Headphones</p>
+  </a>
+  <a href="browse.php?category=Phones" class="category">
+    <img src="../images/icons/phone.png" alt="" class="category_icon" />
+    <p class="category_name">Phones</p>
+  </a>
+  <a href="browse.php?category=Watches" class="category">
+    <img src="../images/icons/watch.png" alt="" class="category_icon" />
+    <p class="category_name">Watches</p>
+  </a>
+</div>
     </div>
   </div>
 </section>
