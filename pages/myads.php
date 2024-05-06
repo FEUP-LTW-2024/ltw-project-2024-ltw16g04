@@ -30,7 +30,39 @@
   <header class="header">
     <?php drawHeader(); ?>
   </header>
-  <body id="order_body">
-    <?php drawMyAds(); ?>
+  <body id="ad_body">
+    <section class="ad_header">
+      <div class= "ad_header_container">
+        <p>Home / My Ads</p>
+        <p>Here is your ads, <?php echo 
+        $session->getName();
+        ?>!</p>
+      </div>  
+    </section>
+    <section class="account">
+      <div class="container account_nav">
+        <div class="account_title">
+        <h1 class="profile_title">Manage My Account</h1></div>
+        <div class="account_selector">
+          <a href="profile.php" class="account_link">My Profile</a>
+          <a href="order.php" class="account_link">My Orders</a>
+          <a href="wishlist.php" class="account_link">My Wishlist</a>
+          <a href="#" class="account_link">My Ads</a>
+          <a href="login.php" class="account_link" id="logout">Log Out</a>
+        </div>
+      </div>
+      <section class="ads">
+        <div class="card">
+          <div class="card_top">
+            <img src="../images/items/gameController.png" alt="" class="card_img" />
+            <button class="add_btn">Edit</button>
+          </div>
+          <div class="card_body">
+            <h3 class="card_title">HAVIT HV-G92 Gamepad</h3>
+            <p class="card_price">$120</p>
+          </div>
+        </div>
+      </section>
+    </section>
     <?php drawFooter(); ?>
   </body>

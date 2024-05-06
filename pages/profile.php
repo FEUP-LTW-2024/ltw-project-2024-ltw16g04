@@ -44,7 +44,8 @@
   </section>
   <section class="account">
     <div class="container account_nav">
-      <h1 class="profile_title">Manage My Account</h1>
+      <div class="account_title">
+        <h1 class="profile_title">Manage My Account</h1></div>
       <div class="account_selector">
         <a href="profile.php" class="account_link">My Profile</a>
         <a href="order.php" class="account_link">My Orders</a>
@@ -71,15 +72,16 @@
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" placeholder="Your e-mail" required>
               </div>
-              <div class="input_wrapper_email" id="input_address">
-                <label for="address">Address</label>
-                <input type="text" name="address" id="address" placeholder="Your address" required>
-              </div>
-            </div>
-            <div class="phone">
+              <div class="input_wrapper_email" class="phone">
                 <label for="phone">Phone Number</label>
                 <input type="tel" name="phone" id="phone" placeholder="e.g: +351 000-000-000" required>
             </div>
+              
+            </div>
+            <div id="input_address">
+                <label for="address">Address</label>
+                <input type="text" name="address" id="address" placeholder="Your address" required>
+              </div>
             <div class="password_change">
               <label for="cur-password">Password Changes</label>
               <input type="password" name="cur_password" id="cur_password" placeholder="Current password" required>
