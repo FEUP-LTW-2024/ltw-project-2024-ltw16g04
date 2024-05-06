@@ -75,6 +75,11 @@ function drawMyAds(){
     </section>
     <section class="add_new_ad">
       <button class="add_new">Add new ad</button>
+      <script type="text/javascript">
+        document.querySelector('.add_new').onclick = function () {
+          location.href = "sell.php";
+        };
+      </script>
     </section>
 <?php 
         }
