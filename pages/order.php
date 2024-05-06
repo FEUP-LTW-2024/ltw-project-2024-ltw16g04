@@ -49,26 +49,9 @@
           <a href="login.php" class="account_link" id="logout">Log Out</a>
         </div>
       </div>
-      <section class="orders">
-        <a href="menu.php" class="order_link">
-        <table class="order_table">
-          <tr>
-              <th>ID</th>
-              <th>Product</th>
-              <th>Seller</th>
-              <th>Date</th>
-              <th>Value</th>
-          </tr>
-          <tr>
-              <td>#12345</td>
-              <td>Laptop Samsung</td>
-              <td>#32410</td>
-              <td>12:00 PM, 20/11/2023</td>
-              <td>€279,99</td>
-          </tr>
-        </table>
-        </a>
-      </section>
+      <?php
+      drawOrders();
+      ?>
     </section>
     <?php drawFooter(); ?>
   </body>

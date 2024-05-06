@@ -40,6 +40,26 @@
         $query = 'INSERT INTO BILLING_ITEMS (billing_id, item_id) VALUES (?, ?)';
         $stmt = $db->prepare($query);
         $stmt->execute(array($order_id, $item_id));
+
+        //insert into orders
+
+        $item_id = $session->getCheckoutItem();
+        $query = 'SELECT * FROM Items WHERE id = ?';
+        $stmt = $db->prepare($query);
+        $stmt->execute(array($item_id));
+        $item = $stmt->fetch();
+        $seller_id = $item['seller_id'];
+        
+        //create order id
+        $countOrders = 'SELECT COUNT(*) as count FROM Orders';
+        $stmt = $db->prepare($countOrders);
+        $stmt->execute();
+        $num = $stmt->fetch();
+        $order_id = $num['count'] + 1;
+        $status = 'pending';
+        $query = 'INSERT INTO Orders (id,buyer_id,seller_id,item_id, amount,status) VALUES (?, ?, ?, ?, ?, ?)';
+        $stmt = $db->prepare($query);
+        $stmt->execute(array($order_id,$user_id, $seller_id, $item_id, $item['price'],$status));
         
         header('Location: ../pages/profile.php');
         exit();

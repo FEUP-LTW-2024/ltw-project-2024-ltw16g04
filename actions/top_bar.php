@@ -1,6 +1,7 @@
 <?php
 
 
+
 function drawHeader(){
 
 
@@ -43,7 +44,7 @@ function drawHeader(){
       <img src="../images/message.png" alt="" class="nav_heart" id="messageIcon"/>
       <script type="text/javascript">
             document.getElementById("messageIcon").onclick = function () {
-            location.href = "chat.html";
+            location.href = "chat.php";
             };
           </script>
 

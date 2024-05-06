@@ -123,7 +123,7 @@
   border-radius: 0.5rem;
 }
 
-.add_btn{
+.buy_btn{
     position: absolute;
     bottom: 10px;
     left: 50%;
@@ -138,7 +138,7 @@
     transition: opacity 0.3s ease; 
   }
   
-  .card_top:hover .add_btn {
+  .card_top:hover .buy_btn {
     opacity: 1; 
   }
   .separate{

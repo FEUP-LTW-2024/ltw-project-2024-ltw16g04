@@ -15,6 +15,8 @@ function drawFavorites(){
     $stmt = $db->prepare($query);
     $stmt->execute(array($user_id));
     $favorites = $stmt->fetchAll();
+
+   
     
 ?>
 
@@ -25,7 +27,12 @@ function drawFavorites(){
       <h3 class="section_title">Wishlist</h3> 
     </div>
     <div class="products">
-    <?php foreach($favorites as $favorite){ 
+    <?php 
+    if(!$favorites){
+        echo '<p>No favorites yet.</p>';
+    }
+    
+    foreach($favorites as $favorite){ 
             $query = 'SELECT * FROM Items WHERE id = ?';
             $stmt = $db->prepare($query);
             $stmt->execute(array($favorite['item_id']));
