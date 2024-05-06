@@ -40,7 +40,8 @@
     </section>
     <section class="account">
       <div class="container account_nav">
-        <h1 class="profile_title">Manage My Account</h1>
+      <div class="account_title">
+        <h1 class="profile_title">Manage My Account</h1></div>
         <div class="account_selector">
           <a href="profile.php" class="account_link">My Profile</a>
           <a href="order.php" class="account_link">My Orders</a>

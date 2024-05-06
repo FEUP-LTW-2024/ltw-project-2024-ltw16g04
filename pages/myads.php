@@ -29,9 +29,9 @@
   <header class="header">
     <?php drawHeader(); ?>
   </header>
-  <body id="order_body">
-    <section class="orders_header">
-      <div class= "orders_header_container">
+  <body id="ad_body">
+    <section class="ad_header">
+      <div class= "ad_header_container">
         <p>Home / My Ads</p>
         <p>Here is your ads, <?php echo 
         $session->getName();
@@ -40,7 +40,8 @@
     </section>
     <section class="account">
       <div class="container account_nav">
-        <h1 class="profile_title">Manage My Account</h1>
+        <div class="account_title">
+        <h1 class="profile_title">Manage My Account</h1></div>
         <div class="account_selector">
           <a href="profile.php" class="account_link">My Profile</a>
           <a href="order.php" class="account_link">My Orders</a>
