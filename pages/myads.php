@@ -64,5 +64,8 @@
         </div>
       </section>
     </section>
+    <section class="add_new_ad">
+      <button class="add_new">Add new ad</button>
+    </section>
     <?php drawFooter(); ?>
   </body>

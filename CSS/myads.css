@@ -160,3 +160,28 @@
   #logout:hover{
     color: rgb(214, 2, 2);
   }
+  .add_new{
+    max-width: 114rem;
+    align-self: flex-end;
+    margin-bottom: 10rem;
+    width: 20%;
+    background-color: #006BAF;
+    font-family: "Inter";
+    padding: 15px 40px;
+    font-size: 15px;
+    font-weight:600;
+    letter-spacing: 2px;
+    background-color: #006BAF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    }
+    .add_new_ad{
+      width: 100%;
+      max-width: 114rem;
+      align-self: center;
+      display: flex;
+      align-items: end;
+      justify-content: flex-end;
+    }

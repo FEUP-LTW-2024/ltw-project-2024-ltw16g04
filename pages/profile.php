@@ -37,9 +37,9 @@
   <section class="profile_header">
     <div class= "profile_header_container">
       <p>Home / My Account</p>
-      <p>Welcome! <?php echo 
+      <p>Welcome, <?php echo 
       $session->getName();  
-      ?></p>
+      ?>!</p>
     </div>    
   </section>
   <section class="account">
