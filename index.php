@@ -1,3 +1,3 @@
 <?php
-  die(header('Location: pages/chat.html'));
+  die(header('Location: pages/menu.php'));
 ?>
