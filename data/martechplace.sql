@@ -90,12 +90,12 @@ DROP TABLE IF EXISTS MESSAGES;
 
 CREATE TABLE MESSAGES (
     id INT PRIMARY KEY NOT NULL,
-    sender_id INT NOT NULL,
-    receiver_id INT NOT NULL,
-    message TEXT NOT NULL,
+    from_user INT NOT NULL,
+    to_user INT NOT NULL,
+    message VARCHAR(100) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (sender_id) REFERENCES USERS(id),
-    FOREIGN KEY (receiver_id) REFERENCES USERS(id)
+    FOREIGN KEY (from_user) REFERENCES USERS(id),
+    FOREIGN KEY (to_user) REFERENCES USERS(id)
 );
 
 
