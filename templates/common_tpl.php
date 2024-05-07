@@ -10,7 +10,7 @@ function drawAccountNav(){
           <a href="order.php" class="account_link">My Orders</a>
           <a href="wishlist.php" class="account_link">My Wishlist</a>
           <a href="myads.php" class="account_link">My Ads</a>
-          <a href="login.php" class="account_link" id="logout">Log Out</a>
+          <a href="../actions/logout.php" class="account_link" id="logout">Log Out</a>
         </div>
       </div>
     <?php
