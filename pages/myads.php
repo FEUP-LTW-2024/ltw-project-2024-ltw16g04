@@ -2,9 +2,8 @@
   declare(strict_types = 1);
 
   require_once(__DIR__ .'/../data/connection.php');
-  require_once(__DIR__ .'/../actions/top_bar.php');
-  require_once(__DIR__ .'/../actions/footer.php');
-  require_once(__DIR__ .'/../actions/ads_action.php');
+  require_once(__DIR__ .'/../templates/common_tpl.php');
+  require_once(__DIR__ .'/../templates/ads_tpl.php');
 
 
   $session = new Session(); ?>

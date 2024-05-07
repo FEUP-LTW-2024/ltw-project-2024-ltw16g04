@@ -2,9 +2,8 @@
   declare(strict_types = 1);
 
   require_once(__DIR__ .'/../data/connection.php');
-  require_once(__DIR__ .'/../actions/top_bar.php');
-  require_once(__DIR__ .'/../actions/footer.php');
-  require_once(__DIR__ .'/../actions/orders_action.php');
+  require_once(__DIR__ .'/../templates/common_tpl.php');
+  require_once(__DIR__ .'/../templates/orders_tpl.php');
 
   $session = new Session(); ?>
 
@@ -39,18 +38,9 @@
       </div>  
     </section>
     <section class="account">
-      <div class="container account_nav">
-      <div class="account_title">
-        <h1 class="profile_title">Manage My Account</h1></div>
-        <div class="account_selector">
-          <a href="profile.php" class="account_link">My Profile</a>
-          <a href="order.php" class="account_link">My Orders</a>
-          <a href="wishlist.php" class="account_link">My Wishlist</a>
-          <a href="myads.php" class="account_link">My Ads</a>
-          <a href="login.php" class="account_link" id="logout">Log Out</a>
-        </div>
-      </div>
+      
       <?php
+      drawAccountNav();
       drawOrders();
       ?>
     </section>

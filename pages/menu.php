@@ -2,10 +2,9 @@
   declare(strict_types = 1);
 
   require_once(__DIR__ .'/../data/connection.php');
-  require_once(__DIR__ .'/../actions/top_bar.php');
-  require_once(__DIR__ .'/../actions/footer.php');
+  require_once(__DIR__ .'/../templates/common_tpl.php');
   require_once(__DIR__ .'/../utils/session.php');
-  require_once(__DIR__ .'/../actions/browse_actions.php');
+  require_once(__DIR__ .'/../templates/browse_tpl.php');
  
 
 

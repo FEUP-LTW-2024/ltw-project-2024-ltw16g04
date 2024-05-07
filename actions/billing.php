@@ -5,6 +5,7 @@
     require_once(__DIR__ .'/../data/connection.php');
     include_once(__DIR__ . '/../data/user.php');
     require_once(__DIR__ .'/../actions/favorites.php');
+    require_once(__DIR__ .'/../data/item.php');
 
     $session = new Session();
 
@@ -44,11 +45,8 @@
         //insert into orders
 
         $item_id = $session->getCheckoutItem();
-        $query = 'SELECT * FROM Items WHERE id = ?';
-        $stmt = $db->prepare($query);
-        $stmt->execute(array($item_id));
-        $item = $stmt->fetch();
-        $seller_id = $item['seller_id'];
+        
+        $seller_id = Item::getSeller($item_id, $db);
         
         //create order id
         $countOrders = 'SELECT COUNT(*) as count FROM Orders';

@@ -5,9 +5,10 @@ require_once(__DIR__ .'/../data/connection.php');
 
 $session = new Session();
 
-require_once(__DIR__ . '/../actions/top_bar.php');
-require_once(__DIR__ . '/../actions/checkout_action.php');
-require_once(__DIR__ . '/../actions/footer.php');
+require_once(__DIR__ . '/../templates/common_tpl.php');
+require_once(__DIR__ . '/../templates/checkout_tpl.php');
+
+require_once(__DIR__ . '/../data/item.php');
 
 ?>
 <!DOCTYPE html>

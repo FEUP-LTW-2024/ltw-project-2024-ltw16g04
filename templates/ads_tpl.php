@@ -4,15 +4,14 @@ require_once(__DIR__ .'/../utils/session.php');
 require_once(__DIR__ .'/../data/connection.php');
 
 
-
 function drawMyAds(){
+    require_once(__DIR__ .'/../data/item.php');
+    require_once(__DIR__ .'/../templates/common_tpl.php');
+
     $session = new Session();
     $seller_id = $session->getId();
     $db = getDatabaseConnection();
-    $query = 'SELECT * FROM Items WHERE seller_id = ?';
-    $stmt = $db->prepare($query);
-    $stmt->execute(array($seller_id));
-    $ads = $stmt->fetchAll();
+    $ads = Item::findMyItems($seller_id, $db);
 
 ?>
     <section class="ad_header">
@@ -24,17 +23,9 @@ function drawMyAds(){
       </div>  
     </section>
     <section class="account">
-      <div class="container account_nav">
-        <div class="account_title">
-        <h1 class="profile_title">Manage My Account</h1></div>
-        <div class="account_selector">
-          <a href="profile.php" class="account_link">My Profile</a>
-          <a href="order.php" class="account_link">My Orders</a>
-          <a href="wishlist.php" class="account_link">My Wishlist</a>
-          <a href="myads.php" class="account_link">My Ads</a>
-          <a href="login.php" class="account_link" id="logout">Log Out</a>
-        </div>
-      </div>
+      <?php
+      drawAccountNav();
+      ?>
       <section class="ads">
       <?php if(!$ads){
             echo '<p>No ads yet.</p>';

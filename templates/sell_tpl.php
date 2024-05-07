@@ -53,7 +53,7 @@ function drawSell(){
                   </div>
                   <div class="upload-image">
                     <label for="image">Product Image</label>
-                    <input type="file" name="image" id="image" accept="image/*" required>
+                    <input type="file" name="image" id="image" multiple accept="image/*" required>
                     <p>Upload an image of the product (accepted formats: JPG, PNG, GIF).</p>
                   </div>
                   <div class="description">

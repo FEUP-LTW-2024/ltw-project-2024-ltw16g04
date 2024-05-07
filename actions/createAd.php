@@ -4,6 +4,7 @@ require_once(__DIR__ . '/../conf.php');
 require_once(__DIR__ .'/../utils/session.php');
 require_once(__DIR__ .'/../data/connection.php');
 require_once(__DIR__ .'/../data/user.php');
+require_once(__DIR__ .'/../data/item.php');
 
 $session = new Session();
 
@@ -51,10 +52,8 @@ if(isset($_POST['create_ad'])){
     
     $seller_id = $session->getId();
 
-    $query = 'INSERT INTO Items (id, name, description, price, old_price, category, condition, location, main_image, seller_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
-
-    $stmt = $db->prepare($query);
-    $stmt->execute(array($item_id, $name, $description, $price, $old_price, $category, $condition, $location, $main_image, $seller_id));
+    Item::addItem($item_id, $name, $description, $price, $category, $condition, $location, $main_image, $seller_id, $db);
+    
     header('Location: ../pages/myads.php');
     exit();
 }
