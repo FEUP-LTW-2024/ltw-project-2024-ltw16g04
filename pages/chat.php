@@ -46,7 +46,9 @@
       <div class="chat_form">
         <div class="profile">
         <img src="../images/user.png" alt="" class="profile-pic">
-        <p>Username</p></div>
+        <p><?php echo 
+      $session->getName();  
+      ?></p></div>
         <ul class="user-chats">
           <li><div class="profile-chat">
             <img src="../images/user.png" alt="" class="profile-chat-pic">
@@ -72,7 +74,7 @@
             <button type="submit">Send</button>
           </form>
         </div>
-        <script src="scripts.js"></script>
+        <script src="../js/script.js"></script>
       </div>
       </div>
 
