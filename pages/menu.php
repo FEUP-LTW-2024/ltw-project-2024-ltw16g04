@@ -72,10 +72,6 @@
     <img src="../images/icons/headphone.png" alt="" class="category_icon" />
     <p class="category_name">Headphones</p>
   </a>
-  <a href="browse.php?category=Phones" class="category">
-    <img src="../images/icons/phone.png" alt="" class="category_icon" />
-    <p class="category_name">Phones</p>
-  </a>
   <a href="browse.php?category=Watches" class="category">
     <img src="../images/icons/watch.png" alt="" class="category_icon" />
     <p class="category_name">Watches</p>

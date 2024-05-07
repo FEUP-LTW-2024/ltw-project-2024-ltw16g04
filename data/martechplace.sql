@@ -23,7 +23,7 @@ category TEXT NOT NULL,
 condition TEXT NOT NULL,
 location TEXT NOT NULL,
 main_image TEXT NOT NULL,
-published_time TEXT NOT NULL,
+published_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 seller_id INT NOT NULL,
 FOREIGN KEY (seller_id) REFERENCES USERS(id)
 );

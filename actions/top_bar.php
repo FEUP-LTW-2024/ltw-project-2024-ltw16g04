@@ -18,7 +18,7 @@ function drawHeader(){
     <a href="menu.php" class="nav_logo">MarTech</a></div>
     <ul class="nav_list">
       <li class="nav_item"><a href="../pages/menu.php" class="nav_link">Home</a></li>
-      <li class="nav_item"><a href="../pages/sell.html" class="nav_link">Sell</a></li>
+      <li class="nav_item"><a href="../pages/sell.php" class="nav_link">Sell</a></li>
       <li class="nav_item"><a href="../pages/browse.php" class="nav_link">Products</a></li>
       <li class="nav_item">
         <a href="../pages/profile.php" class="nav_link">Account</a>
