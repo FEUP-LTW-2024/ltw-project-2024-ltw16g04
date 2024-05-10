@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
       xhr.send(params); 
     }
   
+
     function updateChat() {
       
       var xhr = new XMLHttpRequest();
