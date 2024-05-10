@@ -31,7 +31,6 @@ function drawMyAds(){
             echo '<p>No ads yet.</p>';
         ?>
         </section>
-        </section>
         <?php
         }
         else {
@@ -60,6 +59,7 @@ function drawMyAds(){
           </div>
         </div>
       </section>
+   
       <?php
             }
         ?>

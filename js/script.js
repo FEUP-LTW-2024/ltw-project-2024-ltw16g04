@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
     function sendMessage(message) {
       var xhr = new XMLHttpRequest();
-      xhr.open('POST', '../pages/send_message.php', true);
+      xhr.open('POST', '../actions/send_message.php', true);
       xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
       xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) {
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
     function updateChat() {
       var xhr = new XMLHttpRequest();
-      xhr.open('GET', '../pages/get_messages.php', true);
+      xhr.open('GET', '../actions/get_messages.php', true);
       xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
           
