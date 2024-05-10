@@ -14,13 +14,13 @@ $query = "SELECT users.name, messages.message, messages.created_at
         LIMIT 50";
 
 $user_id = $session->getId();
-$stmt = $conn->prepare($query); // Preparar a query
-$stmt->execute(array($user_id));// Executar a query
+$stmt = $conn->prepare($query); 
+$stmt->execute(array($user_id));
 
 $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 if (count($messages) > 0) {
-  // Reverter para ordem cronológica
+ 
   $messages = array_reverse($messages);
 
   foreach ($messages as $message) {

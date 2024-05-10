@@ -91,7 +91,7 @@ DROP TABLE IF EXISTS MESSAGES;
 CREATE TABLE MESSAGES (
     id INT PRIMARY KEY NOT NULL,
     from_user INT NOT NULL,
-    to_user INT NOT NULL,
+    to_user INT,
     message VARCHAR(100) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (from_user) REFERENCES USERS(id),
@@ -170,3 +170,16 @@ INSERT INTO COMMENTS (id, item_id, user_id, rating, comment, created_at) VALUES
     (1, 1, 2, 5, 'Great product, fast delivery!', '2022-01-01 12:00:00'),
     (2, 1, 3, 4, 'Good quality, but took a while to arrive', '2022-01-02 12:00:00'),
     (3, 1, 4, 3, 'Not as described, disappointed', '2022-01-03 12:00:00');
+
+-- Inserir algumas mensagens na tabela MESSAGES
+INSERT INTO MESSAGES (id, from_user, to_user, message, created_at) VALUES
+    (1, 1, 2, 'Oi Jane, você viu meu anúncio do iPhone?', '2022-03-10 10:00:00'),
+    (2, 2, 1, 'Oi John, sim, vi sim. Está em bom estado?', '2022-03-10 10:10:00'),
+    (3, 1, 2, 'Sim, está em ótimo estado, apenas um pouco usado.', '2022-03-10 10:15:00'),
+    (4, 3, 1, 'E aí, John, quanto pelo controle do jogo?', '2022-03-11 09:30:00'),
+    (5, 1, 3, 'Oi Michael, o preço está listado no anúncio, mas posso fazer um desconto.', '2022-03-11 09:35:00'),
+    (6, 4, 1, 'Olá John, você ainda tem a câmera Canon 1200D para venda?', '2022-03-12 11:45:00'),
+    (7, 1, 4, 'Oi Emily, sim, eu ainda tenho a câmera para venda.', '2022-03-12 11:50:00'),
+    (8, 5, 10, 'Oi Amanda, você está vendendo algo novo?', '2022-03-13 14:00:00'),
+    (9, 10, 5, 'Oi David, sim, tenho alguns itens novos chegando esta semana.', '2022-03-13 14:05:00'),
+    (10, 7, 9, 'Ei Ryan, você viu o novo item que estou vendendo?', '2022-03-14 08:00:00');

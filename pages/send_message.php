@@ -1,43 +1,43 @@
 <?php
-require_once(__DIR__ . '/../data/connection.php'); // Função para obter conexão com o banco de dados
-require_once(__DIR__ . '/../utils/session.php'); // Para verificar sessão
+require_once(__DIR__ . '/../data/connection.php');
+require_once(__DIR__ . '/../utils/session.php'); 
 
 $session = new Session();
+$conn = getDatabaseConnection();
 
-// Verifica se o usuário está logado
 if (!$session->isLoggedIn()) {
-  http_response_code(403); // Acesso proibido
+  http_response_code(403);
   echo "Você precisa estar logado para enviar mensagens.";
   exit();
 }
 
-// Obtemos o ID do usuário logado
-$user_id = $session->getUserId(); 
-$message = trim($_POST['message']); // Mensagem enviada pelo cliente
-$timestamp = time(); // Tempo atual em segundos desde a época Unix
 
-// Se a mensagem estiver vazia, não fazemos nada
+$user_id = $session->getId();
+$message = trim($_POST['message']);
+$timestamp = date('Y-m-d H:i:s');
+
+$countMessages = 'SELECT COUNT(*) as count FROM Messages';
+$stmt = $conn->prepare($countMessages);
+$stmt->execute();
+$num = $stmt->fetch();
+$id = $num['count'] + 1;
+echo $id;
+
 if (empty($message)) {
-  http_response_code(400); // Pedido ruim
+  http_response_code(400);
   echo "A mensagem não pode estar vazia.";
   exit();
 }
 
-$conn = getConnection(); // Obter a conexão com o banco de dados
+$query = "INSERT INTO messages (id,from_user, message, created_at) VALUES (?, ?, ?, ?)";
+$stmt = $conn->prepare($query);
 
-$sql = "INSERT INTO messages (user_id, message, timestamp) VALUES (?, ?, ?)";
-$stmt = $conn->prepare($sql); // Prepara a query SQL
-$stmt->bind_param("iss", $user_id, $message, $timestamp); // Vincula os parâmetros
-
-// Executa a query e verifica se foi bem-sucedida
-if ($stmt->execute()) {
-  http_response_code(200); // OK
+if ($stmt->execute(array($id,$user_id, $message, $timestamp))) {
+  http_response_code(200);
   echo "Mensagem enviada com sucesso.";
 } else {
-  http_response_code(500); // Erro interno do servidor
+  http_response_code(500);
   echo "Erro ao enviar a mensagem.";
 }
 
-$stmt->close(); // Fechar o statement
-$conn->close(); // Fechar a conexão
 ?>

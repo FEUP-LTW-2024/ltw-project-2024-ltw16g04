@@ -19,9 +19,15 @@ document.addEventListener('DOMContentLoaded', function() {
       xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
           updateChat();
+        } else{
+          showAlert('Erro ao enviar a mensagem.');
         }
       }
-      xhr.send('message=' + message);
+      xhr.onerror = function() {
+        showAlert('Erro de rede ao tentar enviar a mensagem.');
+      };
+
+      xhr.send('message=' + encodeURIComponent(message)); 
     }
   
     function updateChat() {
