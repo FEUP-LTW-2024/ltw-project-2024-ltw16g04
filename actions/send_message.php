@@ -5,6 +5,8 @@ require_once(__DIR__ . '/../utils/session.php');
 $session = new Session();
 $conn = getDatabaseConnection();
 
+
+
 if (!$session->isLoggedIn()) {
   http_response_code(403);
   echo "Você precisa estar logado para enviar mensagens.";
@@ -13,6 +15,7 @@ if (!$session->isLoggedIn()) {
 
 
 $user_id = $session->getId();
+$chatting = $_POST['user_id'];
 $message = trim($_POST['message']);
 $timestamp = date('Y-m-d H:i:s');
 
@@ -28,10 +31,10 @@ if (empty($message)) {
   exit();
 }
 
-$query = "INSERT INTO messages (id,from_user, message, created_at) VALUES (?, ?, ?, ?)";
+$query = "INSERT INTO messages (id,from_user, to_user, message, created_at) VALUES (?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($query);
 
-if ($stmt->execute(array($id,$user_id, $message, $timestamp))) {
+if ($stmt->execute(array($id,$user_id, $chatting, $message, $timestamp))) {
   http_response_code(200);
   echo json_encode(["success" => true, "message" => "Mensagem enviada com sucesso."]);
 } else {

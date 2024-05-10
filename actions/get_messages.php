@@ -9,13 +9,14 @@ $session = new Session();
 $query = "SELECT users.name, messages.message, messages.created_at, messages.from_user, messages.to_user 
         FROM messages 
         JOIN users ON users.id = messages.from_user
-        WHERE messages.from_user = ? OR messages.to_user = ?
+        WHERE (messages.from_user = ? AND messages.to_user = ?) or (messages.from_user = ? AND messages.to_user = ?)
         ORDER BY messages.created_at DESC 
         LIMIT 50";
 
 $user_id = $session->getId();
+$chatting = $_GET['user_id'];
 $stmt = $conn->prepare($query); 
-$stmt->execute(array($user_id, $user_id));
+$stmt->execute(array($user_id, $chatting, $chatting, $user_id));
 
 $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

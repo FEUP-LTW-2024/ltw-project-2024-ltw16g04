@@ -62,7 +62,7 @@
         <div class="profile">
         <img src="../images/user.png" alt="" class="profile-pic">
         <p><?php echo 
-      $session->getName();  
+      $session->getName();
       ?></p></div>
         <ul class="user-chats" id="chat-container">
         <?php foreach ($chats as $chat): ?>

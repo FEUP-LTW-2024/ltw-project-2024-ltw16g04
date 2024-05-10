@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showAlert("Nenhum chat ativo.");
         return;
       }
-
+      var params = 'user_id=' + encodeURIComponent(activeChatUserId) + '&message=' + encodeURIComponent(message);
       var xhr = new XMLHttpRequest();
       xhr.open('POST', '../actions/send_message.php', true);
       xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -64,12 +64,13 @@ document.addEventListener('DOMContentLoaded', function() {
         showAlert('Erro de rede ao tentar enviar a mensagem.');
       };
 
-      xhr.send('message=' + encodeURIComponent(message)); 
+      xhr.send(params); 
     }
   
     function updateChat() {
+      
       var xhr = new XMLHttpRequest();
-      xhr.open('GET', '../actions/get_messages.php', true);
+      xhr.open('GET', `../actions/get_messages.php?user_id=${encodeURIComponent(activeChatUserId)}`, true);
       xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
           
