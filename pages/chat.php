@@ -6,6 +6,7 @@
 
 
   $session = new Session;
+  $conn = getDatabaseConnection();
 
   if(!$session->isLoggedIn()) {
     $session->addMessage('error', 'Please log in to access this page.');
@@ -13,6 +14,20 @@
     exit();
   }
 
+  $user_id = $session->getId();
+
+  $query = "SELECT users.id, users.name
+          FROM users
+          WHERE users.id IN (
+              SELECT DISTINCT from_user FROM messages WHERE to_user = ? 
+              UNION
+              SELECT DISTINCT to_user FROM messages WHERE from_user = ?
+          ) AND users.id != ?";
+          
+  $stmt = $conn->prepare($query); 
+  $stmt->execute(array($user_id, $user_id, $user_id));
+
+  $chats = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -49,16 +64,15 @@
         <p><?php echo 
       $session->getName();  
       ?></p></div>
-        <ul class="user-chats">
-          <li><div class="profile-chat">
+        <ul class="user-chats" id="chat-container">
+        <?php foreach ($chats as $chat): ?>
+          <li data-user-id="<?php echo htmlspecialchars($chat['id']); ?>"><div class="profile-chat">
             <img src="../images/user.png" alt="" class="profile-chat-pic">
-            <p>Username</p></div></li>
-            <li><div class="profile-chat">
-              <img src="../images/user.png" alt="" class="profile-chat-pic">
-              <p>Username</p></div></li>
+            <p><?php echo htmlspecialchars($chat['name']); ?></p></div></li>
+            <?php endforeach; ?>
         </ul>
       </div>
-      <div class="messages">  
+      <div class="messages">
         <div class="profile">
           <img src="../images/user.png" alt="" class="profile-pic">
           <div class="username-status">

@@ -2,17 +2,37 @@ document.addEventListener('DOMContentLoaded', function() {
     var form = document.getElementById('message-form');
     var messageInput = document.getElementById('message-input');
     var chatBox = document.getElementById('chat-box');
-  
+    var userChats = document.getElementById('chat-container');
+
+    var activeChatUserId = null;
+
+    userChats.addEventListener('click', function(event) {
+      console.log('Clique detectado em:', event.target);
+      var chatItem = event.target.closest('li[data-user-id]');
+      if (chatItem) {
+        activeChatUserId = chatItem.getAttribute('data-user-id');
+        updateChat();
+      }
+    });
+
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       var message = messageInput.value.trim();
-      if (message !== '') {
+      if (message !== '' && activeChatUserId) {
         sendMessage(message);
         messageInput.value = '';
+      }
+      else if (!activeChatUserId) {
+        showAlert("Por favor, selecione um chat.");
       }
     });
   
     function sendMessage(message) {
+      if (!activeChatUserId) {
+        showAlert("Nenhum chat ativo.");
+        return;
+      }
+
       var xhr = new XMLHttpRequest();
       xhr.open('POST', '../actions/send_message.php', true);
       xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
