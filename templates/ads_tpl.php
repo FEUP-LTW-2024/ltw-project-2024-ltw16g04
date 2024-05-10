@@ -30,7 +30,7 @@ function drawMyAds(){
       <?php if(!$ads){
             echo '<p>No ads yet.</p>';
         ?>
-        </section>
+        
         <?php
         }
         else {
@@ -42,6 +42,7 @@ function drawMyAds(){
                 $edit_button_id = 'edit_btn_' . $ad['id'];
                 
         ?>
+        
         <div class="card">
           <div class="card_top">
           <img src="<?php echo $img;?>" alt="" class="card_img" />
@@ -63,7 +64,7 @@ function drawMyAds(){
       <?php
             }
         ?>
-    </section>
+   
     <section class="add_new_ad">
       <button class="add_new">Add new ad</button>
       <script type="text/javascript">
@@ -71,6 +72,7 @@ function drawMyAds(){
           location.href = "sell.php";
         };
       </script>
+    </section>
     </section>
 <?php 
         }
