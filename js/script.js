@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
       xhr.open('GET', '../pages/get_messages.php', true);
       xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
+          
           chatBox.innerHTML = xhr.responseText;
           chatBox.scrollTop = chatBox.scrollHeight;
         }

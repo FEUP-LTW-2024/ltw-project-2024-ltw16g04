@@ -6,7 +6,7 @@ $conn = getDatabaseConnection();
 
 $session = new Session();
 
-$query = "SELECT users.name, messages.message, messages.created_at 
+$query = "SELECT users.name, messages.message, messages.created_at, messages.from_user, messages.to_user 
         FROM messages 
         JOIN users ON users.id = messages.from_user
         WHERE messages.from_user = ? OR messages.to_user = ?
@@ -15,7 +15,7 @@ $query = "SELECT users.name, messages.message, messages.created_at
 
 $user_id = $session->getId();
 $stmt = $conn->prepare($query); 
-$stmt->execute(array($user_id));
+$stmt->execute(array($user_id, $user_id));
 
 $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -24,9 +24,18 @@ if (count($messages) > 0) {
   $messages = array_reverse($messages);
 
   foreach ($messages as $message) {
-    echo "<div class='message'>";
-    echo htmlspecialchars($message['message']);
-    echo "</div>";
+    $receiver = $message['to_user'];
+    $sender = $message['from_user'];
+    if($sender == $user_id) {
+      echo "<div class='user-message'>";
+      echo htmlspecialchars($message['message']);
+      echo "</div>";
+    }
+    else{
+      echo "<div class='other-message'>";
+      echo htmlspecialchars($message['message']);
+      echo "</div>";
+    }
   }
 } else {
   echo "Nenhuma mensagem encontrada."; 

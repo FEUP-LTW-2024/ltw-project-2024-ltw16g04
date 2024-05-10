@@ -67,7 +67,7 @@
   border: 1px solid ;
   transition: all 0.3s ease;
   cursor: pointer;
- 
+  color: #006BAF;
 }
 .category:hover {
   color: #fff;

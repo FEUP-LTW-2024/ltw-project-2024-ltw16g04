@@ -201,6 +201,22 @@
     border-radius: 1rem;
    
   }
+  .user-message {
+    background-color: #006BAF; /* Light green background */
+    color: #ffffff; /* Black text */
+    padding: 8px;
+    margin: 4px 4px 4px 400px;
+    border-radius: 10px;
+    align-self: flex-end; /* Align messages to the right */
+  }
+  .other-message {
+    background-color: #757575; /* White background */
+    color: #ffffff; /* Black text */
+    padding: 8px;
+    margin: 4px 400px 4px 4px;
+    border-radius: 10px;
+    align-self: flex-start; /* Align messages to the left */
+  }
   #status{
     font-size: 1.5rem;
     font-weight: 500;
