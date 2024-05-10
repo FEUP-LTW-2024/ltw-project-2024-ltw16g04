@@ -76,7 +76,7 @@
         <div class="profile">
           <img src="../images/user.png" alt="" class="profile-pic">
           <div class="username-status">
-          <p>Username</p>
+          <p id="chatting-with">Username</p>
           <p id="status">Active Now</p>
         </div>
         </div>

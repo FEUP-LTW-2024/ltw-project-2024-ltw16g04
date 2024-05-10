@@ -3,14 +3,18 @@ document.addEventListener('DOMContentLoaded', function() {
     var messageInput = document.getElementById('message-input');
     var chatBox = document.getElementById('chat-box');
     var userChats = document.getElementById('chat-container');
+    var profileName = document.getElementById('chatting-with');
 
     var activeChatUserId = null;
+    var activeChatUserName = null;
 
     userChats.addEventListener('click', function(event) {
       console.log('Clique detectado em:', event.target);
       var chatItem = event.target.closest('li[data-user-id]');
       if (chatItem) {
         activeChatUserId = chatItem.getAttribute('data-user-id');
+        activeChatUserName = chatItem.querySelector('p').textContent;
+        updateProfile(activeChatUserName);
         updateChat();
       }
     });
@@ -81,7 +85,9 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       xhr.send();
     }
-  
+    function updateProfile(username) {
+      profileName.textContent = username;
+  }
     // Update chat initially
     updateChat();
   });
