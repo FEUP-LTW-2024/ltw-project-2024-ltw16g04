@@ -21,7 +21,6 @@ $stmt = $conn->prepare($countMessages);
 $stmt->execute();
 $num = $stmt->fetch();
 $id = $num['count'] + 1;
-echo $id;
 
 if (empty($message)) {
   http_response_code(400);
@@ -34,10 +33,10 @@ $stmt = $conn->prepare($query);
 
 if ($stmt->execute(array($id,$user_id, $message, $timestamp))) {
   http_response_code(200);
-  echo "Mensagem enviada com sucesso.";
+  echo json_encode(["success" => true, "message" => "Mensagem enviada com sucesso."]);
 } else {
   http_response_code(500);
-  echo "Erro ao enviar a mensagem.";
+  echo json_encode(["error" => "Erro ao enviar a mensagem."]);
 }
 
 ?>

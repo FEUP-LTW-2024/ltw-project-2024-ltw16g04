@@ -14,13 +14,30 @@ document.addEventListener('DOMContentLoaded', function() {
   
     function sendMessage(message) {
       var xhr = new XMLHttpRequest();
-      xhr.open('POST', 'send_message.php', true);
+      xhr.open('POST', '../pages/send_message.php', true);
       xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
       xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-          updateChat();
-        } else{
-          showAlert('Erro ao enviar a mensagem.');
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            console.log("Resposta do servidor:", xhr.responseText); // Para depuração
+            var response;
+      
+            try {
+              response = JSON.parse(xhr.responseText); // Tentar fazer o parse da resposta
+            } catch (e) {
+              console.error("Erro ao fazer o parse da resposta:", e);
+              showAlert("Erro ao interpretar a resposta do servidor."); // Mensagem de alerta para o usuário
+              return;
+            }
+      
+            if (response.success) {
+              updateChat(); // Atualizar o chat se o envio foi bem-sucedido
+            } else {
+              showAlert(response.error); // Mostrar erro se houver
+            }
+          } else {
+            showAlert('Erro ao enviar a mensagem. Status: ' + xhr.status);
+          }
         }
       }
       xhr.onerror = function() {
@@ -32,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
     function updateChat() {
       var xhr = new XMLHttpRequest();
-      xhr.open('GET', 'get_messages.php', true);
+      xhr.open('GET', '../pages/get_messages.php', true);
       xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
           chatBox.innerHTML = xhr.responseText;
