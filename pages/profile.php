@@ -51,17 +51,21 @@
             <div class="name">
               <div class="input_wrapper_name" id="input_fname">
                 <label for="first-name">First Name</label>
-                <input type="text" name="fname" id="fname" placeholder="Your First Name" required>
+                <input type="text" name="fname" id="fname" placeholder="Your First Name" value= <?php echo 
+      $session->getName();  
+      ?> required>
               </div>
               <div class="input_wrapper_name" id="input_lname">
                 <label for="last-name">Last Name</label>
-                <input type="text" name="f=lname" id="lname" placeholder="Your Last Name" required>
+                <input type="text" name="f=lname" id="lname" placeholder="Your Last Name"required>
               </div>
             </div>
             <div class="email">
               <div class="input_wrapper_email" id="input_email">
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Your e-mail" required>
+                <input type="email" name="email" id="email" placeholder="Your e-mail" value=<?php echo 
+      $session->getEmail();  
+      ?> required>
               </div>
               <div class="input_wrapper_email" class="phone">
                 <label for="phone">Phone Number</label>
@@ -93,3 +97,4 @@
   
         <?php drawFooter(); ?>
     </body>
+  

@@ -4,8 +4,7 @@
   require_once(__DIR__ . '/../utils/session.php');
 
   require_once(__DIR__ .'/../data/connection.php');
-  require_once(__DIR__ .'/../actions/top_bar.php');
-  require_once(__DIR__ .'/../actions/footer.php');
+
   
   function drawOrders() {
     $session = new Session();

@@ -17,6 +17,7 @@
         $session->setName($user->name);
         $session->setEmail($user->email);
         $session->setPwd($user->password);
+        
         //fazer algo para aparecer isso
         $session->addMessage('success', 'Login efetuado com sucesso.');
         

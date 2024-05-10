@@ -62,7 +62,7 @@ function drawSell(){
                   </div>
                   <div class="price">
                     <label for="price">Price to be sold</label>
-                    <input type="text" name="price" id="address" placeholder="Ex: John Doe">
+                    <input type="text" name="price" id="address" placeholder="Ex: 20">
                 </div>
                   <p>Details of the seller</p>
                   <div class="name">

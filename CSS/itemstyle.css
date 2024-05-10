@@ -409,7 +409,11 @@ body {
     .rating-group:hover .rating__label .rating__icon--star {
       color: orange;
     }
-  
+
+    .rating__input:checked ~ .rating__label:hover,
+.rating__input:checked + .rating__label:hover ~ .rating__label {
+    color: orange;
+}
     /* make hovered input's following siblings grey on hover */
     .rating__input:hover ~ .rating__label .rating__icon--star {
       color: #ddd;
