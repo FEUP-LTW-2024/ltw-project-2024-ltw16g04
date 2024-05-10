@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
       xhr.send('message=' + encodeURIComponent(message)); 
     }
   
-0
+
     function updateChat() {
       var xhr = new XMLHttpRequest();
       xhr.open('GET', '../actions/get_messages.php', true);
