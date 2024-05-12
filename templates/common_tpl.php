@@ -67,7 +67,7 @@ function drawFooter(){
           
           <ul class="nav__ul">
             <li>
-              <a href="#">Privacy Policy</a>
+              <a href="../pages/privacypolice.php">Privacy Policy</a>
             </li>
             
             <li>
