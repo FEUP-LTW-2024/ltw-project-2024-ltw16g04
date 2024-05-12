@@ -1,5 +1,5 @@
 <?php
-function drawSell(){
+function drawEditAd(){
  
 
   require_once(__DIR__ .'/../data/connection.php');
