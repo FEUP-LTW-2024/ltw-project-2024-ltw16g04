@@ -66,9 +66,11 @@
           </tr>
         </table>
         </a>
-      </section>
     <?php
         }  
+        ?>
+        </section>
+        <?php
     }
 }
 ?>

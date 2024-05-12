@@ -11,6 +11,7 @@ class Item {
     public string $location;
     public string $main_image;
     public int $seller_id;
+  
 
     public function __construct(int $id, string $name, string $description, float $price, string $category, string $condition, string $location, string $main_image, int $seller_id){
         $this->id = $id;
@@ -22,7 +23,7 @@ class Item {
         $this->location = $location;
         $this->main_image = $main_image;
         $this->seller_id = $seller_id;
-        $this->old_price = null;
+        $this->old_price = 0.0;
     }
 
     static function findItem($id, $db): ?Item {
@@ -30,18 +31,20 @@ class Item {
         $stmt = $db->prepare($query);
         $stmt->execute(array($id));
         $item = $stmt->fetch();
+        
         if($item){
+            $seller_id = (int) $item['seller_id']; // Cast to integer
+            $item_id = (int) $item['id']; // Cast to integer
             return new Item(
-                $item['id'],
+                $item_id,
                 $item['name'],
                 $item['description'],
                 $item['price'],
-                $item['old_price'],
                 $item['category'],
                 $item['condition'],
                 $item['location'],
                 $item['main_image'],
-                $item['seller_id'],
+                $seller_id,
             );
         } else {
             return NULL;
@@ -70,7 +73,7 @@ class Item {
         $stmt->execute(array($id));
     }
 
-    static function findMyItems($seller_id, $db){
+    static function findMyItems($seller_id, $db) {
         $query = 'SELECT * FROM Items WHERE seller_id = ?';
         $stmt = $db->prepare($query);
         $stmt->execute(array($seller_id));
@@ -78,11 +81,11 @@ class Item {
         return $items;
     }
 
-    static function getSeller($id, $db){
+    static function getSeller($id, $db) : int{
         $query = 'SELECT seller_id FROM Items WHERE id = ?';
         $stmt = $db->prepare($query);
         $stmt->execute(array($id));
-        $seller_id = $stmt->fetch();
+        $seller_id = $stmt->fetchColumn();
         return $seller_id;
     }
         

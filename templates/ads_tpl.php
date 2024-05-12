@@ -26,6 +26,7 @@ function drawMyAds(){
       <?php
       drawAccountNav();
       ?>
+      
       <section class="ads">
       <?php if(!$ads){
             echo '<p>No ads yet.</p>';
@@ -59,11 +60,15 @@ function drawMyAds(){
             <p class="card_price">€<?php echo $price;?></p>
           </div>
         </div>
-      </section>
+      
    
       <?php
             }
+          }
         ?>
+        </section>
+    </section>
+  
    
     <section class="add_new_ad">
       <button class="add_new">Add new ad</button>
@@ -73,8 +78,10 @@ function drawMyAds(){
         };
       </script>
     </section>
-    </section>
+
+
+
 <?php 
-        }
+        
 }?>
 
