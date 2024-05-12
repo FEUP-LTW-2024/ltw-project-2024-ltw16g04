@@ -71,11 +71,11 @@ function drawFooter(){
             </li>
             
             <li>
-              <a href="#">Terms Of Use</a>
+              <a href="../pages/termsofuse.php">Terms Of Use</a>
             </li>
             
             <li>
-              <a href="#">FAQ</a>
+              <a href="../pages/faq.php">FAQ</a>
             </li>
             
           </ul>
