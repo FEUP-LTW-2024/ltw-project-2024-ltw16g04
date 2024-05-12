@@ -74,7 +74,7 @@
                             <p>Published: <?php echo $published_time; ?></p>
                         </div>
                         <div class="buttons">
-                            <a href="" class="getcontact">GET CONTACT</a>  
+                            <a href="" class="getcontact">REPORT AD</a>  
                             <a href="" class="cart">SEND MESSAGE</a>  
                         </div>
                         <div class="buttons">
