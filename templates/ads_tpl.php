@@ -50,7 +50,7 @@ function drawMyAds(){
             <button class="add_btn" id="<?php echo $edit_button_id;?>">Edit</button>
             <script type="text/javascript">
               document.getElementById("<?php echo $edit_button_id;?>").onclick = function () {
-              location.href = "edit.php?id=<?php echo $id;?>";
+              location.href = "editad.php?id=<?php echo $id;?>";
                 //todo page edit.php
             };
             </script>
