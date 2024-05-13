@@ -7,14 +7,30 @@
 
   $session = new Session;
   $conn = getDatabaseConnection();
+  $user_id = $session->getId();
+  
+  $seller_id = $_GET['seller_id'];
+  $timestamp = date('Y-m-d H:i:s');
 
+  $countMessages = 'SELECT COUNT(*) as count FROM Messages';
+  $stmt = $conn->prepare($countMessages);
+  $stmt->execute();
+  $num = $stmt->fetch();
+  $id = $num['count'] + 1;
+
+
+
+  if($seller_id){
+    $query = "INSERT INTO messages (id,from_user, to_user, message, created_at) VALUES (?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($query);
+    $stmt->execute(array($id,$user_id, $seller_id, "Olá, quero saber mais sobre o produto.", $timestamp));
+  }
+  
   if(!$session->isLoggedIn()) {
     $session->addMessage('error', 'Please log in to access this page.');
     header('Location: login.php');
     exit();
   }
-
-  $user_id = $session->getId();
 
   $query = "SELECT users.id, users.name
           FROM users

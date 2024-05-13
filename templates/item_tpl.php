@@ -75,7 +75,7 @@
                         </div>
                         <div class="buttons">
                             <a href="" class="getcontact">REPORT AD</a>  
-                            <a href="" class="cart">SEND MESSAGE</a>  
+                            <a href="../pages/chat.php?seller_id=<?php echo $seller_id; ?>" class="cart">SEND MESSAGE</a>  
                         </div>
                         <div class="buttons">
                             <a href="../actions/fav_btn.php" class="fav"><img src="../images/heart.png" alt=""> ADD TO FAVORITES</a>  
