@@ -6,20 +6,23 @@ include_once(__DIR__ .'/../data/connection.php');
 
 $session = new Session();
 
+    
 
-    $input = $_POST['input'];
+    $input = $_POST["input"];
     $db = getDatabaseConnection();
-    $query = 'SELECT * FROM Item WHERE name LIKE ?';
+    $query = 'SELECT * FROM Items WHERE name LIKE ?';
     $stmt = $db->prepare($query);
     $stmt->execute(array('%'.$input.'%'));    
     $items = $stmt->fetchAll();
 
     if(!$items){
         $session->addMessage('error', 'Nenhum item encontrado.');
-        header('Location: ../pages/index.php');
+        header('Location: ../pages/browse.php');
         exit();
     } else {
         
-        //fazer página que simula browse com resultados correntes
+        $session->setSearchItem($items);
+        header('Location: ../pages/browse.php?search=1');
+        exit();
     }
 ?>

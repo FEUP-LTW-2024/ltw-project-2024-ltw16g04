@@ -1,6 +1,6 @@
 <?php
 
-function drawBrowse($price = null, $category = null, $condition = null) {
+function drawBrowse($price = null, $category = null, $condition = null, $search = null) {
     require_once(__DIR__ . '/../utils/session.php');
     require_once(__DIR__ . '/../data/connection.php');
     require_once(__DIR__ . '/../data/user.php');
@@ -12,7 +12,8 @@ function drawBrowse($price = null, $category = null, $condition = null) {
     $filters = [
         'price' => $price,
         'category' => $category,
-        'condition' => $condition
+        'condition' => $condition,
+        'search' => $search
     ];
 
     // Fetch items based on filters
@@ -69,11 +70,12 @@ function drawBrowse($price = null, $category = null, $condition = null) {
 }
 
 // Check if filters are provided via query parameters and call the drawBrowse function accordingly
-if (isset($_GET['price']) || isset($_GET['category']) || isset($_GET['condition'])) {
+if (isset($_GET['price']) || isset($_GET['category']) || isset($_GET['condition']) || isset($_GET['search'])) {
     $price = $_GET['price'] ?? null;
     $category = $_GET['category'] ?? null;
     $condition = $_GET['condition'] ?? null;
-    drawBrowse($price, $category, $condition);
+    $search = $_GET['search'] ?? null;
+    drawBrowse($price, $category, $condition, $search);
 } else {
     // If no filters provided, call drawBrowse with null parameters
     drawBrowse();

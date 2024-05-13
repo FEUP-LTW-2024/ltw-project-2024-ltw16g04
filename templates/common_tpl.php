@@ -115,11 +115,12 @@ function drawHeader(){
           </li>
         </ul>
         <div class="nav_items">
-          <form action="#" class="nav_form">
+          <form action="../actions/search_action.php" class="nav_form" method="post">
             <input
               type="text"
               class="nav_input"
               id="search"
+              name="input"
               placeholder="What are you looking for?" />
             <img src="../images/search.png" alt="" class="nav_search" />
     
@@ -142,29 +143,7 @@ function drawHeader(){
       </div>
     </nav>
     
-    <div id="searchResults"></div>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){
-        $('#search').keyup(function(){
-          var input = $(this).val();
-          if(input.length > 0){
-            $.ajax({
-              url: '../actions/search_action.php',
-              method: 'POST',
-              data: {input:input},
-              success: function(data){
-                $('#searchResults').html(data);
-              }
-          });
-          }else{
-            $('#searchResults').css("display", "none");
-          }
-        });
-      });
-    
-    </script>
     <?php 
     }
     ?>

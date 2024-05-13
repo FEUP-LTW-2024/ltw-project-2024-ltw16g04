@@ -10,6 +10,7 @@
       $this->messages = isset($_SESSION['messages']) ? $_SESSION['messages'] : array();
       $this->item_id = isset($_SESSION['item_id']) ? $_SESSION['item_id'] : null;
       $this->checkoutItem = isset($_SESSION['checkoutItem']) ? $_SESSION['checkoutItem'] : null;
+      $this->searchItem = isset($_SESSION['searchItem']) ? $_SESSION['searchItem'] : array();
       unset($_SESSION['messages']);
     }
 
@@ -19,6 +20,14 @@
 
     public function logout() {
       session_destroy();
+    }
+
+    public function getSearchItem() : array {
+      return isset($_SESSION['searchItem']) ? $_SESSION['searchItem'] : array();
+    }
+
+    public function setSearchItem(array $searchItem) {
+      $_SESSION['searchItem'] = $searchItem;
     }
 
     public function getId() : ?int {

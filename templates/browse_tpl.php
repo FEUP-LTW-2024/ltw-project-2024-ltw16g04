@@ -6,7 +6,14 @@ require_once('../data/user.php');
 
 
 function getItems($filters) {
+
+    $session = new Session();
     
+    if(!empty($filters['search'])){
+        $items = $session->getSearchItem();
+        return $items;
+    }
+
     $db = getDatabaseConnection();
    // Base query
    $query = 'SELECT * FROM Items WHERE 1';
