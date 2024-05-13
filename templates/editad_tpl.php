@@ -5,6 +5,7 @@ function drawEditAd(){
   require_once(__DIR__ .'/../data/connection.php');
   require_once(__DIR__ .'/../templates/common_tpl.php');
   require_once(__DIR__ .'/../utils/session.php');
+  require_once(__DIR__ .'/../data/item.php');
 
   $session = new Session();
   if(!$session->isLoggedIn()) {header('Location: ../pages/login.php');
@@ -27,17 +28,20 @@ function drawEditAd(){
     
       <div class="billing_form">
         <p>Details about the product</p>
+        <?php 
+        $item = Item::findItem($_GET['id'], getDatabaseConnection());
+        ?>
             <form action="../actions/editAd.php" method="post" enctype="multipart/form-data">
                   <div class="title">
                     <div class="input-wrapper" id="input_title">
                       <label for="title">Title</label>
-                      <input type="text" name="name" id="title_product" placeholder="Ex: Airpods Gen 2" required>
+                      <input type="text" name="name" id="title_product" value="<?php echo $item->name;?>" required>
                     </div>
                   </div>
                   <div class="category">
                     <label for="category">Category</label>
                     <select name="category" id="category" required>
-                      <option value="" disabled selected>Select a category</option>
+                      <option value="<?php echo $item->category;?>" disabled selected><?php echo $item->category;?></option>
                       <option value="Audio, Photo & Video">Audio, Photo & Video (Not camera)</option>
                       <option value="Cameras">Cameras</option>
                       <option value="Components">Components</option>
@@ -55,7 +59,7 @@ function drawEditAd(){
                   <div class="category">
                     <label for="condition">Condition</label>
                     <select name="condition" id="category" required>
-                      <option value="" disabled selected>Select a condition</option>
+                      <option value="<?php echo $item->condition;?>" disabled selected><?php echo $item->condition;?></option>
                       <option value="New">New</option>
                       <option value="Like new">Like new</option>
                       <option value="Fair">Fair</option>
@@ -65,23 +69,23 @@ function drawEditAd(){
                   </div>
                   <div class="upload-image">
                     <label for="image">Product Image</label>
-                    <input type="file" name="image" id="image" multiple accept="image/*" required>
+                    <input type="file" name="image" id="image" multiple accept="image/*" value="<?php echo $item->main_image;?>" required>
                     <p>Upload an image of the product (accepted formats: JPG, PNG, GIF).</p>
                   </div>
                   <div class="description">
                       <label for="product_description">Description</label>
-                      <textarea id="description" name="description" rows="4" cols="50" placeholder="Enter your description here..."></textarea>
+                      <textarea id="description" name="description" rows="4" cols="50" placeholder="<?php echo $item->description;?>" value="<?php echo $item->description;?>"></textarea>
                   </div>
                   <div class="price">
                     <label for="price">Price to be sold</label>
-                    <input type="text" name="price" id="address" placeholder="Ex: 20">
+                    <input type="text" name="price" id="address" placeholder="<?php echo $item->price;?>" value="<?php echo $item->price;?>">
                 </div>
                   <p>Details of the seller</p>
                   <div class="name">
                     <label for="name">Name of the seller</label>
-                    <input type="text" name="seller" id="address" placeholder="Ex: John Doe" value=<?php echo 
+                    <input type="text" name="seller" id="address" placeholder="Ex: John Doe" value="<?php echo 
       $session->getName();  
-      ?>>
+      ?>">
                 </div>
                 <div class="address">
                     <label for="address">Location (City or postal code)</label>

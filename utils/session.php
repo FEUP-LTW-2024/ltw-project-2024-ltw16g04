@@ -77,6 +77,7 @@
     public function setName(string $name) {
       $_SESSION['name'] = $name;
     }
+    
 
     public function setEmail(string $email) {
       $_SESSION['email'] = $email;
