@@ -127,11 +127,11 @@ function drawFilter(){
                 <label>Condition:</label>
                 <select name="condition">
                     <option value="">Select</option>
-                    <option value="new">New</option>
-                    <option value="like_new">Like New</option>
-                    <option value="used">Used</option>
-                    <option value="fair">Fair</option>
-                    <option value="damaged">Damaged</option>
+                    <option value="New">New</option>
+                    <option value="Like new">Like New</option>
+                    <option value="Used">Used</option>
+                    <option value="Fair">Fair</option>
+                    <option value="Damaged">Damaged</option>
                 </select>
             </div>
             <div class="header_filter" >
