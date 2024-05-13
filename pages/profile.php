@@ -2,6 +2,7 @@
   declare(strict_types = 1);
 
   require_once(__DIR__ .'/../data/connection.php');
+  require_once(__DIR__ .'/../data/user.php');
   require_once(__DIR__ .'/../templates/common_tpl.php');
   require_once(__DIR__ .'/../utils/session.php');
 
@@ -42,7 +43,11 @@
     </div>    
   </section>
   <section class="account">
-    <?php drawAccountNav();?>  
+    <?php drawAccountNav();
+    
+    $user = User::getUser($session->getId(), getDatabaseConnection());
+    $phone = $user->phone;
+    ?>  
 
 
     <section class= "edit_profile">
@@ -75,7 +80,9 @@
             </div>
             <div id="input_address">
                 <label for="address">Address</label>
-                <input type="text" name="address" id="address" placeholder="Your address" required>
+                <input type="text" name="address" id="address" placeholder="Your address" value=<?php echo 
+      $phone;  
+      ?> required>
               </div>
             <div class="password_change">
               <label for="cur-password">Password Changes</label>

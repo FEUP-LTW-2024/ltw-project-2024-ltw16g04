@@ -2,6 +2,7 @@
     require_once(__DIR__ . '/../conf.php');
     require_once(__DIR__ .'/../utils/session.php');
     require_once(__DIR__ .'/../data/connection.php');
+    require_once(__DIR__ .'/../data/user.php');
     
     $session = new Session();
     $session->setItemId($_GET['id']);
@@ -29,6 +30,10 @@
             $main_image = $item['main_image'];
             $seller_id = $item['seller_id'];
             $published_time = $item['published_time'];
+
+            $user = User::getUser($seller_id, $db);
+            $phone = $user->phone;
+            
 
             $query = 'SELECT * FROM Users WHERE id = ?';
             $stmt = $db->prepare($query);
@@ -72,6 +77,7 @@
                             <p>Sold by: <?php echo $seller_name; ?></p>
                             <p>Location: <?php echo $location; ?></p>
                             <p>Published: <?php echo $published_time; ?></p>
+                            <p>Contact seller: <?php echo $phone; ?></p>
                         </div>
                         <div class="buttons">
                             <a href="" class="getcontact">REPORT AD</a>  

@@ -19,7 +19,7 @@ if(!$session->isLoggedIn()) {
 
 $user_id = $session->getId();
 
-addFavorite();
+
 
 
 ?>
@@ -30,7 +30,7 @@ addFavorite();
     <div class="container payment_container">
     
       <div class="payment_form">
-            <form action="../actions/billing.php" method="post">
+            <form action="../actions/payment_action.php" method="post">
             <label for="cards">Accepted Cards</label>
             <div class="payment-method">
                             <input type="radio" name="payment-method" id="method-1" checked>

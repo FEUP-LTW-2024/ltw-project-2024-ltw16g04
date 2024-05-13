@@ -240,6 +240,10 @@ body {
   .info-title p{
     font-weight: bold;
   }
+  .info-title{
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
 
   .cart{
     display: inline-block;
