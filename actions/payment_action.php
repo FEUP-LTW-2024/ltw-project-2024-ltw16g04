@@ -9,6 +9,13 @@
 
     $session = new Session();
 
+    if ($_SESSION['csrf'] !== $_POST['csrf']) {
+
+        $session->addMessage('hacker','Tentativa de csrf');
+        header('Location: ../pages/login.php');
+        exit();
+    }
+
     
     if(isset($_POST['place_order'])){
         $db = getDatabaseConnection();

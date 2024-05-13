@@ -6,6 +6,8 @@ include_once(__DIR__ .'/../data/connection.php');
 
 $session = new Session();
 
+
+
     
 
     $input = $_POST["input"];

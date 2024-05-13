@@ -65,6 +65,7 @@ addFavorite();
                   <button id="place_order" name="place_order">Place order</button>
                   <button id="go_back" name="go_back">Go back</button>
                 </div>
+                <input type="hidden" name="csrf" value="<?php echo $_SESSION['csrf'];?>">
               </form>
       </div>
       <div class="cart">

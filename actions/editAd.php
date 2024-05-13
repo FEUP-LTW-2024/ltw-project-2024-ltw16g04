@@ -8,6 +8,13 @@ require_once(__DIR__ .'/../data/item.php');
 
 $session = new Session();
 
+if ($_SESSION['csrf'] !== $_POST['csrf']) {
+
+    $session->addMessage('hacker','Tentativa de csrf');
+    header('Location: ../pages/login.php');
+    exit();
+}
+
 if(isset($_POST['create_ad'])){
     $db = getDatabaseConnection();
     $item_id = $_POST['ad_id'];

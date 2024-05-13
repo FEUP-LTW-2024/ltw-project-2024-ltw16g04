@@ -98,10 +98,12 @@ function drawEditAd(){
       ?>>
                 </div>
                 <input type="hidden" name="ad_id" value=<?php echo $_GET['id']; ?>>
+                <input type="hidden" name="csrf" value="<?php echo $_SESSION['csrf'];?>">
                 <div class="buttons">
                   <button id="place_order" name="create_ad">Save changes</button>
                   <button id="go_back" name="go_back">Go back</button>
                 </div>
+
               </form>
       </div>
       </div>

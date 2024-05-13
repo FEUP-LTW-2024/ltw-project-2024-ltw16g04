@@ -5,6 +5,14 @@
     require_once(__DIR__ .'/../data/connection.php');
     include_once(__DIR__ . '/../data/user.php');
     $session = new Session();
+
+    if ($_SESSION['csrf'] !== $_POST['csrf']) {
+
+        $session->addMessage('hacker','Tentativa de csrf');
+        header('Location: ../pages/login.php');
+        exit();
+    }
+    
     $db = getDatabaseConnection();
     if(isset($_POST['save_changes'])){ 
     $email = $_SESSION['email'];

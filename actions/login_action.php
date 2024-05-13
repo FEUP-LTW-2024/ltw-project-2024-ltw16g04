@@ -5,9 +5,16 @@
     require_once(__DIR__ .'/../data/connection.php');
     include_once(__DIR__ . '/../data/user.php');
 
+    if (session_status() == PHP_SESSION_NONE){
+        session_set_cookie_params(0, '/', $_SERVER['HTTP_HOST'], true, true);
+        session_start();
+        if (!isset($_SESSION['csrf'])){
+            $_SESSION['csrf'] = bin2hex(openssl_random_pseudo_bytes(32));
+        }
+    }
     
     $session = new Session();
-    
+
     
     $db = getDatabaseConnection();
     $user = User::checkUserWithPassword($_POST['email'], $_POST['password'],$db);
@@ -16,7 +23,6 @@
         $session->setId($user->id_user);
         $session->setName($user->name);
         $session->setEmail($user->email);
-        $session->setPwd($user->password);
         
         //fazer algo para aparecer isso
         $session->addMessage('success', 'Login efetuado com sucesso.');

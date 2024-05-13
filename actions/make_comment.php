@@ -9,6 +9,13 @@
 
     
     $session = new Session();
+
+    if ($_SESSION['csrf'] !== $_POST['csrf']) {
+
+        $session->addMessage('hacker','Tentativa de csrf');
+        header('Location: ../pages/login.php');
+        exit();
+    }
     
 
     $db = getDatabaseConnection();
@@ -16,7 +23,7 @@
 
     $user_id = $session->getId();
     $user = User::getUser($user_id,$db);
-    $comment = $_POST['comment'];
+    $comment = preg_replace("/[^a-zA-Z\s]/", '', $_POST['comment']);
     //ver depois
     $created_at = date('Y-m-d H:i:s');
     $rating = $_POST['rating'];

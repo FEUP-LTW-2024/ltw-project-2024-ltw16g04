@@ -217,7 +217,7 @@ function drawAddComment($item_id) {
             </div>
           <textarea name="comment" id="" cols="30" rows="10" placeholder="Type your comment"></textarea>
           <input type="hidden" name="id" value="<?php echo htmlspecialchars($_GET['id']); ?>">
-           
+          <input type="hidden" name="csrf" value="<?php echo $_SESSION['csrf'];?>">
           <button id="submit">Submit Comment</button>
 
         </form>

@@ -63,6 +63,7 @@ $user_id = $session->getId();
                       <input type="text" name="CV" id="CV" placeholder="Ex: 123">
                     </div>
                   </div>
+                  <input type="hidden" name="csrf" value="<?php echo $_SESSION['csrf'];?>">
                 <div class="name">
                   <button id="place_order" name="place_order">Pay now</button>
                   <button id="go_back" name="go_back">Go back</button>
