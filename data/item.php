@@ -59,7 +59,7 @@ class Item {
 
     static function editItem($id, $name, $description, $price, $category, $condition, $location, $main_image, $seller_id, $db){
         //get old item price
-        $item = findItem($id, $db);
+        $item = Item::findItem($id, $db);
         $old_price = $item->price;
         $query = 'UPDATE Items SET name = ?, description = ?, price = ?, old_price = ?, category = ?, condition = ?, location = ?, main_image = ?, seller_id = ? WHERE id = ?';
         $stmt = $db->prepare($query);

@@ -27,7 +27,7 @@ function drawEditAd(){
     
       <div class="billing_form">
         <p>Details about the product</p>
-            <form action="../actions/createAd.php" method="post" enctype="multipart/form-data">
+            <form action="../actions/editAd.php" method="post" enctype="multipart/form-data">
                   <div class="title">
                     <div class="input-wrapper" id="input_title">
                       <label for="title">Title</label>
@@ -93,8 +93,9 @@ function drawEditAd(){
       $session->getEmail();  
       ?>>
                 </div>
+                <input type="hidden" name="ad_id" value=<?php echo $_GET['id']; ?>>
                 <div class="buttons">
-                  <button id="place_order" name="create_ad">Add ad</button>
+                  <button id="place_order" name="create_ad">Save changes</button>
                   <button id="go_back" name="go_back">Go back</button>
                 </div>
               </form>
