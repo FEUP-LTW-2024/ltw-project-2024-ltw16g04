@@ -1,0 +1,53 @@
+body {
+    font-family: "Inter";
+    margin: 0;
+    padding: 20px;
+}
+p{
+    font-size: 1.2rem;
+
+}
+.shipping-label {
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    margin-right: 10px;
+}
+
+.company-name {
+    font-size: 1.8rem;
+  font-weight: 800;
+  font-style: italic;
+  color: #006BAF;
+}
+
+.address p {
+    margin: 5px 0;
+}
+
+.barcode {
+    text-align: center;
+    margin-top: 20px;
+}
+.item {
+    margin-bottom: 20px;
+}
+
+.item h2 {
+    margin-top: 0;
+}
+
+.item p {
+    margin: 5px 0;
+}
+
