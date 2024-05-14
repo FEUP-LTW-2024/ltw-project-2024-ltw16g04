@@ -10,8 +10,11 @@ $session = new Session();
   if(!$session->isLoggedIn()) {header('Location: ../pages/login.php');
   exit();}
 
+  $user = User::getUser($session->getId(), getDatabaseConnection());
+  $name = $user->name;
 
 
+  
 ?>
 
 <!DOCTYPE html>
@@ -67,7 +70,7 @@ $session = new Session();
             <h3>Item Information</h2>
             <p>Item Name: Product XYZ</p>
             <p>Weight: 1.5 lbs</p>
-            <p>From: John Doe</p>
+            <p>From: <?php echo $name; ?></p>
         </div>
         <div class="barcode">
             <!-- Barcode image or text goes here -->

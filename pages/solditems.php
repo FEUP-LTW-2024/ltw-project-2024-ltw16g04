@@ -41,7 +41,7 @@
       
       <?php
       drawAccountNav();
-      drawOrders();
+      drawSoldItems();
       ?>
     </section>
     <?php drawFooter(); ?>
