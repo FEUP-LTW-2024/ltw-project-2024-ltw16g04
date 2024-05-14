@@ -6,23 +6,23 @@
   require_once(__DIR__ .'/../data/connection.php');
 
   
-  function drawOrders() {
+  function drawSoldItems() {
     $session = new Session();
-    $db = getDatabaseConnection(); 
-    $user_id = $session->getId(); 
+    $db = getDatabaseConnection(); // Conexão com o banco de dados
+    $user_id = $session->getId(); // Obtém o ID do usuário da sessão
 
-    
+    // Consulta para obter todos os pedidos para o usuário
     $query = 'SELECT * FROM Orders WHERE buyer_id = ?';
     $stmt = $db->prepare($query);
     $stmt->execute(array($user_id));
-    $orders = $stmt->fetchAll(); 
+    $orders = $stmt->fetchAll(); // Obter todos os pedidos do banco de dados
 
     
 
     ?>
     <section class="orders">
     <?php if(!$orders){
-            echo '<p>No orders yet</p>';
+            echo '<p>You have not sold any items yet</p>';
             ?>
             </section>
             <?php

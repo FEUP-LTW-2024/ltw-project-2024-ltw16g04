@@ -74,15 +74,13 @@
               </div>
               <div class="input_wrapper_email" class="phone">
                 <label for="phone">Phone Number</label>
-                <input type="tel" name="phone" id="phone" placeholder="e.g: +351 000-000-000" required>
+                <input type="tel" name="phone" id="phone" placeholder="e.g: +351 000-000-000" value=<?php echo $phone;  ?> required>
             </div>
               
             </div>
             <div id="input_address">
                 <label for="address">Address</label>
-                <input type="text" name="address" id="address" placeholder="Your address" value=<?php echo 
-      $phone;  
-      ?> required>
+                <input type="text" name="address" id="address" placeholder="Your address" required>
               </div>
             <div class="password_change">
               <label for="cur-password">Password Changes</label>

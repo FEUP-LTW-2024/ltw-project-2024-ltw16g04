@@ -104,11 +104,8 @@
     padding: 10px; 
     text-align: left; 
 }
-
-
 .order_table tr:hover {
-    background-color: #f9f9f9; 
-}
+    background-color: #f9f9f9; }
 .order_link{
   text-decoration: none;
   color:inherit;
