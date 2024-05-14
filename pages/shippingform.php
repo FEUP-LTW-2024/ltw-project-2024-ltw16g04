@@ -10,8 +10,45 @@ $session = new Session();
   if(!$session->isLoggedIn()) {header('Location: ../pages/login.php');
   exit();}
 
+  $db = getDatabaseConnection();
   $user = User::getUser($session->getId(), getDatabaseConnection());
   $name = $user->name;
+  $user_id = $session->getId(); 
+
+  $query = 'SELECT * FROM Orders WHERE seller_id = ?';
+  $stmt = $db->prepare($query);
+  $stmt->execute(array($user_id));
+  $orders = $stmt->fetchAll(); 
+  
+    
+        foreach ($orders as $order){
+          $item_id = $order['item_id'];
+          $query = 'SELECT * FROM Items WHERE id = ?';
+          $stmt = $db->prepare($query);
+          $stmt->execute(array($item_id));
+          $item = $stmt->fetch();
+          $item_name = $item['name'];
+          $price = $order['amount'];
+          $created_at = $order['created_at'];
+          $seller_id = $order['seller_id'];
+          $buyer_id = $order['buyer_id'];
+          $query = 'SELECT * FROM Users WHERE id = ?';
+          $stmt = $db->prepare($query);
+          $stmt->execute(array($buyer_id));
+
+          $buyer = $stmt->fetch();
+          $buyer_name = $buyer['name'];
+
+          $query = 'SELECT * FROM Billing WHERE user_id = ?';
+          $stmt = $db->prepare($query);
+          $stmt->execute(array($buyer_id));
+
+            $billing = $stmt->fetch();
+            $first_name = $billing['first_name'];
+            $street = $billing['street'];
+            $apartment = $billing['apartment'];
+            $city = $billing['city'];
+        }
 
 
   
@@ -52,7 +89,7 @@ $session = new Session();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shipping Label</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../CSS/shippingform.css">
 </head>
 <body>
     <div class="shipping-label">
@@ -61,16 +98,16 @@ $session = new Session();
             <span class="company-name">MarTech</span>
         </div>
         <div class="address">
-            <p>John Doe</p>
-            <p>123 Main Street</p>
-            <p>City, State, ZIP Code</p>
-            <p>Country</p>
+            <p><?php echo $buyer_name; ?></p>
+            <p><?php echo $street;?>, AP: <?php echo $apartment; ?></p>
+            <p><?php echo $city; ?></p>
         </div>
         <div class="item">
             <h3>Item Information</h2>
-            <p>Item Name: Product XYZ</p>
+            <p>Price: €<?php echo $price; ?> </p>
             <p>Weight: 1.5 lbs</p>
             <p>From: <?php echo $name; ?></p>
+            <p>Shipped: <?php echo $created_at; ?></p>
         </div>
         <div class="barcode">
             <!-- Barcode image or text goes here -->
