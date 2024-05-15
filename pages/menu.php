@@ -91,7 +91,7 @@
     <div class="products">
       <?php 
         $items = getItems([]);
-        drawItems($items);
+        drawItems($items, true);
         ?>
     </div>
       <div class="container_btn">
