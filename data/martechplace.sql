@@ -8,6 +8,7 @@ name TEXT NOT NULL,
 address TEXT,
 phone TEXT NOT NULL UNIQUE,
 email TEXT NOT NULL UNIQUE,
+admin BOOLEAN DEFAULT FALSE,
 password TEXT NOT NULL
 );
 
@@ -154,6 +155,9 @@ INSERT INTO USERS (id, name, address ,phone, email, password) VALUES
     (8, 'Jessica Anderson', 'Fenix Map 24','2223334444', 'jessica@example.com', '$2y$10$14dgc3k1Te4IsVgJujVOtO8Yb1Eawh1Cni3QojWqMHUHa6sn3i9MK'),
     (9, 'Ryan Thomas', 'LandSlide 32','8887776666', 'ryan@example.com', '$2y$10$bXv84kLcw9wvC8hSM8fSmeX2tdTy4bvJwWz45jrTQ3SpqTR5gSNpS'),
     (10, 'Amanda Garcia', 'Palm Beach 13','6665554444', 'amanda@example.com', '$2y$10$lu/oz3gyAOVbnUr4HhpZ8..Oy7hkqbs9VnH6zbQe2kJtdhsNECbbe');
+
+INSERT INTO USERS(id,name,address,phone,email,admin,password) VALUES 
+    (11,'Admin','Admin Street 1','313092028','admin@martech.com',TRUE,'$2y$10$KR14h9O7bPg.JSItFtXLNupwJa4YErbVKE2mmeSKhyMAntCL0U33m');
 
 
 INSERT INTO ITEMS (id, name, description, price, old_price, category, condition, location, main_image, published_time, seller_id) VALUES
