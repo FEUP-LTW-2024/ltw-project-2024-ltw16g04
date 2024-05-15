@@ -48,7 +48,6 @@
 
 
     ?>
-        <a href="item.php?id=<?php echo $item_id;?>"; class="order_link">
         <table class="order_table">
           <tr>
               <th>ID</th>

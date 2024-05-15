@@ -30,6 +30,8 @@ FOREIGN KEY (seller_id) REFERENCES USERS(id)
 
 
 
+
+
 DROP TABLE IF EXISTS THUMBNAILS;
 
 CREATE TABLE THUMBNAILS(
@@ -140,6 +142,7 @@ CREATE TABLE BILLING_ITEMS (
 );
 
 -- Inserir 10 usuários aleatórios na tabela USERS com IDs especificados
+
 INSERT INTO USERS (id, name, address ,phone, email, password) VALUES
     (1, 'John Doe', 'Willow Street 24' ,'1234567890', 'john@example.com', '$2y$10$.TIqTQYZiEBbIJFIQKukqebIUkf6M3aX1AHJlm84nxtD4OqLIn.uu'),
     (2, 'Jane Smith', 'Campus Neight 13' ,'9876543210', 'jane@example.com', '$2y$10$Zb55hLKEeAVM6W0sb0az0OzeyJHoQRzI8dWp/7YZH2q6T53wTk7Hu'),
@@ -153,18 +156,17 @@ INSERT INTO USERS (id, name, address ,phone, email, password) VALUES
     (10, 'Amanda Garcia', 'Palm Beach 13','6665554444', 'amanda@example.com', '$2y$10$lu/oz3gyAOVbnUr4HhpZ8..Oy7hkqbs9VnH6zbQe2kJtdhsNECbbe');
 
 
-INSERT INTO ITEMS (id, name, description, price, old_price, category, condition, location, main_image,published_time, seller_id) VALUES
-    (1, 'Iphone 13 Pro Max', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-    25.00, 45.00, 'Smartphones', 'Fair', 'Rua de Antonio Enes, Porto', '../images/items/iphonemain.jpeg','10:34',1),
-    (2, 'HAVIT HV-G92 Gamepad', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna', 12.90, 15.40, 'Peripheral Devices', 'Like new', 'Rua da Maia, 134', '../images/items/gameController.png', '15 minutes',2),
-    (3, 'HAVIT HV-G92 Gamepad', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna', 4.30, 15.40, 'Peripheral Devices', 'Used', 'Rua de Pedro Cabral Santos, 134', '../images/items/gameController.png', '3 months',3),
-    (4, 'Canon 1200D 18-55 + 16GB', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna', 12.90, 15.40, 'Audio, Photo & Video', 'New', 'Rua da Maia, 134', '../images/items/camera.png', '2 weeks',4);
-    (5, 'Airpods 2 Gen', 'Used two times, like new.', 40.90, , 'Headphones', 'Like new', 'Rua da Souza, 124', '../images/items/airpodgen2.jpg', '3 weeks',5);
-    (6, 'Nikon Camera', 'With some scratches but works just fine, comes with one lens', 80.00, , 'Cameras', 'Fair', 'Rua da Rosa, 100', '../images/items/cameranikon.png', '1 month',6);
-    (7, 'Macbook Pro 2019', 'Used for 2 years, in good condition, comes with charger', 1000.00, 1200.00, 'Computers', 'Fair', 'Rua da Maia, 134', '../images/items/macbookpro.png', '1 year',7);
-    (8, 'Samsung Galaxy S21', 'Brand new, never used, comes with charger and box', 500.00, , 'Smartphones', 'New', 'Rua da Maia, 134', '../images/items/samsungs21.png', '1 month',8);
-    (9, 'WH-CH520 wireless', 'Used for 6 months, in good condition, comes with charger', 50.00, 70.00, 'Peripheral Devices', 'Fair', 'Rua da Maia, 134', '../images/items/sonyheadphones.png', '6 months',9);
-    (10, 'Xbox Series X', 'Brand new, never used, comes with controller and box', 600.00, , 'Consoles', 'New', 'Rua da Maia, 134', '../images/items/xboxseriesx.jpg', '1 month',10);
+INSERT INTO ITEMS (id, name, description, price, old_price, category, condition, location, main_image, published_time, seller_id) VALUES
+    (1, 'Iphone 13 Pro Max', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat', 25.00, 45.00, 'Smartphones', 'Fair', 'Rua de Antonio Enes, Porto', '../images/items/iphonemain.jpeg', '2024-05-15 10:34:00', 1),
+    (2, 'HAVIT HV-G92 Gamepad', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna', 12.90, 15.40, 'Peripheral Devices', 'Like new', 'Rua da Maia, 134', '../images/items/gameController.png', '2024-05-15 10:19:00', 2),
+    (3, 'HAVIT HV-G92 Gamepad', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna', 4.30, 15.40, 'Peripheral Devices', 'Used', 'Rua de Pedro Cabral Santos, 134', '../images/items/gameController.png', '2024-02-15 10:00:00', 3),
+    (4, 'Canon 1200D 18-55 + 16GB', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna', 12.90, 15.40, 'Audio, Photo & Video', 'New', 'Rua da Maia, 134', '../images/items/camera.png', '2024-04-30 10:00:00', 4),
+    (5, 'Airpods 2 Gen', 'Used two times, like new.', 40.90, NULL, 'Headphones', 'Like new', 'Rua da Souza, 124', '../images/items/airpodgen2.jpg', '2024-04-24 10:00:00', 5),
+    (6, 'Nikon Camera', 'With some scratches but works just fine, comes with one lens', 80.00, NULL, 'Cameras', 'Fair', 'Rua da Rosa, 100', '../images/items/cameranikon.png', '2024-04-15 10:00:00', 6),
+    (7, 'Macbook Pro 2019', 'Used for 2 years, in good condition, comes with charger', 1000.00, 1200.00, 'Computers', 'Fair', 'Rua da Maia, 134', '../images/items/macbookpro.png', '2023-05-15 10:00:00', 7),
+    (8, 'Samsung Galaxy S21', 'Brand new, never used, comes with charger and box', 500.00, NULL, 'Smartphones', 'New', 'Rua da Maia, 134', '../images/items/samsungs21.png', '2024-04-15 10:00:00', 8),
+    (9, 'WH-CH520 wireless', 'Used for 6 months, in good condition, comes with charger', 50.00, 70.00, 'Peripheral Devices', 'Fair', 'Rua da Maia, 134', '../images/items/sonyheadphones.png', '2023-11-15 10:00:00', 9),
+    (10, 'Xbox Series X', 'Brand new, never used, comes with controller and box', 600.00, NULL, 'Consoles', 'New', 'Rua da Maia, 134', '../images/items/xboxseriesx.jpg', '2024-04-15 10:00:00', 10);
 
 INSERT INTO THUMBNAILS(id, item_id, url) VALUES
     (1, 1, '../images/items/iphone1.jpeg'),
