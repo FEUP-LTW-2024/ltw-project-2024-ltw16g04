@@ -1,0 +1,166 @@
+#edit_category_body{
+    display: flex;
+    flex-direction: column;
+}
+  .category_header_container{
+    width: 100%;
+    align-self: center;
+    display: flex;
+    justify-content:space-between;
+    margin: 5rem 0rem;
+    align-items: center;
+    padding: 0rem 1rem;
+  }
+  .category_header_container p{
+    display: flex;
+    align-items: center;
+  }
+  .category_header{
+    width: 100%;
+    max-width: 114rem;
+    display: flex;
+    align-self: center;
+  }
+  .account{
+    width: 100%;
+    max-width: 114rem;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10rem;
+  }
+  
+  .account_nav{
+    width: 30%;
+    height: 100%;
+    align-self: flex-start;
+    border: #ccc 1px solid;
+  }
+  .account_title{
+    padding: 1rem;
+    background-color: #006BAF;
+    color: white;
+    font-size: 1.6rem;
+  }
+ 
+  .account_subtitle{
+    margin: 10px 0px;
+    padding-left: 0;
+    padding: 1rem;
+    background-color: #999;
+    color: white;
+    font-size: 1.6rem;
+  }
+  .account_selector {
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 10px 0;
+  padding-left: 0px;
+
+  }
+  .account_selector a {
+    font-size: 1.1em;
+    color: black;
+    transition: all 0.3s ease;
+  }
+  .account_link {
+    padding: 0.3em;
+    padding-left: 20px;
+    color: black;
+    transition: all 0.3s ease;
+  }
+  .account_link:hover{
+    color: #006BAF;
+  }
+  #logout{
+  color: red;
+}
+#logout:hover{
+  color: rgb(214, 2, 2);
+}
+ 
+  .edit_categories{
+    width: 50%;
+    border:solid 4px #ccc;
+    border-radius: 1rem;
+    padding: 20px;
+  }
+  .edit_categories input{
+    height: 30px;
+    width: 100%;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding: 0.6em 0.5rem;
+    background-color: #F5F5F5;
+    border-radius: 6px;
+    border: 2px solid #ccc;
+  }
+
+  .profile_sub{
+    margin-bottom: 2rem;
+  }
+
+
+input{
+  padding: 100px;
+}
+
+#add_btn{
+    width: 40%;
+    background-color: #006BAF;
+    font-size: 1.5rem;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 1.5em 2.5rem;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+#delete_btn{
+  width: 40%;
+  background-color:#e91b00 ;
+  font-size: 1.5rem;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 1.5em 2.5rem;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 30px;
+ 
+}
+
+.finish_add_category{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-bottom: #ccc 3px solid;
+  margin-bottom: 20px;
+}
+.finish_delete_category{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+select{
+  display: flex;
+    width: 70%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+#add_category{
+  padding: 17px 10px;
+}
