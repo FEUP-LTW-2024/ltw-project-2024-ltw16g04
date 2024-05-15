@@ -117,3 +117,13 @@ ul {
 .nav_heart:hover{
   filter: drop-shadow(16px 16px 20px rgb(0, 4, 255)) invert(50%);
 }
+
+#search_btn{
+  border: none; /* Remove default border */
+  outline: none; /* Remove outline when button is focused */
+  background-color: #F5F5F5; /* Set background color */
+}
+
+#search_btn:hover{
+  background-color: transparent; 
+}
