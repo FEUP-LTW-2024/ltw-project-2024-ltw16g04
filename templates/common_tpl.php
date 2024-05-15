@@ -123,9 +123,12 @@ function drawHeader(){
               id="search"
               name="input"
               placeholder="What are you looking for?" />
-            <img src="../images/search.png" alt="" class="nav_search" />
-    
+              <button type="submit" class="nav_search" id="search_btn">
+                <img src="../images/search.png" alt="Search" />
+             </button>
           </form>
+
+        
     
           <img src="../images/heart.png" alt="" class="nav_heart"  id="favoriteIcon"/>
           <script type="text/javascript">
