@@ -9,7 +9,7 @@
   function drawOrders() {
     $session = new Session();
     $db = getDatabaseConnection(); 
-    $user_id = $session->getId(); 
+    $user_id = $session->getId();
 
     
     $query = 'SELECT * FROM Orders WHERE buyer_id = ?';
@@ -31,11 +31,7 @@
 
         foreach ($orders as $order){
           $item_id = $order['item_id'];
-          $query = 'SELECT * FROM Items WHERE id = ?';
-          $stmt = $db->prepare($query);
-          $stmt->execute(array($item_id));
-          $item = $stmt->fetch();
-          $item_name = $item['name'];
+          $item_name = $order['item_name'];
           $price = $order['amount'];
           $created_at = $order['created_at'];
           $seller_id = $order['seller_id'];

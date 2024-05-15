@@ -19,7 +19,8 @@
     
 
     ?>
-    <section class="orders">
+    <section class="orders">   margin-top: 1em;
+    margin-bottom: 1em;
     <?php if(!$orders){
             echo '<p>You have not sold any items yet</p>';
             ?>
@@ -30,11 +31,7 @@
 
         foreach ($orders as $order){
           $item_id = $order['item_id'];
-          $query = 'SELECT * FROM Items WHERE id = ?';
-          $stmt = $db->prepare($query);
-          $stmt->execute(array($item_id));
-          $item = $stmt->fetch();
-          $item_name = $item['name'];
+          $item_name = $order['item_name'];
           $price = $order['amount'];
           $created_at = $order['created_at'];
           $seller_id = $order['seller_id'];
@@ -46,7 +43,7 @@
           $buyer = $stmt->fetch();
           $buyer_name = $buyer['name'];
 
-
+#<?php echo $item_id;?><
     ?>
         <a href="../pages/shippingform.php" class="order_link">
         <table class="order_table">
@@ -55,12 +52,12 @@
               <th>Product</th>
               <th>Buyer</th>
               <th>Date</th>
-              <th>Value</th>
+              <th>Value </th>
           </tr>
           <tr>
               <td>#<?php echo $item_id;?></td>
               <td><?php echo $item_name;?></td>
-              <td><?php echo $buyer_name;?></td>
+              <td><?php echo $item_name;?></td>
               <td><?php echo $created_at;?></td>
               <td>€<?php echo $price;?></td>
           </tr>

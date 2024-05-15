@@ -80,7 +80,7 @@
     font-family: "Inter";
   }
   .user-chats{
-    margin: 0 10px;
+    margin: 0;
   }
 
   .user-chats p{
@@ -177,6 +177,11 @@
   
   .header_filter_link:hover{
     color: #006BAF;
+  }
+
+  .profile-chat:hover{
+    background-color: #dad6d6;
+    cursor: pointer;
   }
  #title_product{
     width:70%

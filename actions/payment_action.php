@@ -37,6 +37,7 @@
         
         $seller_id = Item::getSeller($item_id, $db);
         $item = Item::findItem($item_id, $db);
+    
         //create order id
         $countOrders = 'SELECT COUNT(*) as count FROM Orders';
         $stmt = $db->prepare($countOrders);
@@ -45,9 +46,10 @@
         $order_id = $num['count'] + 1;
         $status = 'pending';
         $amount = $item->price;
-        $query = 'INSERT INTO Orders (id,buyer_id,seller_id,item_id, amount,status) VALUES (?, ?, ?, ?, ?, ?)';
+        $name = $item->name;
+        $query = 'INSERT INTO Orders (id,buyer_id,seller_id,item_id, item_name,amount,status) VALUES (?, ?, ?, ?, ? ,?, ?)';
         $stmt = $db->prepare($query);
-        $stmt->execute(array($order_id,$user_id, $seller_id, $item_id, $amount,$status));
+        $stmt->execute(array($order_id,$user_id, $seller_id, $item_id, $name,$amount,$status));
         Item::deleteItem($item_id, $db);
 
         header('Location: ../pages/order.php');
