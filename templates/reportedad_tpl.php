@@ -7,17 +7,15 @@ include_once(__DIR__ . '/../data/user.php');
 
 
 function drawReportedAds(){
+
+    require_once(__DIR__ . '/../data/item.php');
     $session = new Session();
     $db = getDatabaseConnection();
-    $user_id = $session->getId();
-    //seleciona todos os favoritos daquele usuario
-    $query = 'SELECT * FROM Favorites WHERE user_id = ?';
+    $query = 'SELECT * FROM REPORT_ITEM';
     $stmt = $db->prepare($query);
-    $stmt->execute(array($user_id));
-    $favorites = $stmt->fetchAll();
+    $stmt->execute();
+    $reported_ads = $stmt->fetchAll();
 
-   
-    
 ?>
 
 <section class="section">
@@ -26,19 +24,16 @@ function drawReportedAds(){
 
     <div class="products">
     <?php 
-    if(!$favorites){
-        echo '<p>No favorites yet.</p>';
+    if(!$reported_ads){
+        echo '<p>There are no reports.</p>';
     }
     
-    foreach($favorites as $favorite){ 
-            $query = 'SELECT * FROM Items WHERE id = ?';
-            $stmt = $db->prepare($query);
-            $stmt->execute(array($favorite['item_id']));
-            $item = $stmt->fetch();
-            $name = $item['name'];
-            $price = $item['price'];
-            $img = $item['main_image']; 
-            $buy_button_id = 'buy_btn_' . $item['id'];
+    foreach($reported_ads as $report){ 
+            $item = Item::findItem($report['item_id'], $db);
+            $name = $item->name;
+            $price = $item->price;
+            $img = $item->main_image; 
+            $buy_button_id = 'buy_btn_' . $item->id;
 
             ?>
       <div class="card">
@@ -47,53 +42,18 @@ function drawReportedAds(){
           <img src="<?php echo $img;?>" alt="" class="card_img" />
           <script type="text/javascript">
             document.getElementById("<?php echo $buy_button_id;?>").onclick = function () {
-            location.href = "item.php?id=<?php echo $item['id'];?>";
+            location.href = "../actions/delete_btn_action.php?id=<?php echo $item->id;?>";
             };
           </script>
         </div>
         <div class="card_body">
-          <h2 class="card_title">Item id</h2>
+          <h2 class="card_title">#<?php echo $report['item_id'];?></h2>
           <div class="report-description">
-          <p id="description">"Its very offensive! Please review it dnfuiwefebefiubuifubwuifbbwufbiurfbcsjndcjksnrjfbacsciaddsjkfhsifhiwheifisfhhiscaxmnadbaifhef"</p></div>
+          <p id="description"><?php echo $report['description'];?></p></div>
           <button id="<?php echo $buy_button_id; ?>" class="buy_btn">Delete Ad</button>
         </div>
         </div>
       </div>
-      <div class="card">
-        <div class="card_content">
-        <div class="card_top">
-          <img src="<?php echo $img;?>" alt="" class="card_img" />
-          <script type="text/javascript">
-            document.getElementById("<?php echo $buy_button_id;?>").onclick = function () {
-            location.href = "item.php?id=<?php echo $item['id'];?>";
-            };
-          </script>
-        </div>
-        <div class="card_body">
-          <h2 class="card_title">Item id</h2>
-          <div class="report-description">
-          <p id="description">"Its very offensive! Please review it dnfuiwefebefiubuifubwuifbbwufbiurfbcsjndcjksnrjfbacsciaddsjkfhsifhiwheifisfhhiscaxmnadbaifhef"</p></div>
-          <button id="<?php echo $buy_button_id; ?>" class="buy_btn">Delete Ad</button>
-        </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card_content">
-        <div class="card_top">
-          <img src="<?php echo $img;?>" alt="" class="card_img" />
-          <script type="text/javascript">
-            document.getElementById("<?php echo $buy_button_id;?>").onclick = function () {
-            location.href = "item.php?id=<?php echo $item['id'];?>";
-            };
-          </script>
-        </div>
-        <div class="card_body">
-          <h2 class="card_title">Item id</h2>
-          <div class="report-description">
-          <p id="description">"Its very offensive! Please review it dnfuiwefebefiubuifubwuifbbwufbiurfbcsjndcjksnrjfbacsciaddsjkfhsifhiwheifisfhhiscaxmnadbaifhef"</p></div>
-          <button id="<?php echo $buy_button_id; ?>" class="buy_btn">Delete Ad</button>
-        </div>
-        </div>
       </div>
       </div>
       <?php } ?>

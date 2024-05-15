@@ -27,9 +27,8 @@ Thank you for bringing this to our attention. We apologize for any inconvenience
                       <textarea id="description" name="description" rows="10" cols="50" placeholder="Enter your description here..."></textarea>
                   </div>
 
-                  create hidden input with item_id
                   
-                  <input type="hidden" name="item_id" value="<?php $item_id; ?>">
+                  <input type="hidden" name="item_id" value="<?php echo $item_id; ?>">
 
                 <div class="buttons">
                   <button id="place_order" name="report_ad">Report ad</button>

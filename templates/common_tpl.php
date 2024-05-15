@@ -1,7 +1,11 @@
 <?php 
 
 function drawAccountNav(){
+    
+  require_once(__DIR__ . '/../data/user.php');
     ?>
+
+    
     <div class="container account_nav">
         <div class="account_title">
         <h1 class="profile_title">Manage My Account</h1></div>
