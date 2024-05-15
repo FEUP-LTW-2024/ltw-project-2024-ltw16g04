@@ -6,7 +6,6 @@ $session = new Session();
 $conn = getDatabaseConnection();
 
 
-
 if (!$session->isLoggedIn()) {
   http_response_code(403);
   echo "Você precisa estar logado para enviar mensagens.";

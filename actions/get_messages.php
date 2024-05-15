@@ -6,12 +6,6 @@ $conn = getDatabaseConnection();
 
 $session = new Session();
 
-if ($_SESSION['csrf'] !== $_POST['csrf']) {
-
-  $session->addMessage('hacker','Tentativa de csrf');
-  header('Location: ../pages/login.php');
-  exit();
-}
 
 $query = "SELECT users.name, messages.message, messages.created_at, messages.from_user, messages.to_user 
         FROM messages 
