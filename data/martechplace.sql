@@ -71,6 +71,7 @@ CREATE TABLE ORDERS (
     buyer_id INT NOT NULL,
     seller_id INT NOT NULL,
     item_id INT NOT NULL,
+    item_name TEXT NOT NULL,
     amount DECIMAL(10, 2) NOT NULL,
     status TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
