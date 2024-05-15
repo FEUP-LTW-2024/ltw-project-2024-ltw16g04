@@ -8,6 +8,7 @@ name TEXT NOT NULL,
 address TEXT,
 phone TEXT NOT NULL UNIQUE,
 email TEXT NOT NULL UNIQUE,
+admin BOOLEAN DEFAULT FALSE,
 password TEXT NOT NULL
 );
 
@@ -27,6 +28,8 @@ published_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 seller_id INT NOT NULL,
 FOREIGN KEY (seller_id) REFERENCES USERS(id)
 );
+
+
 
 
 
@@ -140,25 +143,34 @@ CREATE TABLE BILLING_ITEMS (
 );
 
 -- Inserir 10 usuários aleatórios na tabela USERS com IDs especificados
+
 INSERT INTO USERS (id, name, address ,phone, email, password) VALUES
-    (1, 'John Doe', 'Willow Street 24' ,'1234567890', 'john@example.com', 'password1'),
-    (2, 'Jane Smith', 'Campus Neight 13' ,'9876543210', 'jane@example.com', 'password2'),
-    (3, 'Michael Johnson','Bruxels Barrack 23' ,'5556667777', 'michael@example.com', 'password3'),
-    (4, 'Emily Brown', 'Crossriver side 13' ,'1112223333', 'emily@example.com', 'password4'),
-    (5, 'David Wilson', 'Landlust 123' ,'9998887777', 'david@example.com', 'password5'),
-    (6, 'Sarah Taylor', 'Pork Ranch 13','4443332222', 'sarah@example.com', 'password6'),
-    (7, 'Christopher Martinez', 'CruiseSide 131','7778889999', 'christopher@example.com', 'password7'),
-    (8, 'Jessica Anderson', 'Fenix Map 24','2223334444', 'jessica@example.com', 'password8'),
-    (9, 'Ryan Thomas', 'LandSlide 32','8887776666', 'ryan@example.com', 'password9'),
-    (10, 'Amanda Garcia', 'Palm Beach 13','6665554444', 'amanda@example.com', 'password10');
+    (1, 'John Doe', 'Willow Street 24' ,'1234567890', 'john@example.com', '$2y$10$.TIqTQYZiEBbIJFIQKukqebIUkf6M3aX1AHJlm84nxtD4OqLIn.uu'),
+    (2, 'Jane Smith', 'Campus Neight 13' ,'9876543210', 'jane@example.com', '$2y$10$Zb55hLKEeAVM6W0sb0az0OzeyJHoQRzI8dWp/7YZH2q6T53wTk7Hu'),
+    (3, 'Michael Johnson','Bruxels Barrack 23' ,'5556667777', 'michael@example.com', '$2y$10$.IQRmiWUz15fLKlc5sT6pezsz.tghZIjyaOJepPfddVenEuQ0Vjma'),
+    (4, 'Emily Brown', 'Crossriver side 13' ,'1112223333', 'emily@example.com', '$2y$10$NiKrE2oLk4y8FDKkXparqu8j4i01dfH/wNj5lP/715ugvQcgef0OO'),
+    (5, 'David Wilson', 'Landlust 123' ,'9998887777', 'david@example.com', '$2y$10$awRmIObKfNpAw3lyVQWkpOTAq4gOYW3nMASXGJ73JVEMJc1hDJGAW'),
+    (6, 'Sarah Taylor', 'Pork Ranch 13','4443332222', 'sarah@example.com', '$2y$10$eHSI0db0MpDSqktjXMi1FO.IYfBdwbQyBy6W37z/4.Ys/UEXWB96O'),
+    (7, 'Christopher Martinez', 'CruiseSide 131','7778889999', 'christopher@example.com', '$2y$10$5ysRncUlPEfweXTvHQjgkOJvAkypaot6qEZ791mtjaD6QdeSFLa7e'),
+    (8, 'Jessica Anderson', 'Fenix Map 24','2223334444', 'jessica@example.com', '$2y$10$14dgc3k1Te4IsVgJujVOtO8Yb1Eawh1Cni3QojWqMHUHa6sn3i9MK'),
+    (9, 'Ryan Thomas', 'LandSlide 32','8887776666', 'ryan@example.com', '$2y$10$bXv84kLcw9wvC8hSM8fSmeX2tdTy4bvJwWz45jrTQ3SpqTR5gSNpS'),
+    (10, 'Amanda Garcia', 'Palm Beach 13','6665554444', 'amanda@example.com', '$2y$10$lu/oz3gyAOVbnUr4HhpZ8..Oy7hkqbs9VnH6zbQe2kJtdhsNECbbe');
+
+INSERT INTO USERS(id,name,address,phone,email,admin,password) VALUES 
+    (11,'Admin','Admin Street 1','313092028','admin@martech.com',TRUE,'$2y$10$KR14h9O7bPg.JSItFtXLNupwJa4YErbVKE2mmeSKhyMAntCL0U33m');
 
 
-INSERT INTO ITEMS (id, name, description, price, old_price, category, condition, location, main_image,published_time, seller_id) VALUES
-    (1, 'Iphone 13 Pro Max', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-    25.00, 45.00, 'Smartphones', 'Fair', 'Rua de Antonio Enes, Porto', '../images/items/iphonemain.jpeg','10:34',1),
-    (2, 'HAVIT HV-G92 Gamepad', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna', 12.90, 15.40, 'Peripheral Devices', 'Like new', 'Rua da Maia, 134', '../images/items/gameController.png', '15 minutes',2),
-    (3, 'HAVIT HV-G92 Gamepad', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna', 4.30, 15.40, 'Peripheral Devices', 'Used', 'Rua de Pedro Cabral Santos, 134', '../images/items/gameController.png', '3 months',3),
-    (4, 'Canon 1200D 18-55 + 16GB', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna', 12.90, 15.40, 'Audio, Photo & Video', 'New', 'Rua da Maia, 134', '../images/items/camera.png', '2 weeks',4);
+INSERT INTO ITEMS (id, name, description, price, old_price, category, condition, location, main_image, published_time, seller_id) VALUES
+    (1, 'Iphone 13 Pro Max', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat', 25.00, 45.00, 'Smartphones', 'Fair', 'Rua de Antonio Enes, Porto', '../images/items/iphonemain.jpeg', '2024-05-15 10:34:00', 1),
+    (2, 'HAVIT HV-G92 Gamepad', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna', 12.90, 15.40, 'Peripheral Devices', 'Like new', 'Rua da Maia, 134', '../images/items/gameController.png', '2024-05-15 10:19:00', 2),
+    (3, 'HAVIT HV-G92 Gamepad', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna', 4.30, 15.40, 'Peripheral Devices', 'Used', 'Rua de Pedro Cabral Santos, 134', '../images/items/gameController.png', '2024-02-15 10:00:00', 3),
+    (4, 'Canon 1200D 18-55 + 16GB', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna', 12.90, 15.40, 'Audio, Photo & Video', 'New', 'Rua da Maia, 134', '../images/items/camera.png', '2024-04-30 10:00:00', 4),
+    (5, 'Airpods 2 Gen', 'Used two times, like new.', 40.90, NULL, 'Headphones', 'Like new', 'Rua da Souza, 124', '../images/items/airpodgen2.jpg', '2024-04-24 10:00:00', 5),
+    (6, 'Nikon Camera', 'With some scratches but works just fine, comes with one lens', 80.00, NULL, 'Cameras', 'Fair', 'Rua da Rosa, 100', '../images/items/cameranikon.png', '2024-04-15 10:00:00', 6),
+    (7, 'Macbook Pro 2019', 'Used for 2 years, in good condition, comes with charger', 1000.00, 1200.00, 'Computers', 'Fair', 'Rua da Maia, 134', '../images/items/macbookpro.png', '2023-05-15 10:00:00', 7),
+    (8, 'Samsung Galaxy S21', 'Brand new, never used, comes with charger and box', 500.00, NULL, 'Smartphones', 'New', 'Rua da Maia, 134', '../images/items/samsungs21.png', '2024-04-15 10:00:00', 8),
+    (9, 'WH-CH520 wireless', 'Used for 6 months, in good condition, comes with charger', 50.00, 70.00, 'Peripheral Devices', 'Fair', 'Rua da Maia, 134', '../images/items/sonyheadphones.png', '2023-11-15 10:00:00', 9),
+    (10, 'Xbox Series X', 'Brand new, never used, comes with controller and box', 600.00, NULL, 'Consoles', 'New', 'Rua da Maia, 134', '../images/items/xboxseriesx.jpg', '2024-04-15 10:00:00', 10);
 
 INSERT INTO THUMBNAILS(id, item_id, url) VALUES
     (1, 1, '../images/items/iphone1.jpeg'),

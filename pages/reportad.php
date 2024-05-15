@@ -5,6 +5,8 @@ require_once(__DIR__ .'/../utils/session.php');
 require_once(__DIR__ .'/../data/connection.php');
 require_once(__DIR__ .'/../templates/common_tpl.php');
 require_once(__DIR__ .'/../templates/reportad_tpl.php');
+require_once(__DIR__ .'/../data/item.php');
+require_once(__DIR__ .'/../actions/reportAd_action.php');
 
 
 $session = new Session();
@@ -36,7 +38,7 @@ $session = new Session();
   
   <?php drawHeader(); ?>
 
-  <?php drawReportAd(); ?>
+  <?php drawReportAd($_GET['id']); ?>
 
  <!--FOOTER-->
 

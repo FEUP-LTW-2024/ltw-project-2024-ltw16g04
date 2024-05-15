@@ -15,7 +15,7 @@ if (!$session->isLoggedIn()) {
 
 $user_id = $session->getId();
 $chatting = $_POST['user_id'];
-$message = trim($_POST['message']);
+$message = $comment = preg_replace("/[^a-zA-Z\s]/", '', trim($_POST['message']));
 $timestamp = date('Y-m-d H:i:s');
 
 $countMessages = 'SELECT COUNT(*) as count FROM Messages';

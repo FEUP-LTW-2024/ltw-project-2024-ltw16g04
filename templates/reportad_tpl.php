@@ -1,5 +1,5 @@
 <?php
-function drawReportAd(){
+function drawReportAd($item_id){
  
 
   require_once(__DIR__ .'/../data/connection.php');
@@ -11,15 +11,6 @@ function drawReportAd(){
   if(!$session->isLoggedIn()) {header('Location: ../pages/login.php');
   exit();}
 ?>
-<?php
-
-
-
-
-
-
-?>
-
 
 <section class="section">
     <div class="container">
@@ -29,15 +20,19 @@ function drawReportAd(){
       <div class="report_form">
         <p>
 Thank you for bringing this to our attention. We apologize for any inconvenience caused by the ad. Understanding your reasons for reporting it will help us improve our services. Please provide details on why you found the ad problematic, and we'll take appropriate action. Your feedback is valuable to us!</p>
-            <form action="../actions/reportAd.php" method="post" enctype="multipart/form-data">
+            <form action="../actions/reportAd_action.php" method="post" enctype="multipart/form-data">
                 
                  
                   <div class="description">
                       <textarea id="description" name="description" rows="10" cols="50" placeholder="Enter your description here..."></textarea>
                   </div>
+
+                  create hidden input with item_id
                   
+                  <input type="hidden" name="item_id" value="<?php $item_id; ?>">
+
                 <div class="buttons">
-                  <button id="place_order" name="create_ad">Report ad</button>
+                  <button id="place_order" name="report_ad">Report ad</button>
                   <button id="go_back" name="go_back">Go back</button>
                 </div>
               </form>
