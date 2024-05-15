@@ -20,6 +20,7 @@
             header('Location: ../pages/index.php');
             exit();
         } else {
+            $id = $item['id'];
             $name = $item['name'];
             $description = $item['description'];
             $price = $item['price'];
@@ -81,7 +82,7 @@
                         </div>
                         <div class="buttons">
                             <a href="../pages/reportad.php" class="getcontact">REPORT AD</a>  
-                            <a href="../pages/chat.php?seller_id=<?php echo $seller_id; ?>" class="cart">SEND MESSAGE</a>  
+                            <a href="../pages/chat.php?seller_id=<?php echo $seller_id; ?>item_id=<?php echo $id; ?>" class="cart">SEND MESSAGE</a>  
                         </div>
                         <div class="buttons">
                             <a href="../actions/fav_btn.php" class="fav"><img src="../images/heart.png" alt=""> ADD TO FAVORITES</a>  

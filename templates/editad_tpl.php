@@ -102,6 +102,7 @@ function drawEditAd(){
                 <div class="buttons">
                   <button id="place_order" name="create_ad">Save changes</button>
                   <button id="go_back" name="go_back">Go back</button>
+                  <button id="delete_ad" name="delete_ad">Delete Ad</button>
                 </div>
 
               </form>
