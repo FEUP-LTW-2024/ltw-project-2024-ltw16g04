@@ -74,7 +74,7 @@
               </div>
               <div class="input_wrapper_email" class="phone">
                 <label for="phone">Phone Number</label>
-                <input type="tel" name="phone" id="phone" placeholder="e.g: +351 000-000-000" value=<?php echo $phone;  ?> required>
+                <input type="tel" name="phone" id="phone" placeholder="e.g: +351 000-000-000" value=<?php echo $phone;?> required>
             </div>
               
             </div>
