@@ -45,13 +45,22 @@
     color: white;
     font-size: 1.6rem;
   }
+
+  .account_subtitle{
+    margin: 10px 0px;
+    padding-left: 0;
+    padding: 1rem;
+    background-color: #999;
+    color: white;
+    font-size: 1.6rem;
+  }
   .account_selector {
   
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     margin: 10px 0;
-  padding-left: 10px;
+  padding-left: 0px;
 
   }
   .account_selector a {
@@ -61,6 +70,7 @@
   }
   .account_link {
     padding: 0.3em;
+    padding-left: 20px;
     color: black;
     transition: all 0.3s ease;
   }
