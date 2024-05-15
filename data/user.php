@@ -20,6 +20,20 @@
         $stmt->execute(array($id,$name,$phone, $email, password_hash($pwd, PASSWORD_DEFAULT)));
     }
 
+    static function isAdmin($user_id,$db){
+        $query = 'SELECT * FROM Users WHERE id = ?';
+        $stmt = $db->prepare($query);
+        $stmt->execute(array($user_id));
+        $user = $stmt->fetch();
+
+        if($user['admin'] == TRUE){
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
     static function getUser($id, $db): ?User {
         $query = 'SELECT * FROM Users WHERE id = ?';
         $stmt = $db->prepare($query);

@@ -51,6 +51,7 @@
 
 
     <section class= "edit_profile">
+  
       <h1 class="profile_sub">Edit My Profile</h2>
       <form action="../actions/edit_profile_action.php" method="post">
             <div class="name">
@@ -89,11 +90,6 @@
               <input type="password" name="rep_password" id="rep_password" placeholder="Repeat new password" required>
             </div>
             <div class="finish_edit_profile">
-            <?php foreach ($session->getMessages() as $messsage) { ?>
-	              <article class="<?=$messsage['type']?>">
-	              <?=$messsage['text']?>
-	              </article>
-	            <?php } ?>
               <button id="save_changes" name = "save_changes">Save Changes</button>
             </div>
         </form>

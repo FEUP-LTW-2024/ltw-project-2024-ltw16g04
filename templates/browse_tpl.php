@@ -46,11 +46,12 @@ function getItems($filters) {
    return $items;
 }
 
-function drawItems($items) {
+function drawItems($items, $menu = false) {
 
     ?>
     <div class="products">
 <?php
+    $count = 0;
 
     foreach ($items as $item) {
         
@@ -66,6 +67,12 @@ function drawItems($items) {
         $published_time = $item['published_time'];
         // Generate a unique identifier for each button
         $button_id = 'buy_btn_' . $item['id'];
+        $count++;
+        
+        if($menu && $count > 8){
+            break;
+        }
+
 
 ?>
 
@@ -107,7 +114,7 @@ function drawFilter(){
                     <option value="25-50">$25 - $50</option>
                     <option value="50-100">$50 - $100</option>
                     <option value="100-200">$100 - $200</option>
-                    <option value="200-">Above $200</option>
+                    <option value="200-10000000">Above $200</option>
                 </select>
             </div>
             <div class="header_filter">
