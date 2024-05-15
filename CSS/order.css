@@ -38,7 +38,8 @@
     border: #ccc 1px solid;
   }
   .account_title{
-    padding: 1rem;
+ 
+    padding: 2rem 1rem;
     background-color: #006BAF;
     color: white;
     font-size: 1.6rem;

@@ -23,7 +23,7 @@ function drawAccountNav(){
           if(User::isAdmin($session->getId(), $db)){ ?>
           <div class="account_subtitle">
           <h3 class="action_subtitle">Admin Actions</h3></div>
-          <a href="solditems.php" class="account_link">Add Categories</a>
+          <a href="addcategories.php" class="account_link">Add Categories</a>
           <a href="reportedad.php" class="account_link">Ads Reported</a>
           <a href="solditems.php" class="account_link">Users List</a>
           </div> 
