@@ -59,6 +59,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../CSS/chat.css" rel="stylesheet">
+    <link href="../CSS/topbar.css" rel="stylesheet">
+    <link href="../CSS/footer.css" rel="stylesheet">
     <!-- fonts used  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -108,7 +110,7 @@
           <form id="message-form">
       
             <input type="text" id="message-input" placeholder="Type your message...">
-            <button type="submit">Send</button>
+            <button type="submit" id="send_btn">Send</button>
           </form>
         </div>
         <script src="../js/script.js"></script>

@@ -143,7 +143,7 @@ function drawHeader(){
               name="input"
               placeholder="What are you looking for?" />
               <button type="submit" class="nav_search" id="search_btn">
-                <img src="../images/search.png" alt="Search" />
+                <img src="../images/search.png" alt="Search" id="btn_img"/>
              </button>
           </form>
 
