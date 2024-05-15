@@ -59,6 +59,15 @@ if(isset($_POST['create_ad'])){
     
     $seller_id = $session->getId();
 
+    if (!is_numeric($price) || floatval($price) < 0) {
+        $session->addMessage('error', 'Price must be a positive number.');
+        header('Location: ../pages/sell.php');
+        exit();
+    }
+
+    $price = floatval($price);
+
+
     Item::addItem($item_id, $name, $description, $price, $category, $condition, $location, $main_image, $seller_id, $db);
     
     header('Location: ../pages/myads.php');

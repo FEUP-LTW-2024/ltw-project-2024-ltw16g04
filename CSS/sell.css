@@ -219,7 +219,19 @@
     margin-top: 10px;
     margin-bottom: 30px;
 }
-
+#delete_ad{
+  width: 25%;
+    background-color: red;
+    font-size: 1.5rem;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 1.5em 5rem;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
 
 
   

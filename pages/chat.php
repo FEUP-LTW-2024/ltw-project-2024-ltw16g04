@@ -10,6 +10,7 @@
   $user_id = $session->getId();
   
   $seller_id = $_GET['seller_id'];
+  $item_id = $_GET['item_id'];
   $timestamp = date('Y-m-d H:i:s');
 
   $countMessages = 'SELECT COUNT(*) as count FROM Messages';
@@ -18,12 +19,17 @@
   $num = $stmt->fetch();
   $id = $num['count'] + 1;
 
-
+  $productMessage = 'SELECT * FROM ITEMS WHERE id = ?';
+  $stmt = $conn->prepare($productMessage);
+  $stmt->execute(array($item_id));
+  $item = $stmt->fetch();
+  $item_name = $item['name'];
 
   if($seller_id){
     $query = "INSERT INTO messages (id,from_user, to_user, message, created_at) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($query);
-    $stmt->execute(array($id,$user_id, $seller_id, "Olá, quero saber mais sobre o produto.", $timestamp));
+    $message = "Olá, quero saber mais sobre o produto $item_name.";
+    $stmt->execute(array($id,$user_id, $seller_id, $message, $timestamp));
   }
   
   if(!$session->isLoggedIn()) {
