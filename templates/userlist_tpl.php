@@ -1,46 +1,37 @@
 <?php
   declare(strict_types=1);
 
-  require_once(__DIR__ . '/../utils/session.php');
-
-  require_once(__DIR__ .'/../data/connection.php');
+ 
 
   
   function drawUserList() {
+    require_once(__DIR__ . '/../utils/session.php');
+
+    require_once(__DIR__ .'/../data/connection.php');
+    require_once(__DIR__ .'/../data/user.php');
     $session = new Session();
     $db = getDatabaseConnection(); 
-    $user_id = $session->getId();
-
-    
-    $query = 'SELECT * FROM Orders WHERE buyer_id = ?';
-    $stmt = $db->prepare($query);
-    $stmt->execute(array($user_id));
-    $orders = $stmt->fetchAll(); 
+    $users = User::getAllUsers($db);
 
     
 
     ?>
+    
     <section class="orders">
-    <?php if(!$orders){
-            echo '<p>No orders yet</p>';
+    <?php if(!$users){
+            echo '<p>No Users yet</p>';
             ?>
             </section>
             <?php
     }
     else {
 
-        foreach ($orders as $order){
-          $item_id = $order['item_id'];
-          $item_name = $order['item_name'];
-          $price = $order['amount'];
-          $created_at = $order['created_at'];
-          $seller_id = $order['seller_id'];
-          $query = 'SELECT * FROM Users WHERE id = ?';
-          $stmt = $db->prepare($query);
-          $stmt->execute(array($seller_id));
-
-          $seller = $stmt->fetch();
-          $seller_name = $seller['name'];
+    foreach ($users as $user){
+        $user_id = $user['id'];
+        $user_name = $user['name'];
+        $user_email = $user['email'];
+        $delete_btn_id = 'delete_btn_' . $user['id'];
+        $edit_button_id = 'edit_btn_' . $user['id'];
 
 
     ?>
@@ -51,16 +42,33 @@
                 <th>User Id</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Role</th>
             </tr>
             <tr>
-                <td>#<?php echo $item_id;?></td>
-                <td><?php echo $item_name;?></td>
-                <td><?php echo $seller_name;?></td>
+                <td>#<?php echo $user_id;?></td>
+                <td><?php echo $user_name;?></td>
+                <td><?php echo $user_email;?></td>
+                <?php if(User::isAdmin($user_id,$db)){?>
+                    <td>Admin</td>
+                <?php } else { ?>
+                    <td>User</td>
+                <?php } ?>
             </tr>
         </table>
         <div class="buttons">
-            <button id="button1">Elevate to Admin</button>
-            <button id="button2">Delete User</button>
+            <button id="<?php echo $edit_button_id;?>" class="elevatebtn">Elevate to Admin</button>
+            <script type="text/javascript">
+              document.getElementById("<?php echo $edit_button_id;?>").onclick = function () {
+              location.href = "../actions/elevate_user_action.php?id=<?php echo $user_id;?>";
+            };
+            </script>
+            <button id="<?php echo $delete_btn_id;?>" class = "deletebtn">Delete User</button>
+            <script type="text/javascript">
+              document.getElementById("<?php echo $delete_btn_id;?>").onclick = function () {
+              location.href = "../actions/delete_user_action.php?id=<?php echo $user_id;?>";
+            };
+            </script>
+            
         </div>
     </div>
 

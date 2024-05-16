@@ -4,6 +4,7 @@
   require_once(__DIR__ .'/../data/connection.php');
   require_once(__DIR__ .'/../templates/common_tpl.php');
   require_once(__DIR__ .'/../templates/userlist_tpl.php');
+  require_once(__DIR__ .'/../utils/session.php');
 
   $session = new Session(); ?>
 

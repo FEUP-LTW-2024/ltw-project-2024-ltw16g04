@@ -19,8 +19,7 @@
     
 
     ?>
-    <section class="orders">   margin-top: 1em;
-    margin-bottom: 1em;
+    <section class="orders">   
     <?php if(!$orders){
             echo '<p>You have not sold any items yet</p>';
             ?>

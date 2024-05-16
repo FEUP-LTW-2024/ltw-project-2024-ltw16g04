@@ -34,6 +34,14 @@
 
     }
 
+    static function getAllUsers($db){
+        $query = 'SELECT * FROM Users';
+        $stmt = $db->prepare($query);
+        $stmt->execute();
+        $users = $stmt->fetchAll();
+        return $users;
+    }
+
     static function getUser($id, $db): ?User {
         $query = 'SELECT * FROM Users WHERE id = ?';
         $stmt = $db->prepare($query);
@@ -108,5 +116,18 @@
             return false;
         }
     }
+
+    static function deleteUser($id, $db){
+        $query = 'DELETE FROM Users WHERE id = ?';
+        $stmt = $db->prepare($query);
+        $stmt->execute(array($id));
     }
+
+    static function elevateUser($id, $db){
+        $query = 'UPDATE Users SET admin = TRUE WHERE id = ?';
+        $stmt = $db->prepare($query);
+        $stmt->execute(array($id));
+    }
+
+}
     ?>
