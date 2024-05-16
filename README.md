@@ -18,7 +18,7 @@
 ## Screenshots
 
 <p align="center" justify="center">
-  <img src="images/martechMenu.jpg"/>
+  <img src="images/martechMenu.jpeg"/>
 </p>
 ## Implemented Features
 
