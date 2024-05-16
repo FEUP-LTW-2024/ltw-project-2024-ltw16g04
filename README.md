@@ -15,6 +15,9 @@
     sqlite data/martechplace.db < data/martechplace.sql
     php -S localhost:9000
 
+### Login Information
+    asfasfasf
+
 ## Screenshots
 
 <p align="center" justify="center">
