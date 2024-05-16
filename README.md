@@ -61,9 +61,9 @@
 **Security**:
 We have been careful with the following security aspects:
 
-- [ ] **SQL injection**
-- [ ] **Cross-Site Scripting (XSS)**
-- [ ] **Cross-Site Request Forgery (CSRF)**
+- [X] **SQL injection**
+- [X] **Cross-Site Scripting (XSS)**
+- [X] **Cross-Site Request Forgery (CSRF)**
 
 **Password Storage Mechanism**: md5 / sha1 / sha256 / hash_password&verify_password
 
