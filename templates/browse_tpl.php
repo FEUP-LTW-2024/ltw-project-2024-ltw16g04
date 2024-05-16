@@ -121,13 +121,18 @@ function drawFilter(){
                 <label>Category:</label>
                 <select name="category">
                     <option value="">Select</option>
-                    <option value="Audio, Photo & Video">Audio, Photo & Video</option>
-                    <option value="Components">Components</option>
-                    <option value="Computers">Computers</option>
-                    <option value="Consoles">Consoles</option>
-                    <option value="Peripheral Devices">Peripheral Devices</option>
-                    <option value="Smartphones">Smartphones</option>
-                    <option value="Tablets">Tablets</option>
+                    <?php 
+                      $db = getDatabaseConnection();
+                      $query = 'SELECT * FROM CATEGORIES';
+                      $stmt = $db->prepare($query);
+                      $stmt->execute();
+                      $categories = $stmt->fetchAll();
+                      foreach($categories as $category) {
+                        echo '<option value="' . $category['name'] . '">' . htmlspecialchars($category['name']) . '</option>';
+                      }
+                      ?>
+                    
+                    
                 </select>
             </div>
             <div class="header_filter">
