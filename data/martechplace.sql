@@ -29,7 +29,12 @@ seller_id INT NOT NULL,
 FOREIGN KEY (seller_id) REFERENCES USERS(id)
 );
 
+DROP TABLE IF EXISTS CATEGORIES;
 
+CREATE TABLE CATEGORIES(
+    id INT PRIMARY KEY NOT NULL,
+    name TEXT NOT NULL
+);
 
 
 
@@ -203,3 +208,14 @@ INSERT INTO MESSAGES (id, from_user, to_user, message, created_at) VALUES
     (8, 5, 10, 'Oi Amanda, você está vendendo algo novo?', '2022-03-13 14:00:00'),
     (9, 10, 5, 'Oi David, sim, tenho alguns itens novos chegando esta semana.', '2022-03-13 14:05:00'),
     (10, 7, 9, 'Ei Ryan, você viu o novo item que estou vendendo?', '2022-03-14 08:00:00');
+
+
+INSERT INTO CATEGORIES(id,name) VALUES 
+      (1, 'Audio, Photo & Video'),
+      (2, 'Components'),
+      (3, 'Computers'),
+      (4, 'Consoles'),
+      (5, 'Peripheral Devices'),
+      (6, 'Smartphones'),
+      (7, 'Tablets'),
+      (8, 'Watches');

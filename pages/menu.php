@@ -35,13 +35,7 @@
  <header class="header">
   <div class="container header_container">
     <div class="header_filter">
-      <a href="browse.php?category=Audio%2C%20Photo%20%26%20Video" class="header_filter_link">Audio, Photo & Video</a>
-      <a href="browse.php?category=Components" class="header_filter_link">Components</a>
-      <a href="browse.php?category=Computers" class="header_filter_link">Computers</a>
-      <a href="browse.php?category=Consoles" class="header_filter_link">Consoles</a>
-      <a href="browse.php?category=Peripheral%20Devices" class="header_filter_link">Peripheral Devices</a>
-      <a href="browse.php?category=Smartphones" class="header_filter_link">Smartphones</a>
-      <a href="browse.php?category=Tablets" class="header_filter_link">Tablets</a>
+      <?php drawCategories();?>
     </div>
     <img src="../images/add.jpeg" alt="" class="header_img"/>
   </div>
