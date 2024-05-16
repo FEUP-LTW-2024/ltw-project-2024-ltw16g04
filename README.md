@@ -16,7 +16,12 @@
     php -S localhost:9000
 
 ### Login Information
-    asfasfasf
+    Simple User:
+        John@example.com
+        password1
+    Admin:
+        admin@martech.com
+        admin123
 
 ## Screenshots
 
