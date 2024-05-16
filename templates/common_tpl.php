@@ -25,7 +25,7 @@ function drawAccountNav(){
           <h3 class="action_subtitle">Admin Actions</h3></div>
           <a href="addcategories.php" class="account_link">Add Categories</a>
           <a href="reportedad.php" class="account_link">Ads Reported</a>
-          <a href="solditems.php" class="account_link">Users List</a>
+          <a href="userlist.php" class="account_link">Users List</a>
           </div> 
           <?php }else { ?> <?php } ?>
           <a href="../actions/logout.php" class="account_link" id="logout">Log Out</a>
