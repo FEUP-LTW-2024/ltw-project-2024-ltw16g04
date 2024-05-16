@@ -23,9 +23,11 @@
 </p>
 <p align="center" justify="center">
   <img src="images/martechBrowse.jpeg"/>
+    <br>
 </p>
 <p align="center" justify="center">
   <img src="images/martechUserAdmin.png"/>
+    <br>
 </p>
 
 ## Implemented Features
