@@ -1,5 +1,21 @@
 <?php 
 
+function drawCategories(){
+
+  $db = getDatabaseConnection();
+  $query = 'SELECT * FROM CATEGORIES';
+  $stmt = $db->prepare($query);
+  $stmt->execute();
+  $categories = $stmt->fetchAll();
+  foreach($categories as $category) {
+    $encodedCategoryName = urlencode($category['name']);
+    echo '<a href="browse.php?category=' . $encodedCategoryName . '" class="header_filter_link">' . htmlspecialchars($category['name']) . '</a>';
+}
+
+
+}
+
+
 function drawAccountNav(){
     
   require_once(__DIR__ . '/../data/user.php');

@@ -58,6 +58,7 @@
                 <input type="text" name="add_category" id="add_category" placeholder="Ex: Laptops" required>
               </div>
             <div class="finish_add_category">
+            <input type="hidden" name="csrf" value="<?php echo $_SESSION['csrf'];?>">
               <button id="add_btn" name = "add_button">Add Category</button>
             </div>
         </form>
@@ -66,21 +67,21 @@
       <form action="../actions/edit_categories_action.php" method="post">
             <div id="select_category">
                     <select name="category" id="category" required>
-                      <option value="" disabled selected>Select a category</option>
-                      <option value="Audio, Photo & Video">Audio, Photo & Video (Not camera)</option>
-                      <option value="Cameras">Cameras</option>
-                      <option value="Components">Components</option>
-                      <option value="Computers">Computers</option>
-                      <option value="Consoles">Consoles</option>
-                      <option value="Gaming">Gaming</option>
-                      <option value="Headphones">Headphones</option>
-                      <option value="Smartphones">Smartphones</option>
-                      <option value="Peripheral Devices">Peripheral Devices</option>
-                      <option value="Tablets">Tablets</option>
-                      <option value="Watches">Watches</option>
+                    <option value="" disabled selected>Select a category</option>
+                      <?php 
+                      $db = getDatabaseConnection();
+                      $query = 'SELECT * FROM CATEGORIES';
+                      $stmt = $db->prepare($query);
+                      $stmt->execute();
+                      $categories = $stmt->fetchAll();
+                      foreach($categories as $category) {
+                        echo '<option value="' . $category['name'] . '">' . htmlspecialchars($category['name']) . '</option>';
+                      }
+                      ?>
                     </select>
               </div>
             <div class="finish_delete_category">
+            <input type="hidden" name="csrf" value="<?php echo $_SESSION['csrf'];?>">
               <button id="delete_btn" name = "delete_button">Delete Category</button>
             </div>
         </form>
