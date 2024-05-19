@@ -12,7 +12,7 @@
     or
     git clone git@github.com:FEUP-LTW-2024/ltw-project-2024-ltw16g04.git
     git checkout final-delivery-v1
-    sqlite data/martechplace.db < data/martechplace.sql
+    sqlite3 data/martechplace.db < data/martechplace.sql
     php -S localhost:9000
 
 ### Login Information
