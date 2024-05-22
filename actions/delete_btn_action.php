@@ -9,9 +9,15 @@ include_once(__DIR__ . '/../data/item.php');
 $item_id = $_GET['id'];
 $db = getDatabaseConnection();
 
-Item::deleteItem($db, $item_id);
+Item::deleteItem($item_id, $db);
 
-header('Location: ../pages/reportad.php');
+$query = 'DELETE FROM REPORT_ITEM WHERE item_id = ?';
+$stmt = $db->prepare($query);
+$stmt->execute(array($item_id));
+
+
+
+header('Location: ../pages/reportedad.php');
 exit();
 
 ?>

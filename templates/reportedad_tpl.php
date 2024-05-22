@@ -40,17 +40,18 @@ function drawReportedAds(){
         <div class="card_content">
         <div class="card_top">
           <img src="<?php echo $img;?>" alt="" class="card_img" />
-          <script type="text/javascript">
-            document.getElementById("<?php echo $buy_button_id;?>").onclick = function () {
-            location.href = "../actions/delete_btn_action.php?id=<?php echo $item->id;?>";
-            };
-          </script>
+          
         </div>
         <div class="card_body">
           <h2 class="card_title">#<?php echo $report['item_id'];?></h2>
           <div class="report-description">
           <p id="description"><?php echo $report['description'];?></p></div>
           <button id="<?php echo $buy_button_id; ?>" class="buy_btn">Delete Ad</button>
+          <script type="text/javascript">
+            document.getElementById("<?php echo $buy_button_id;?>").onclick = function () {
+            location.href = "../actions/delete_btn_action.php?id=<?php echo $item->id;?>";
+            };
+          </script>
         </div>
         </div>
       </div>

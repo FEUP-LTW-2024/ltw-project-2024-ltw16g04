@@ -69,7 +69,7 @@ function drawEditAd(){
                   </div>
                   <div class="upload-image">
                     <label for="image">Product Image</label>
-                    <input type="file" name="image" id="image" multiple accept="image/*" value="<?php echo $item->main_image;?>" required>
+                    <input type="file" name="image" id="image" multiple accept="image/*" value="<?php echo $item->main_image;?>">
                     <p>Upload an image of the product (accepted formats: JPG, PNG, GIF).</p>
                   </div>
                   <div class="description">

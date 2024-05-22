@@ -15,6 +15,14 @@ if ($_SESSION['csrf'] !== $_POST['csrf']) {
     exit();
 }
 
+if(isset($_POST['delete_ad'])){
+    $db = getDatabaseConnection();
+    $item_id = $_POST['ad_id'];
+    Item::deleteItem($item_id, $db);
+    header('Location: ../pages/myads.php');
+    exit();
+}
+
 if(isset($_POST['create_ad'])){
     $db = getDatabaseConnection();
     $item_id = $_POST['ad_id'];
